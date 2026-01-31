@@ -1,6 +1,7 @@
 package com.wdbyte.bing.html;
 
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -70,8 +71,8 @@ public class WebSiteGenerator {
         indexHtml = replaceSidebar(indexHtml, monthMap, null);
         // 替换图片列表
         indexHtml = replaceImgList(indexHtml, bingImages.size() > 30 ? bingImages.subList(0, 30) : bingImages);
-        // 替换底部月度历史
-        indexHtml = replaceMonthHistory(indexHtml, monthMap, null);
+        // 替换底部月度历史 - 使用新的Fluent Design日历
+        indexHtml = replaceMonthHistoryWithCalendar(indexHtml, bingImages, null);
         // 写到文件
         HtmlFileUtils.writeIndexHtml(indexHtml);
     }
@@ -163,8 +164,66 @@ public class WebSiteGenerator {
     }
 
     /**
-     * 替换底部的月度历史链接
-     *
+     * 替换底部月度历史 - 使用新的Fluent Design日历
+     * @param html
+     * @param bingImages
+     * @param nowMonth
+     * @return
+     */
+    public String replaceMonthHistoryWithCalendar(String html, List<Images> bingImages, String nowMonth) {
+        // 构建日历数据
+        Map<String, Object> calendarData = buildCalendarData(bingImages);
+        
+        // 生成Fluent Design日历
+        String calendarHtml = MonthHistory.getFluentCalendar(calendarData);
+        
+        return html.replace(MonthHistory.VAR_MONTH_HISTORY, calendarHtml);
+    }
+    
+    /**
+     * 构建日历数据
+     * @param bingImages
+     * @return
+     */
+    private Map<String, Object> buildCalendarData(List<Images> bingImages) {
+        Map<String, Object> calendarData = new HashMap<>();
+        
+        // 获取当前年月
+        Calendar now = Calendar.getInstance();
+        int currentYear = now.get(Calendar.YEAR);
+        int currentMonth = now.get(Calendar.MONTH) + 1; // Calendar月份是0-based
+        
+        calendarData.put("currentYear", currentYear);
+        calendarData.put("currentMonth", currentMonth);
+        
+        // 统计每日壁纸数量
+        Map<String, Integer> wallpaperCounts = new HashMap<>();
+        Map<Integer, Integer> yearStats = new HashMap<>();
+        
+        for (Images image : bingImages) {
+            String date = image.getDate();
+            String[] dateParts = date.split("-");
+            if (dateParts.length == 3) {
+                int year = Integer.parseInt(dateParts[0]);
+                int month = Integer.parseInt(dateParts[1]);
+                
+                // 统计每日数量
+                wallpaperCounts.put(date, wallpaperCounts.getOrDefault(date, 0) + 1);
+                
+                // 统计年度数量
+                yearStats.put(year, yearStats.getOrDefault(year, 0) + 1);
+            }
+        }
+        
+        calendarData.put("wallpaperCounts", wallpaperCounts);
+        calendarData.put("yearStats", yearStats);
+        
+        return calendarData;
+    }
+
+    /**
+     * 替换底部月度历史
+     * @param html
      * @param monthMap
      * @param nowMonth
      * @return

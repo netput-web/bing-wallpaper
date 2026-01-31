@@ -1,5 +1,8 @@
 package com.wdbyte.bing.html;
 
+import java.util.Calendar;
+import java.util.Map;
+
 import com.wdbyte.bing.Images;
 import com.wdbyte.bing.Wallpaper;
 
@@ -49,12 +52,11 @@ public class HtmlConstant {
         private static final String VAR_IMG_CARD_DOWNLOAD_URL = "${img_card_download_url}";
         private static final String VAR_IMG_CARD_DATE = "${img_card_date}";
         private static final String IMG_CARD = ""
-            + "<div class=\"w3-third \" style=\"position: relative;height:249px\">\n"
-            +"  <img class=\"smallImg\" src=\"${img_card_url}&pid=hp&w=50\"  style=\"width:95%;\" />"
-            + "<a href=\"${img_detail_url}\"  target=\"_blank\"> <img class=\"bigImg w3-hover-shadow\" src=\"${img_card_download_url_preview}&pid=hp&w=384&h=216&rs=1&c=4\" style=\"width:95%\" onload=\"imgloading(this)\"></a>\n"
-            + " <p>${img_card_date} <a href=\"${img_card_download_url}\" target=\"_blank\">Download 4k</a> "
-            + "<button class=\"like-button img-btn\" onclick=\"updateLove('${img_card_region}','${img_card_date}')\">喜欢</button>"
-            + "</p>\n"
+            + "<div style=\"width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box\">\n"
+            +"  <img class=\"smallImg\" src=\"${img_card_url}&pid=hp&w=50\"  style=\"width:95%; position: absolute; top: 0; left: 2.5%;\" />"
+            + "<a href=\"${img_detail_url}\"  target=\"_blank\"> <img class=\"bigImg w3-hover-shadow\" src=\"${img_card_download_url_preview}&pid=hp&w=384&h=216&rs=1&c=4\" style=\"width:95%; position: absolute; top: 0; left: 2.5%;\" onload=\"imgloading(this)\"></a>\n"
+            + " <div style=\"position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;\">${img_card_date} <a href=\"${img_card_download_url}\" target=\"_blank\">Download 4k</a> "
+            + "<button class=\"like-button img-btn\" onclick=\"updateLove('${img_card_region}','${img_card_date}')\">喜欢</button></div>\n"
             + "</div>";
 
         public static String getImgCard(Images bingImage) {
@@ -68,19 +70,118 @@ public class HtmlConstant {
         }
     }
     /**
-     * 底部归档
+     * 底部归档 - Fluent Design 日历
      */
     public static class MonthHistory{
         public static final String VAR_MONTH_HISTORY = "${month_history}";
-
         public static final String VAR_MONTH_HISTORY_NOW_MONTH_COLOR = "w3-green";
         public static final String VAR_MONTH_HISTORY_MONTH_COLOR = "w3-light-grey";
         private static final String VAR_MONTH_HISTORY_HREF_URL = "${month_href_url}";
         private static final String VAR_MONTH_HISTORY_HREF_TITLE = "${month_href_title}";
+        
+        // 新的Fluent Design日历结构
+        private static final String FLUENT_CALENDAR = ""
+            + "<div class=\"calendar-section\">\n"
+            + "  <div class=\"calendar-nav\">\n"
+            + "    <button class=\"nav-button nav-prev\" onclick=\"calendarNavigate('prev')\">◀</button>\n"
+            + "    <div class=\"nav-year\" onclick=\"showYearSelector()\">2026</div>\n"
+            + "    <div class=\"nav-month\" onclick=\"showMonthSelector()\">1月</div>\n"
+            + "    <button class=\"nav-button nav-next\" onclick=\"calendarNavigate('next')\">▶</button>\n"
+            + "  </div>\n"
+            + "  \n"
+            + "  <div class=\"calendar-grid\">\n"
+            + "    <div class=\"calendar-header\">日</div>\n"
+            + "    <div class=\"calendar-header\">一</div>\n"
+            + "    <div class=\"calendar-header\">二</div>\n"
+            + "    <div class=\"calendar-header\">三</div>\n"
+            + "    <div class=\"calendar-header\">四</div>\n"
+            + "    <div class=\"calendar-header\">五</div>\n"
+            + "    <div class=\"calendar-header\">六</div>\n"
+            + "    ${calendar_days}\n"
+            + "  </div>\n"
+            + "  \n"
+            + "  <div class=\"calendar-stats\">\n"
+            + "    📊 <span class=\"stats-text\">2026年共有 31 张壁纸</span>\n"
+            + "  </div>\n"
+            + "</div>\n";
+        
+        // 单个日期模板
+        private static final String CALENDAR_DAY = ""
+            + "<div class=\"calendar-day ${has_wallpaper}\" onclick=\"goToDate('${date_url}')\" data-count=\"${wallpaper_count}\">\n"
+            + "  ${day_number}\n"
+            + "  ${wallpaper_indicator}\n"
+            + "</div>\n";
+        
+        // 旧的月度历史链接（保留兼容性）
         private static final String MONTH_HISTORY_HREF = "<a class=\"w3-tag w3-button w3-hover-green w3-light-grey w3-margin-bottom\" href=\"${month_href_url}\">${month_href_title}</a>";
+        
         public static String getMonthHistory(String url,String title) {
             String result = MONTH_HISTORY_HREF.replace(VAR_MONTH_HISTORY_HREF_URL, url);
             return result.replace(VAR_MONTH_HISTORY_HREF_TITLE, title);
+        }
+        
+        // 新的日历生成方法
+        public static String getFluentCalendar(Map<String, Object> calendarData) {
+            String result = FLUENT_CALENDAR;
+            
+            // 替换日历数据
+            result = result.replace("${calendar_days}", generateCalendarDays(calendarData));
+            result = result.replace("2026", String.valueOf(calendarData.get("currentYear")));
+            result = result.replace("1月", calendarData.get("currentMonth") + "月");
+            result = result.replace("2026年共有 31 张壁纸", generateStatsText(calendarData));
+            
+            return result;
+        }
+        
+        private static String generateCalendarDays(Map<String, Object> calendarData) {
+            StringBuilder days = new StringBuilder();
+            int currentMonth = (Integer) calendarData.get("currentMonth");
+            int currentYear = (Integer) calendarData.get("currentYear");
+            
+            // 计算月份第一天是星期几
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(currentYear, currentMonth - 1, 1);
+            int firstDayOfWeek = calendar.get(Calendar.DAY_OF_WEEK) - 1; // 调整为0-6
+            
+            // 添加空白日期
+            for (int i = 0; i < firstDayOfWeek; i++) {
+                days.append("<div class=\"calendar-day empty\"></div>\n");
+            }
+            
+            // 添加月份日期
+            int daysInMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+            Map<String, Integer> wallpaperCounts = (Map<String, Integer>) calendarData.get("wallpaperCounts");
+            
+            for (int day = 1; day <= daysInMonth; day++) {
+                String dateKey = String.format("%04d-%02d-%02d", currentYear, currentMonth, day);
+                int wallpaperCount = wallpaperCounts.getOrDefault(dateKey, 0);
+                
+                boolean hasWallpaper = wallpaperCount > 0;
+                String wallpaperClass = hasWallpaper ? "has-wallpaper" : "";
+                String dateUrl = hasWallpaper ? String.format("day/%04d%02d/%02d.html", currentYear, currentMonth, day) : "#";
+                String wallpaperIndicator = hasWallpaper ? 
+                    (wallpaperCount > 1 ? "<div class=\"wallpaper-count\" data-count=\"" + wallpaperCount + "\"></div>" : "<div class=\"wallpaper-dot\"></div>") : "";
+                
+                String dayHtml = CALENDAR_DAY
+                    .replace("${has_wallpaper}", wallpaperClass)
+                    .replace("${date_url}", dateUrl)
+                    .replace("${wallpaper_count}", String.valueOf(wallpaperCount))
+                    .replace("${day_number}", String.valueOf(day))
+                    .replace("${wallpaper_indicator}", wallpaperIndicator);
+                
+                days.append(dayHtml);
+            }
+            
+            return days.toString();
+        }
+        
+        private static String generateStatsText(Map<String, Object> calendarData) {
+            int currentYear = (Integer) calendarData.get("currentYear");
+            Map<Integer, Integer> yearStats = (Map<Integer, Integer>) calendarData.get("yearStats");
+            int yearCount = yearStats.getOrDefault(currentYear, 0);
+            int totalCount = yearStats.values().stream().mapToInt(Integer::intValue).sum();
+            
+            return String.format("%d年共有 %d 张壁纸", currentYear, yearCount);
         }
     }
 

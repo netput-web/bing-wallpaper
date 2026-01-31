@@ -16,10 +16,21 @@
             height: 100%;
             margin: 0;
         }
+        .header-16-9 {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 比例 */
+            overflow: hidden;
+            border-radius: 8px; /* 添加圆角效果 */
+        }
         .bgimg-header {
             background-image: url("${head_img_url}&pid=hp&w=2000");
-            height: 103%;
-            position: relative;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -29,8 +40,11 @@
             background-image: url("${head_img_url}&pid=hp&w=480"); /* 使用小图 */
             filter: blur(15px);
             -webkit-filter: blur(15px);
-            position: relative;
-            height: 103%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -64,8 +78,211 @@
             color:#fff!important;background-color:#4CAF50!important;
             box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
         }
-        .darkmode--activated .w3-third p {
-            color:white;
+        .nav-top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(248, 248, 248, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .nav-top .w3-bar {
+            border-radius: 0 !important; /* 移除圆角 */
+        }
+        .main-content {
+            margin-top: 70px; /* 为固定导航栏留出空间 */
+        }
+        /* 覆盖W3.CSS的默认样式，确保1200px宽度和对齐 */
+        .main-content.w3-content {
+            max-width: 1200px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+        /* 强制覆盖w3-main的所有媒体查询样式 */
+        .w3-main.main-content {
+            margin-left: auto !important;
+            margin-right: auto !important;
+            max-width: 1200px !important;
+        }
+        /* 在所有屏幕尺寸下都强制应用1200px宽度 */
+        @media screen {
+            .main-content.w3-content,
+            .w3-main.main-content {
+                max-width: 1200px !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+        }
+        /* 移除w3-row-padding的左右padding，确保图片与大图对齐 */
+        .w3-row-padding > .w3-third {
+            padding: 0 8px;
+        }
+        /* 调整图片容器的padding，确保内容对齐 */
+        #img_list {
+            padding: 16px 0 0 0 !important;
+        }
+        /* 移除所有可能影响对齐的阴影和边框 */
+        .main-content.w3-content,
+        .w3-main.main-content {
+            box-shadow: none !important;
+            border: none !important;
+            outline: none !important;
+        }
+        /* 确保图片容器没有多余的边距 */
+        #img_list > div {
+            box-sizing: border-box !important;
+        }
+        /* 强制覆盖w3-margin样式，确保间距生效 */
+        #img_list {
+            padding-top: 48px !important;
+            margin-top: 0 !important;
+        }
+        #img_list + .w3-margin {
+            margin-top: 16px !important;
+        }
+        
+        /* Fluent Design 日历样式 */
+        .calendar-section {
+            background: rgba(248, 249, 250, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            backdrop-filter: blur(20px);
+            padding: 24px;
+            margin: 16px 0;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .calendar-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .nav-button {
+            background: transparent;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .nav-button:hover {
+            background: rgba(0, 0, 0, 0.04);
+            color: #333;
+        }
+        
+        .nav-year, .nav-month {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-year:hover, .nav-month:hover {
+            background: rgba(0, 0, 0, 0.04);
+        }
+        
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .calendar-header {
+            text-align: center;
+            font-size: 12px;
+            font-weight: 500;
+            color: #666;
+            padding: 8px 0;
+        }
+        
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            color: #333;
+        }
+        
+        .calendar-day:hover {
+            background: rgba(0, 0, 0, 0.04);
+        }
+        
+        .calendar-day.empty {
+            cursor: default;
+        }
+        
+        .calendar-day.empty:hover {
+            background: transparent;
+        }
+        
+        .calendar-day.has-wallpaper {
+            background: rgba(0, 120, 215, 0.08);
+            color: #0078d4;
+            font-weight: 500;
+        }
+        
+        .calendar-day.has-wallpaper:hover {
+            background: rgba(0, 120, 215, 0.12);
+        }
+        
+        .wallpaper-dot {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            width: 6px;
+            height: 6px;
+            background: #0078d4;
+            border-radius: 50%;
+        }
+        
+        .wallpaper-count {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            background: #0078d4;
+            color: white;
+            font-size: 10px;
+            padding: 1px 3px;
+            border-radius: 8px;
+            min-width: 14px;
+            text-align: center;
+            line-height: 1;
+        }
+        
+        .calendar-stats {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            padding: 12px 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+        }
+        
+        .stats-text {
+            font-weight: 500;
         }
     </style>
     <script>
@@ -76,6 +293,75 @@
       var s = document.getElementsByTagName("script")[0]; 
       s.parentNode.insertBefore(hm, s);
     })();
+    
+    // 日历导航功能
+    let currentYear = 2026;
+    let currentMonth = 1;
+    let calendarMode = 'month'; // 'year' | 'month'
+    
+    function calendarNavigate(direction) {
+        if (calendarMode === 'year') {
+            if (direction === 'prev') {
+                currentYear--;
+            } else {
+                currentYear++;
+            }
+            updateCalendarYear();
+        } else {
+            if (direction === 'prev') {
+                currentMonth--;
+                if (currentMonth < 1) {
+                    currentMonth = 12;
+                    currentYear--;
+                }
+            } else {
+                currentMonth++;
+                if (currentMonth > 12) {
+                    currentMonth = 1;
+                    currentYear++;
+                }
+            }
+            updateCalendarMonth();
+        }
+        refreshCalendar();
+    }
+    
+    function showYearSelector() {
+        // 切换到年份选择模式
+        calendarMode = 'year';
+        updateCalendarYear();
+        // 这里可以显示年份选择器
+        console.log('显示年份选择器');
+    }
+    
+    function showMonthSelector() {
+        // 切换到月份选择模式
+        calendarMode = 'month';
+        updateCalendarMonth();
+        // 这里可以显示月份选择器
+        console.log('显示月份选择器');
+    }
+    
+    function updateCalendarYear() {
+        document.querySelector('.nav-year').textContent = currentYear;
+        document.querySelector('.nav-month').textContent = '选择月份';
+    }
+    
+    function updateCalendarMonth() {
+        document.querySelector('.nav-year').textContent = currentYear;
+        document.querySelector('.nav-month').textContent = currentMonth + '月';
+    }
+    
+    function goToDate(dateUrl) {
+        if (dateUrl && dateUrl !== '#') {
+            window.open(dateUrl, '_blank');
+        }
+    }
+    
+    function refreshCalendar() {
+        // 这里可以发送AJAX请求刷新日历数据
+        console.log('刷新日历:', currentYear, currentMonth);
+    }
     </script>
 
 </head>
@@ -108,27 +394,34 @@
     };
 </script>
 <body>
-<div class="smallImg-header"></div> <!-- 模糊的小图 -->
-<div class="bgimg-header">
-    <div class="w3-display-middle w3-padding-large w3-wide w3-text-light-grey w3-center">
-        <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge">${head_title}</h1>
-        <div class=" w3-padding-large w3-text-light-grey" style="max-width: 800px">
-            <p>${head_img_desc}</p>
-        </div>
-        <h5 class="w3-hide-large" style="white-space:nowrap">Bing Wallpaper</h5>
-    </div>
-</div>
-<menu class="w3-display-container w3-content w3-center" style="max-width:100%; height: 10px">
-    <div class="w3-bar w3-light-grey w3-round w3-display-bottommiddle w3-card  w3-round-xlarge">
-        <a href="/" class="w3-bar-item w3-button w3-hover-green">首页</a>
+<!-- 顶部固定导航栏 -->
+<nav class="nav-top">
+    <div class="w3-bar w3-light-grey w3-card">
+        <a href="/" class="w3-bar-item w3-button w3-hover-green"><strong>Bing Wallpaper</strong></a>
         <a href="#portfolio" class="w3-bar-item w3-button w3-hover-green"  onclick="w3_open()">归档</a>
         <a href="/zh-cn/" class="w3-bar-item w3-button w3-hover-green">中国</a>
         <a href="https://github.com/niumoo/bing-wallpaper" target="_blank" class="w3-bar-item w3-button w3-hover-green  w3-hide-small">GitHub</a>
         <a href="https://wdbyte.com/bing-wallpaper-400" target="_blank" class="w3-bar-item w3-button w3-hover-green w3-hide-small">关于</a>
         <a href="/download.html" class="w3-bar-item w3-button w3-hover-green">客户端</a>
-        <input id="search" type="text" class="w3-bar-item w3-input w3-round-xlarge w3-hide-small" placeholder="找壁纸" style="width: 150px">
+        <input id="search" type="text" class="w3-bar-item w3-input w3-hide-small" placeholder="找壁纸" style="width: 150px">
     </div>
-</menu>
+</nav>
+
+<!-- 16:9 大图区域 -->
+<div style="max-width: 1200px; margin: 0 auto;">
+    <div class="header-16-9">
+        <div class="smallImg-header"></div> <!-- 模糊的小图 -->
+        <div class="bgimg-header">
+            <div class="w3-display-middle w3-padding-large w3-wide w3-text-light-grey w3-center">
+                <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge">${head_title}</h1>
+                <div class=" w3-padding-large w3-text-light-grey" style="max-width: 800px">
+                    <p>${head_img_desc}</p>
+                </div>
+                <h5 class="w3-hide-large" style="white-space:nowrap">Bing Wallpaper</h5>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Sidebar (hidden by default) -->
 <sidebar class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;max-width:200px;min-width:100px" id="mySidebar">
@@ -137,10 +430,10 @@
 </sidebar>
 
 
-<div class="w3-main w3-content w3-padding" style="max-width:1200px;">
+<div class="w3-main w3-content main-content" style="max-width:1200px; margin: 0 auto;">
 
     <!-- First Photo Grid-->
-    <div class="w3-row-padding w3-padding-16 w3-center" id="img_list">
+    <div class="w3-center" id="img_list" style="display: flex; flex-wrap: wrap; justify-content: space-between; padding: 48px 0 0 0;">
         ${img_card_list}
     </div>
     <div class=" w3-margin">
