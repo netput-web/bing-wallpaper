@@ -148,10 +148,11 @@
             display: flex;
             gap: 24px;
             align-items: flex-start;
-            max-width: 1200px !important;
+            max-width: 1200px !important; /* Changed from width: 1200px to max-width for alignment */
             margin-left: auto !important;
             margin-right: auto !important;
             padding: 0;
+            margin-bottom: 48px; /* 添加底部间距，与页脚保持距离 */
         }
         
         .calendar-section {
@@ -577,8 +578,141 @@
     }
     
     function refreshCalendar() {
-        // 这里可以发送AJAX请求刷新日历数据
         console.log('刷新日历:', currentYear, currentMonth);
+        
+        // 更新导航显示
+        updateCalendarMonth();
+        
+        // 生成新的日历网格
+        generateCalendarGrid(currentYear, currentMonth);
+        
+        // 更新统计信息
+        updateCalendarStats(currentYear, currentMonth);
+    }
+    
+    function generateCalendarGrid(year, month) {
+        const calendarGrid = document.querySelector('.calendar-grid');
+        if (!calendarGrid) return;
+        
+        // 清空现有内容，保留星期标题
+        const headers = calendarGrid.querySelectorAll('.calendar-day-header');
+        calendarGrid.innerHTML = '';
+        headers.forEach(header => calendarGrid.appendChild(header));
+        
+        // 计算月份第一天是星期几
+        const firstDay = new Date(year, month - 1, 1).getDay();
+        const daysInMonth = new Date(year, month, 0).getDate();
+        
+        // 添加空白日期
+        for (let i = 0; i < firstDay; i++) {
+            const emptyDay = document.createElement('div');
+            emptyDay.className = 'calendar-day empty';
+            calendarGrid.appendChild(emptyDay);
+        }
+        
+        // 添加月份日期
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dayElement = document.createElement('div');
+            dayElement.className = 'calendar-day';
+            dayElement.textContent = day;
+            
+            // 检查是否有壁纸数据（这里简化处理，实际应该从服务器获取）
+            const dateKey = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+            if (hasWallpaperData(dateKey)) {
+                dayElement.classList.add('has-wallpaper');
+                dayElement.innerHTML = `${day}<div class="wallpaper-dot"></div>`;
+                
+                // 添加点击事件（如果有数据的话）
+                const wallpaperInfo = getWallpaperInfo(dateKey);
+                if (wallpaperInfo) {
+                    dayElement.onclick = function() {
+                        showPreview(
+                            wallpaperInfo.dateUrl,
+                            wallpaperInfo.previewUrl,
+                            wallpaperInfo.title,
+                            wallpaperInfo.desc,
+                            wallpaperInfo.downloadUrl
+                        );
+                    };
+                    dayElement.style.cursor = 'pointer';
+                }
+            }
+            
+            calendarGrid.appendChild(dayElement);
+        }
+    }
+    
+    // 检查是否有壁纸数据（基于当前已知的数据）
+    function hasWallpaperData(dateKey) {
+        // 这里我们基于2026年1月的数据来判断
+        // 实际应用中应该从服务器获取或缓存所有数据
+        const knownDates = [
+            '2026-01-01', '2026-01-02', '2026-01-03', '2026-01-04', '2026-01-05',
+            '2026-01-06', '2026-01-07', '2026-01-08', '2026-01-09', '2026-01-10',
+            '2026-01-11', '2026-01-12', '2026-01-13', '2026-01-14', '2026-01-15',
+            '2026-01-16', '2026-01-17', '2026-01-18', '2026-01-19', '2026-01-20',
+            '2026-01-21', '2026-01-22', '2026-01-23', '2026-01-24', '2026-01-25',
+            '2026-01-26', '2026-01-27', '2026-01-28', '2026-01-29', '2026-01-30',
+            '2026-01-31'
+        ];
+        
+        // 如果是2026年1月，返回已知数据
+        if (dateKey.startsWith('2026-01-')) {
+            return knownDates.includes(dateKey);
+        }
+        
+        // 其他月份暂时返回false（实际应该从服务器获取）
+        return false;
+    }
+    
+    // 获取壁纸信息（基于当前已知的数据）
+    function getWallpaperInfo(dateKey) {
+        // 这里只返回2026年1月的数据
+        // 实际应用中应该从服务器获取或缓存所有数据
+        const wallpaperData_2026_01 = {
+            '2026-01-01': {
+                dateUrl: 'day/202601/01.html',
+                previewUrl: 'https://cn.bing.com/th?id=OHR.GermanyNewYear_EN-US6344260060_UHD.jpg&pid=hp&w=800&h=450&rs=1&c=4',
+                title: 'New Year\'s Eve, Oberbaum Bridge, Berlin, Germany (© spreephoto.de/Getty Images)',
+                desc: 'New Year\'s Eve, Oberbaum Bridge, Berlin, Germany (© spreephoto.de/Getty Images)',
+                downloadUrl: 'https://cn.bing.com/th?id=OHR.GermanyNewYear_EN-US6344260060_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4'
+            },
+            '2026-01-02': {
+                dateUrl: 'day/202601/02.html',
+                previewUrl: 'https://cn.bing.com/th?id=OHR.NewYearFox_EN-US6422915878_UHD.jpg&pid=hp&w=800&h=450&rs=1&c=4',
+                title: 'Arctic fox sleeping (© Chansak Joe/Getty Images)',
+                desc: 'Arctic fox sleeping (© Chansak Joe/Getty Images)',
+                downloadUrl: 'https://cn.bing.com/th?id=OHR.NewYearFox_EN-US6422915878_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4'
+            },
+            '2026-01-03': {
+                dateUrl: 'day/202601/03.html',
+                previewUrl: 'https://cn.bing.com/th?id=OHR.VeniceView_EN-US3244163136_UHD.jpg&pid=hp&w=800&h=450&rs=1&c=4',
+                title: 'Aerial view of Venice, Italy (© Clement Leonard/Getty Images)',
+                desc: 'Aerial view of Venice, Italy (© Clement Leonard/Getty Images)',
+                downloadUrl: 'https://cn.bing.com/th?id=OHR.VeniceView_EN-US3244163136_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4'
+            }
+            // 可以添加更多日期的数据...
+        };
+        
+        return wallpaperData_2026_01[dateKey] || null;
+    }
+    
+    function updateCalendarStats(year, month) {
+        const statsElement = document.querySelector('.calendar-stats .stats-text');
+        if (!statsElement) return;
+        
+        // 计算该月有多少张壁纸
+        let wallpaperCount = 0;
+        const daysInMonth = new Date(year, month, 0).getDate();
+        
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dateKey = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+            if (hasWallpaperData(dateKey)) {
+                wallpaperCount++;
+            }
+        }
+        
+        statsElement.textContent = `${year}年${month}月共有 ${wallpaperCount} 张壁纸`;
     }
     </script>
 
