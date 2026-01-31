@@ -33,19 +33,17 @@ jobs:
           
     - name: Commit files
       run: |
-         git config --local user.email "niumoo@126.com"
-         git config --local user.name "niumoo"
-         git pull
+         git config --local user.email "action@github.com"
+         git config --local user.name "GitHub Action"
          git add README.md
          git add bing-wallpaper.md
          git add picture/*
          git add docs/*
          git add zh-cn/*
-         git commit -m "update readme.md"
+         git commit -m "update readme.md" || echo "No changes to commit"
     - name: Push changes
       uses: ad-m/github-push-action@v0.6.0
       with:
-         github_token: ${{ secrets.MY_GIT_TOKEN }}
+         github_token: ${{ secrets.GITHUB_TOKEN }}
          branch: main
-         force: false
     
