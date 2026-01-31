@@ -79,38 +79,78 @@ public class HtmlConstant {
         private static final String VAR_MONTH_HISTORY_HREF_URL = "${month_href_url}";
         private static final String VAR_MONTH_HISTORY_HREF_TITLE = "${month_href_title}";
         
-        // 新的Fluent Design日历结构
+        // 新的Fluent Design日历结构 - 带预览区域
         private static final String FLUENT_CALENDAR = ""
-            + "<div class=\"calendar-section\">\n"
-            + "  <div class=\"calendar-nav\">\n"
-            + "    <button class=\"nav-button nav-prev\" onclick=\"calendarNavigate('prev')\">◀</button>\n"
-            + "    <div class=\"nav-year\" onclick=\"showYearSelector()\">2026</div>\n"
-            + "    <div class=\"nav-month\" onclick=\"showMonthSelector()\">1月</div>\n"
-            + "    <button class=\"nav-button nav-next\" onclick=\"calendarNavigate('next')\">▶</button>\n"
+            + "<div class=\"calendar-preview-container\">\n"
+            + "  <div class=\"calendar-section\">\n"
+            + "    <div class=\"calendar-header-section\">\n"
+            + "      <h3 class=\"calendar-title\">搜索历史壁纸</h3>\n"
+            + "      <div class=\"calendar-nav\">\n"
+            + "        <button class=\"nav-button nav-prev\" onclick=\"calendarNavigate('prev')\">◀</button>\n"
+            + "        <div class=\"nav-year\" onclick=\"showYearSelector()\">2026</div>\n"
+            + "        <div class=\"nav-month\" onclick=\"showMonthSelector()\">1月</div>\n"
+            + "        <button class=\"nav-button nav-next\" onclick=\"calendarNavigate('next')\">▶</button>\n"
+            + "      </div>\n"
+            + "    </div>\n"
+            + "    \n"
+            + "    <div class=\"calendar-grid\">\n"
+            + "      <div class=\"calendar-day-header\">日</div>\n"
+            + "      <div class=\"calendar-day-header\">一</div>\n"
+            + "      <div class=\"calendar-day-header\">二</div>\n"
+            + "      <div class=\"calendar-day-header\">三</div>\n"
+            + "      <div class=\"calendar-day-header\">四</div>\n"
+            + "      <div class=\"calendar-day-header\">五</div>\n"
+            + "      <div class=\"calendar-day-header\">六</div>\n"
+            + "      ${calendar_days}\n"
+            + "    </div>\n"
+            + "    \n"
+            + "    <div class=\"calendar-stats\">\n"
+            + "      📊 <span class=\"stats-text\">2026年共有 31 张壁纸</span>\n"
+            + "    </div>\n"
             + "  </div>\n"
             + "  \n"
-            + "  <div class=\"calendar-grid\">\n"
-            + "    <div class=\"calendar-header\">日</div>\n"
-            + "    <div class=\"calendar-header\">一</div>\n"
-            + "    <div class=\"calendar-header\">二</div>\n"
-            + "    <div class=\"calendar-header\">三</div>\n"
-            + "    <div class=\"calendar-header\">四</div>\n"
-            + "    <div class=\"calendar-header\">五</div>\n"
-            + "    <div class=\"calendar-header\">六</div>\n"
-            + "    ${calendar_days}\n"
-            + "  </div>\n"
-            + "  \n"
-            + "  <div class=\"calendar-stats\">\n"
-            + "    📊 <span class=\"stats-text\">2026年共有 31 张壁纸</span>\n"
+            + "  <div class=\"preview-section\">\n"
+            + "    <div class=\"preview-header\">\n"
+            + "      <h3>壁纸预览</h3>\n"
+            + "      <div class=\"preview-date\" id=\"preview-date\">请选择日期</div>\n"
+            + "    </div>\n"
+            + "    <div class=\"preview-container\">\n"
+            + "      <div class=\"preview-placeholder\" id=\"preview-placeholder\">\n"
+            + "        <div class=\"preview-icon\">📅</div>\n"
+            + "        <p>点击日历中的日期查看壁纸</p>\n"
+            + "      </div>\n"
+            + "      <div class=\"preview-content\" id=\"preview-content\" style=\"display: none;\">\n"
+            + "        <div class=\"preview-image-container\">\n"
+            + "          <img id=\"preview-image\" src=\"\" alt=\"壁纸预览\" />\n"
+            + "        </div>\n"
+            + "        <div class=\"preview-info\">\n"
+            + "          <h4 id=\"preview-title\">壁纸标题</h4>\n"
+            + "          <p id=\"preview-desc\">壁纸描述</p>\n"
+            + "          <div class=\"preview-actions\">\n"
+            + "            <a id=\"preview-download\" href=\"\" target=\"_blank\" class=\"preview-btn\">下载4k</a>\n"
+            + "            <a id=\"preview-detail\" href=\"\" target=\"_blank\" class=\"preview-btn\">查看详情</a>\n"
+            + "          </div>\n"
+            + "        </div>\n"
+            + "      </div>\n"
+            + "    </div>\n"
             + "  </div>\n"
             + "</div>\n";
         
-        // 单个日期模板
+        // 单个日期模板 - 添加预览功能
         private static final String CALENDAR_DAY = ""
-            + "<div class=\"calendar-day ${has_wallpaper}\" onclick=\"goToDate('${date_url}')\" data-count=\"${wallpaper_count}\">\n"
+            + "<div class=\"calendar-day ${has_wallpaper}\" onclick=\"showPreview('${date_url}', '${preview_url}', '${title}', '${desc}', '${download_url}')\" data-count=\"${wallpaper_count}\">\n"
             + "  ${day_number}\n"
             + "  ${wallpaper_indicator}\n"
             + "</div>\n";
+        
+        // 转义JavaScript字符串中的特殊字符
+        private static String escapeJavaScript(String str) {
+            if (str == null) return "";
+            return str.replace("'", "\\'")
+                     .replace("\"", "\\\"")
+                     .replace("\n", "\\n")
+                     .replace("\r", "\\r");
+        }
         
         // 旧的月度历史链接（保留兼容性）
         private static final String MONTH_HISTORY_HREF = "<a class=\"w3-tag w3-button w3-hover-green w3-light-grey w3-margin-bottom\" href=\"${month_href_url}\">${month_href_title}</a>";
@@ -124,8 +164,11 @@ public class HtmlConstant {
         public static String getFluentCalendar(Map<String, Object> calendarData) {
             String result = FLUENT_CALENDAR;
             
+            // 生成日历数据
+            String calendarDays = generateCalendarDays(calendarData);
+            
             // 替换日历数据
-            result = result.replace("${calendar_days}", generateCalendarDays(calendarData));
+            result = result.replace("${calendar_days}", calendarDays);
             result = result.replace("2026", String.valueOf(calendarData.get("currentYear")));
             result = result.replace("1月", calendarData.get("currentMonth") + "月");
             result = result.replace("2026年共有 31 张壁纸", generateStatsText(calendarData));
@@ -151,6 +194,7 @@ public class HtmlConstant {
             // 添加月份日期
             int daysInMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
             Map<String, Integer> wallpaperCounts = (Map<String, Integer>) calendarData.get("wallpaperCounts");
+            Map<String, Map<String, String>> wallpaperData = (Map<String, Map<String, String>>) calendarData.get("wallpaperData");
             
             for (int day = 1; day <= daysInMonth; day++) {
                 String dateKey = String.format("%04d-%02d-%02d", currentYear, currentMonth, day);
@@ -158,13 +202,33 @@ public class HtmlConstant {
                 
                 boolean hasWallpaper = wallpaperCount > 0;
                 String wallpaperClass = hasWallpaper ? "has-wallpaper" : "";
-                String dateUrl = hasWallpaper ? String.format("day/%04d%02d/%02d.html", currentYear, currentMonth, day) : "#";
+                
+                // 获取壁纸数据
+                String dateUrl = "";
+                String previewUrl = "";
+                String title = "";
+                String desc = "";
+                String downloadUrl = "";
+                
+                if (hasWallpaper && wallpaperData.containsKey(dateKey)) {
+                    Map<String, String> data = wallpaperData.get(dateKey);
+                    dateUrl = String.format("day/%04d%02d/%02d.html", currentYear, currentMonth, day);
+                    previewUrl = data.get("previewUrl");
+                    title = escapeJavaScript(data.get("title"));
+                    desc = escapeJavaScript(data.get("desc"));
+                    downloadUrl = data.get("downloadUrl");
+                }
+                
                 String wallpaperIndicator = hasWallpaper ? 
                     (wallpaperCount > 1 ? "<div class=\"wallpaper-count\" data-count=\"" + wallpaperCount + "\"></div>" : "<div class=\"wallpaper-dot\"></div>") : "";
                 
                 String dayHtml = CALENDAR_DAY
                     .replace("${has_wallpaper}", wallpaperClass)
                     .replace("${date_url}", dateUrl)
+                    .replace("${preview_url}", previewUrl)
+                    .replace("${title}", title)
+                    .replace("${desc}", desc)
+                    .replace("${download_url}", downloadUrl)
                     .replace("${wallpaper_count}", String.valueOf(wallpaperCount))
                     .replace("${day_number}", String.valueOf(day))
                     .replace("${wallpaper_indicator}", wallpaperIndicator);

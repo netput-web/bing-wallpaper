@@ -196,8 +196,9 @@ public class WebSiteGenerator {
         calendarData.put("currentYear", currentYear);
         calendarData.put("currentMonth", currentMonth);
         
-        // 统计每日壁纸数量
+        // 统计每日壁纸数量和详细数据
         Map<String, Integer> wallpaperCounts = new HashMap<>();
+        Map<String, Map<String, String>> wallpaperData = new HashMap<>();
         Map<Integer, Integer> yearStats = new HashMap<>();
         
         for (Images image : bingImages) {
@@ -210,12 +211,23 @@ public class WebSiteGenerator {
                 // 统计每日数量
                 wallpaperCounts.put(date, wallpaperCounts.getOrDefault(date, 0) + 1);
                 
+                // 构建壁纸详细数据
+                Map<String, String> data = new HashMap<>();
+                data.put("previewUrl", image.getSimpleUrl() + "&pid=hp&w=800&h=450&rs=1&c=4");
+                data.put("title", image.getDesc());
+                data.put("desc", image.getDesc());
+                data.put("downloadUrl", image.getUrl());
+                data.put("detailUrl", image.getDetailUrlPath());
+                
+                wallpaperData.put(date, data);
+                
                 // 统计年度数量
                 yearStats.put(year, yearStats.getOrDefault(year, 0) + 1);
             }
         }
         
         calendarData.put("wallpaperCounts", wallpaperCounts);
+        calendarData.put("wallpaperData", wallpaperData);
         calendarData.put("yearStats", yearStats);
         
         return calendarData;
