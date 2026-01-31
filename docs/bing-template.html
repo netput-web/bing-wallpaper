@@ -207,12 +207,89 @@
             position: relative;
             width: 100%;
             min-width: 400px;
-            min-height: 225px; /* 16:9 的最小高度: 400 * 0.5625 */
-            padding-bottom: 56.25%; /* 16:9 比例 */
-            background: rgba(255, 0, 0, 0.1); /* 临时添加红色背景以便观察 */
+            background: #f8f9fa;
             border-radius: 8px;
             overflow: hidden;
             max-width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .preview-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 400px; /* 设置最小高度 */
+        }
+        
+        .preview-image-container {
+            flex: 1;
+            position: relative;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 225px; /* 16:9的最小高度 */
+            overflow: hidden;
+        }
+        
+        .preview-image {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain; /* 确保完整显示图片 */
+            transition: transform 0.3s ease;
+            display: block;
+        }
+        
+        .preview-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .preview-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .preview-info h4 {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .preview-info p {
+            margin: 0 0 16px 0;
+            font-size: 14px;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+        
+        .preview-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .preview-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .preview-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
         
         .preview-placeholder {
@@ -226,95 +303,13 @@
             align-items: center;
             justify-content: center;
             color: #666;
+            background: #f8f9fa;
         }
         
         .preview-icon {
             font-size: 48px;
             margin-bottom: 16px;
             opacity: 0.5;
-        }
-        
-        .preview-placeholder p {
-            margin: 0;
-            font-size: 14px;
-            text-align: center;
-        }
-        
-        .preview-content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .preview-image-container {
-            flex: 1;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .preview-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .preview-image:hover {
-            transform: scale(1.05);
-        }
-        
-        .preview-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-            color: white;
-            padding: 20px;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .preview-content:hover .preview-info {
-            transform: translateY(0);
-        }
-        
-        .preview-info h4 {
-            margin: 0 0 8px 0;
-            font-size: 16px;
-            font-weight: 600;
-        }
-        
-        .preview-info p {
-            margin: 0 0 12px 0;
-            font-size: 14px;
-            opacity: 0.9;
-            line-height: 1.4;
-        }
-        
-        .preview-actions {
-            display: flex;
-            gap: 8px;
-        }
-        
-        .preview-btn {
-            display: inline-block;
-            padding: 6px 12px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 12px;
-            transition: all 0.2s ease;
-        }
-        
-        .preview-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-1px);
         }
         
         .calendar-nav {
@@ -457,8 +452,109 @@
             border-top: 1px solid rgba(0, 0, 0, 0.06);
         }
         
-        .stats-text {
-            font-weight: 500;
+        .year-selector {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+        }
+        
+        .year-selector.active {
+            display: block;
+        }
+        
+        .year-item {
+            padding: 10px 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.2s;
+        }
+        
+        .year-item:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .year-item.selected {
+            background-color: #0078d4;
+            color: white;
+        }
+        
+        .year-item:last-child {
+            border-bottom: none;
+        }
+        
+        .quick-nav {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+            justify-content: center;
+        }
+        
+        .quick-nav button {
+            padding: 6px 12px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+        
+        .quick-nav button:hover {
+            background: #f8f9fa;
+            border-color: #0078d4;
+        }
+        
+        .loading-spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #0078d4;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .calendar-day {
+            transition: all 0.2s ease;
+        }
+        
+        .calendar-day:hover {
+            transform: scale(1.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .wallpaper-dot {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
         }
     </style>
     <script>
@@ -534,11 +630,14 @@
         }
     }
     
-    // 显示预览功能
+    // 显示预览功能 - 彻底修复版本
     function showPreview(dateUrl, previewUrl, title, desc, downloadUrl) {
         if (!previewUrl || previewUrl === '') {
+            console.warn('⚠️ 预览URL为空，无法显示预览');
             return;
         }
+        
+        console.log('🖼️ 开始加载预览:', previewUrl);
         
         // 更新预览内容
         const placeholder = document.getElementById('preview-placeholder');
@@ -551,7 +650,6 @@
         const previewDate = document.getElementById('preview-date');
         
         // 设置预览数据
-        previewImage.src = previewUrl;
         previewTitle.textContent = title || '壁纸标题';
         previewDesc.textContent = desc || '壁纸描述';
         previewDownload.href = downloadUrl || '#';
@@ -570,24 +668,426 @@
         placeholder.style.display = 'none';
         content.style.display = 'flex';
         
-        // 添加加载效果
+        // 重置图片样式
         previewImage.style.opacity = '0';
+        previewImage.style.transform = 'scale(1)';
+        previewImage.style.maxWidth = '100%';
+        previewImage.style.maxHeight = '100%';
+        previewImage.style.width = 'auto';
+        previewImage.style.height = 'auto';
+        previewImage.style.objectFit = 'contain';
+        
+        // 添加加载效果
         previewImage.onload = function() {
+            console.log('✅ 预览图片加载成功:', previewUrl);
+            console.log('📏 图片尺寸:', previewImage.naturalWidth + 'x' + previewImage.naturalHeight);
+            
+            // 检查图片是否正确加载
+            if (previewImage.naturalWidth === 0 || previewImage.naturalHeight === 0) {
+                console.error('❌ 图片尺寸异常');
+                return;
+            }
+            
             previewImage.style.opacity = '1';
         };
+        
+        previewImage.onerror = function() {
+            console.error('❌ 预览图片加载失败:', previewUrl);
+            previewImage.style.opacity = '0.3';
+            previewImage.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik04NSA1MEgxMTVWMTAwSDg1VjUwWiIgZmlsbD0iI0NDQyIvPgo8cGF0aCBkPSJNMTAwIDYwTDkwIDgwSDEwMEwxMTAgNjBIMTAwWiIgZmlsbD0iI0NDQyIvPgo8dGV4dCB4PSIxMDAiIHk9IjEyMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzk5OTk5OSIgZm9udC1zaXplPSIxNCI+5Zu+54mH5b2T5LiN5a2Y5ZyoPC90ZXh0Pgo8L3N2Zz4K';
+        };
+        
+        // 设置图片源
+        previewImage.src = previewUrl;
     }
     
-    function refreshCalendar() {
-        console.log('刷新日历:', currentYear, currentMonth);
+    // 🚀 第三阶段：高级交互功能
+    class CalendarUIController {
+        constructor() {
+            this.yearSelectorVisible = false;
+            this.keyboardEnabled = true;
+            this.init();
+        }
         
-        // 更新导航显示
-        updateCalendarMonth();
+        init() {
+            this.setupKeyboardNavigation();
+            this.setupClickOutsideHandler();
+            this.setupQuickNavigation();
+        }
         
-        // 生成新的日历网格
-        generateCalendarGrid(currentYear, currentMonth);
+        // 设置键盘导航
+        setupKeyboardNavigation() {
+            document.addEventListener('keydown', (e) => {
+                if (!this.keyboardEnabled) return;
+                
+                switch(e.key) {
+                    case 'ArrowLeft':
+                        document.querySelector('.nav-controls').innerHTML = `
+                            <button onclick="calendarNavigate('prev')" class="nav-btn">‹</button>
+                            <div class="nav-info">
+                                <div class="nav-year" onclick="toggleYearSelector()" style="cursor: pointer;">2026</div>
+                                <div class="nav-month">1月</div>
+                                <div class="year-selector">
+                                    <!-- 年份列表将在这里动态生成 -->
+                                </div>
+                            </div>
+                            <button onclick="calendarNavigate('next')" class="nav-btn">›</button>
+                        `;
+                        break;
+                    case 'ArrowUp':
+                        e.preventDefault();
+                        currentMonth--;
+                        if (currentMonth < 1) {
+                            currentMonth = 12;
+                            currentYear--;
+                        }
+                        refreshCalendar();
+                        break;
+                    case 'ArrowDown':
+                        e.preventDefault();
+                        currentMonth++;
+                        if (currentMonth > 12) {
+                            currentMonth = 1;
+                            currentYear++;
+                        }
+                        refreshCalendar();
+                        break;
+                    case 'Escape':
+                        this.hideYearSelector();
+                        break;
+                }
+            });
+        }
         
-        // 更新统计信息
-        updateCalendarStats(currentYear, currentMonth);
+        // 设置点击外部关闭
+        setupClickOutsideHandler() {
+            document.addEventListener('click', (e) => {
+                const yearNav = document.querySelector('.nav-year');
+                const yearSelector = document.querySelector('.year-selector');
+                
+                if (yearNav && yearSelector && 
+                    !yearNav.contains(e.target) && 
+                    !yearSelector.contains(e.target)) {
+                    this.hideYearSelector();
+                }
+            });
+        }
+        
+        // 设置快速导航
+        setupQuickNavigation() {
+            // 添加快速导航按钮
+            const calendarSection = document.querySelector('.calendar-section');
+            if (calendarSection) {
+                const quickNav = document.createElement('div');
+                quickNav.className = 'quick-nav';
+                quickNav.innerHTML = `
+                    <button onclick="goToToday()">今天</button>
+                    <button onclick="goToCurrentMonth()">当前月</button>
+                    <button onclick="goToRandomMonth()">随机月</button>
+                    <button onclick="toggleYearSelector()">选择年份</button>
+                `;
+                
+                const navContainer = calendarSection.querySelector('.calendar-nav');
+                if (navContainer) {
+                    navContainer.appendChild(quickNav);
+                }
+            }
+        }
+        
+        // 显示年份选择器
+        showYearSelector() {
+            const yearSelector = document.querySelector('.year-selector');
+            if (!yearSelector) return;
+            
+            // 生成年份列表
+            this.generateYearList();
+            
+            yearSelector.classList.add('active');
+            this.yearSelectorVisible = true;
+        }
+        
+        // 隐藏年份选择器
+        hideYearSelector() {
+            const yearSelector = document.querySelector('.year-selector');
+            if (yearSelector) {
+                yearSelector.classList.remove('active');
+            }
+            this.yearSelectorVisible = false;
+        }
+        
+        // 生成年份列表
+        generateYearList() {
+            const yearSelector = document.querySelector('.year-selector');
+            if (!yearSelector) return;
+            
+            const availableMonths = calendarDataManager.getAvailableMonths();
+            const years = [...new Set(availableMonths.map(m => m.year))].sort((a, b) => b - a);
+            
+            yearSelector.innerHTML = '';
+            
+            years.forEach(year => {
+                const yearItem = document.createElement('div');
+                yearItem.className = 'year-item';
+                if (year === currentYear) {
+                    yearItem.classList.add('selected');
+                }
+                yearItem.textContent = year + '年';
+                yearItem.onclick = () => this.selectYear(year);
+                yearSelector.appendChild(yearItem);
+            });
+        }
+        
+        // 选择年份
+        selectYear(year) {
+            currentYear = year;
+            currentMonth = 1; // 重置到1月
+            this.hideYearSelector();
+            refreshCalendar();
+        }
+        
+        // 切换年份选择器
+        toggleYearSelector() {
+            if (this.yearSelectorVisible) {
+                this.hideYearSelector();
+            } else {
+                this.showYearSelector();
+            }
+        }
+    }
+    
+    // 全局UI控制器
+    const calendarUIController = new CalendarUIController();
+    
+    // 🚀 第三阶段：快速导航功能
+    function goToToday() {
+        const today = new Date();
+        currentYear = today.getFullYear();
+        currentMonth = today.getMonth() + 1;
+        refreshCalendar();
+    }
+    
+    function goToCurrentMonth() {
+        currentYear = 2026;
+        currentMonth = 1;
+        refreshCalendar();
+    }
+    
+    function goToRandomMonth() {
+        const availableMonths = calendarDataManager.getAvailableMonths();
+        if (availableMonths.length === 0) return;
+        
+        const randomMonth = availableMonths[Math.floor(Math.random() * availableMonths.length)];
+        currentYear = randomMonth.year;
+        currentMonth = randomMonth.month;
+        refreshCalendar();
+    }
+    
+    function toggleYearSelector() {
+        calendarUIController.toggleYearSelector();
+    }
+    
+    // 🚀 第三阶段：增强的加载状态
+    function showLoadingState() {
+        const statsElement = document.querySelector('.calendar-stats .stats-text');
+        if (statsElement) {
+            statsElement.innerHTML = '<span class="loading-spinner"></span>加载中...';
+        }
+        
+        const calendarGrid = document.querySelector('.calendar-grid');
+        if (calendarGrid) {
+            calendarGrid.style.opacity = '0.6';
+        }
+    }
+    
+    // 🚀 第三阶段：增强的日历网格生成
+    function generateCalendarGridWithData(year, month, monthData) {
+        const calendarGrid = document.querySelector('.calendar-grid');
+        if (!calendarGrid) return;
+        
+        // 恢复透明度并添加动画
+        calendarGrid.style.opacity = '1';
+        calendarGrid.classList.add('fade-in');
+        
+        // 清空现有内容，保留星期标题
+        const headers = calendarGrid.querySelectorAll('.calendar-day-header');
+        calendarGrid.innerHTML = '';
+        headers.forEach(header => calendarGrid.appendChild(header));
+        
+        // 计算月份第一天是星期几
+        const firstDay = new Date(year, month - 1, 1).getDay();
+        const daysInMonth = new Date(year, month, 0).getDate();
+        
+        // 添加空白日期
+        for (let i = 0; i < firstDay; i++) {
+            const emptyDay = document.createElement('div');
+            emptyDay.className = 'calendar-day empty';
+            calendarGrid.appendChild(emptyDay);
+        }
+        
+        // 添加月份日期
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dayElement = document.createElement('div');
+            dayElement.className = 'calendar-day';
+            dayElement.textContent = day;
+            
+            // 检查是否有壁纸数据
+            const dayKey = String(day).padStart(2, '0');
+            const wallpaperInfo = monthData.wallpapers[dayKey];
+            
+            if (wallpaperInfo) {
+                dayElement.classList.add('has-wallpaper');
+                dayElement.innerHTML = `${day}<div class="wallpaper-dot"></div>`;
+                
+                // 添加点击事件
+                dayElement.onclick = function() {
+                    showPreview(
+                        wallpaperInfo.dateUrl,
+                        wallpaperInfo.previewUrl,
+                        wallpaperInfo.title,
+                        wallpaperInfo.desc,
+                        wallpaperInfo.downloadUrl
+                    );
+                };
+                dayElement.style.cursor = 'pointer';
+                
+                // 添加悬停提示
+                dayElement.title = wallpaperInfo.title;
+                
+                // 添加数据属性用于高级功能
+                dayElement.dataset.date = wallpaperInfo.date;
+                dayElement.dataset.title = wallpaperInfo.title;
+            }
+            
+            calendarGrid.appendChild(dayElement);
+        }
+        
+        // 移除动画类
+        setTimeout(() => {
+            calendarGrid.classList.remove('fade-in');
+        }, 300);
+    }
+    async function refreshCalendar() {
+        console.log('🔄 刷新日历:', currentYear, currentMonth);
+        
+        // 显示加载状态
+        showLoadingState();
+        
+        try {
+            // 初始化索引数据（如果还没有）
+            await calendarDataManager.initIndex();
+            
+            // 获取月份数据
+            const monthData = await calendarDataManager.getMonthData(currentYear, currentMonth);
+            
+            // 更新导航显示
+            updateCalendarMonth();
+            
+            // 生成新的日历网格
+            generateCalendarGridWithData(currentYear, currentMonth, monthData);
+            
+            // 更新统计信息
+            updateCalendarStatsWithData(monthData);
+            
+            // 预加载相邻月份
+            calendarDataManager.preloadAdjacentMonths(currentYear, currentMonth);
+            
+        } catch (error) {
+            console.error('❌ 日历刷新失败:', error);
+            showErrorState();
+        }
+    }
+    
+    // 显示加载状态
+    function showLoadingState() {
+        const statsElement = document.querySelector('.calendar-stats .stats-text');
+        if (statsElement) {
+            statsElement.textContent = `${currentYear}年${currentMonth}月 - 加载中...`;
+        }
+        
+        const calendarGrid = document.querySelector('.calendar-grid');
+        if (calendarGrid) {
+            calendarGrid.style.opacity = '0.6';
+        }
+    }
+    
+    // 显示错误状态
+    function showErrorState() {
+        const statsElement = document.querySelector('.calendar-stats .stats-text');
+        if (statsElement) {
+            statsElement.textContent = `${currentYear}年${currentMonth}月 - 加载失败`;
+        }
+        
+        const calendarGrid = document.querySelector('.calendar-grid');
+        if (calendarGrid) {
+            calendarGrid.style.opacity = '1';
+        }
+    }
+    
+    // 使用真实数据生成日历网格
+    function generateCalendarGridWithData(year, month, monthData) {
+        const calendarGrid = document.querySelector('.calendar-grid');
+        if (!calendarGrid) return;
+        
+        // 恢复透明度
+        calendarGrid.style.opacity = '1';
+        
+        // 清空现有内容，保留星期标题
+        const headers = calendarGrid.querySelectorAll('.calendar-day-header');
+        calendarGrid.innerHTML = '';
+        headers.forEach(header => calendarGrid.appendChild(header));
+        
+        // 计算月份第一天是星期几
+        const firstDay = new Date(year, month - 1, 1).getDay();
+        const daysInMonth = new Date(year, month, 0).getDate();
+        
+        // 添加空白日期
+        for (let i = 0; i < firstDay; i++) {
+            const emptyDay = document.createElement('div');
+            emptyDay.className = 'calendar-day empty';
+            calendarGrid.appendChild(emptyDay);
+        }
+        
+        // 添加月份日期
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dayElement = document.createElement('div');
+            dayElement.className = 'calendar-day';
+            dayElement.textContent = day;
+            
+            // 检查是否有壁纸数据
+            const dayKey = String(day).padStart(2, '0');
+            const wallpaperInfo = monthData.wallpapers[dayKey];
+            
+            if (wallpaperInfo) {
+                dayElement.classList.add('has-wallpaper');
+                dayElement.innerHTML = `${day}<div class="wallpaper-dot"></div>`;
+                
+                // 添加点击事件
+                dayElement.onclick = function() {
+                    showPreview(
+                        wallpaperInfo.dateUrl,
+                        wallpaperInfo.previewUrl,
+                        wallpaperInfo.title,
+                        wallpaperInfo.desc,
+                        wallpaperInfo.downloadUrl
+                    );
+                };
+                dayElement.style.cursor = 'pointer';
+                
+                // 添加悬停提示
+                dayElement.title = wallpaperInfo.title;
+            }
+            
+            calendarGrid.appendChild(dayElement);
+        }
+    }
+    
+    // 使用真实数据更新统计信息
+    function updateCalendarStatsWithData(monthData) {
+        const statsElement = document.querySelector('.calendar-stats .stats-text');
+        if (!statsElement || !monthData) return;
+        
+        const stats = monthData.stats;
+        statsElement.textContent = `${monthData.year}年${monthData.month}月共有 ${stats.hasWallpaper} 张壁纸 (覆盖率: ${stats.coverage})`;
     }
     
     function generateCalendarGrid(year, month) {
@@ -642,7 +1142,137 @@
         }
     }
     
-    // 检查是否有壁纸数据（基于当前已知的数据）
+    // 🚀 第二阶段：日历数据管理器
+    class CalendarDataManager {
+        constructor() {
+            this.cache = new Map(); // 缓存已加载数据
+            this.loadingPromises = new Map(); // 防止重复加载
+            this.indexData = null; // 索引数据
+        }
+        
+        // 初始化索引数据
+        async initIndex() {
+            if (this.indexData) return;
+            
+            try {
+                const response = await fetch('/data/calendar-index.json');
+                if (!response.ok) {
+                    throw new Error('Failed to load calendar index');
+                }
+                this.indexData = await response.json();
+                console.log('📅 日历索引数据加载成功:', this.indexData.totalMonths, '个月');
+            } catch (error) {
+                console.error('❌ 日历索引数据加载失败:', error);
+                this.indexData = { months: [], totalMonths: 0 };
+            }
+        }
+        
+        // 获取月份数据
+        async getMonthData(year, month) {
+            const key = `${year}-${String(month).padStart(2, '0')}`;
+            
+            // 检查缓存
+            if (this.cache.has(key)) {
+                console.log('📦 从缓存获取月份数据:', key);
+                return this.cache.get(key);
+            }
+            
+            // 检查是否正在加载
+            if (this.loadingPromises.has(key)) {
+                console.log('⏳ 等待月份数据加载:', key);
+                return this.loadingPromises.get(key);
+            }
+            
+            // 加载数据
+            const promise = this.loadMonthData(key);
+            this.loadingPromises.set(key, promise);
+            
+            try {
+                const data = await promise;
+                this.cache.set(key, data);
+                console.log('✅ 月份数据加载成功:', key);
+                return data;
+            } finally {
+                this.loadingPromises.delete(key);
+            }
+        }
+        
+        // 加载月份数据
+        async loadMonthData(key) {
+            try {
+                const response = await fetch(`/data/calendar/${key}.json`);
+                if (!response.ok) {
+                    console.warn(`⚠️ 月份数据不存在: ${key}`);
+                    return this.generateEmptyMonthData(key);
+                }
+                return await response.json();
+            } catch (error) {
+                console.warn(`⚠️ 月份数据加载失败: ${key}`, error);
+                return this.generateEmptyMonthData(key);
+            }
+        }
+        
+        // 生成空月份数据
+        generateEmptyMonthData(key) {
+            const [year, month] = key.split('-').map(Number);
+            return {
+                year,
+                month,
+                yearMonth: key,
+                wallpapers: {},
+                stats: { total: new Date(year, month, 0).getDate(), hasWallpaper: 0, coverage: "0.0%" }
+            };
+        }
+        
+        // 获取可用月份列表
+        getAvailableMonths() {
+            return this.indexData ? this.indexData.months : [];
+        }
+        
+        // 检查月份是否有数据
+        hasMonthData(year, month) {
+            if (!this.indexData) return false;
+            const key = `${year}-${String(month).padStart(2, '0')}`;
+            return this.indexData.months.some(month => month.yearMonth === key);
+        }
+        
+        // 预加载相邻月份
+        async preloadAdjacentMonths(year, month) {
+            const adjacentMonths = [
+                { year: month === 1 ? year - 1 : year, month: month === 1 ? 12 : month - 1 },
+                { year: month === 12 ? year + 1 : year, month: month === 12 ? 1 : month + 1 }
+            ];
+            
+            for (const adjMonth of adjacentMonths) {
+                if (this.hasMonthData(adjMonth.year, adjMonth.month)) {
+                    this.getMonthData(adjMonth.year, adjMonth.month);
+                }
+            }
+        }
+    }
+    
+    // 全局数据管理器实例
+    const calendarDataManager = new CalendarDataManager();
+    
+    // 🚀 第二阶段：页面初始化
+    document.addEventListener('DOMContentLoaded', async function() {
+        console.log('🎯 页面加载完成，开始初始化日历...');
+        
+        try {
+            // 初始化日历数据管理器
+            await calendarDataManager.initIndex();
+            
+            // 初始化当前日历
+            await refreshCalendar();
+            
+            console.log('✅ 日历初始化完成！');
+            
+        } catch (error) {
+            console.error('❌ 日历初始化失败:', error);
+        }
+    });
+    
+    // 🚀 第一阶段：数据生成成功！现在开始第二阶段：前端集成已知的数据
     function hasWallpaperData(dateKey) {
         // 这里我们基于2026年1月的数据来判断
         // 实际应用中应该从服务器获取或缓存所有数据

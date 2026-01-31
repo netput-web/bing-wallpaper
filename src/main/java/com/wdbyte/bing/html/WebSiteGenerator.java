@@ -1,17 +1,12 @@
 package com.wdbyte.bing.html;
 
 import java.io.IOException;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson2.JSONObject;
-import com.alibaba.fastjson2.JSONWriter.Feature;
-
+import com.alibaba.fastjson.JSONObject;
 import com.wdbyte.bing.BingFileUtils;
 import com.wdbyte.bing.Images;
 import com.wdbyte.bing.Wallpaper;
@@ -20,6 +15,8 @@ import com.wdbyte.bing.html.HtmlConstant.ImgCard;
 import com.wdbyte.bing.html.HtmlConstant.ImgDetail;
 import com.wdbyte.bing.html.HtmlConstant.MonthHistory;
 import com.wdbyte.bing.html.HtmlConstant.Sidebar;
+import com.wdbyte.bing.utils.CalendarDataGenerator;
+import com.wdbyte.bing.utils.CalendarDataGeneratorOptimized;
 
 /**
  * @author niulang
@@ -28,6 +25,7 @@ import com.wdbyte.bing.html.HtmlConstant.Sidebar;
 public class WebSiteGenerator {
 
     public static void main(String[] args) throws IOException {
+        System.out.println("🎯 WebSiteGenerator main() 方法开始执行...");
         WebSiteGenerator generator = new WebSiteGenerator();
 
         List<Images> bingImages = BingFileUtils.readBing();
@@ -38,6 +36,12 @@ public class WebSiteGenerator {
         generator.htmlGeneratorMonth(monthMap);
         generator.htmlGeneratorImgDetail(bingImages);
         generator.htmlGeneratorImgJson(bingImages);
+        
+        System.out.println("🎯 准备调用日历数据生成...");
+        // 🚀 第一阶段：生成日历数据文件
+        generator.generateCalendarDataFiles(bingImages);
+        
+        System.out.println("🎯 WebSiteGenerator main() 方法执行完成！");
     }
 
     public void htmlGenerator() throws IOException {
@@ -49,6 +53,9 @@ public class WebSiteGenerator {
         htmlGeneratorMonth(monthMap);
         htmlGeneratorImgDetail(bingImages);
         htmlGeneratorImgJson(bingImages);
+        
+        // 🚀 第一阶段：生成日历数据文件
+        generateCalendarDataFiles(bingImages);
     }
 
     private void htmlGeneratorToday(List<Images> bingImages) throws IOException {
@@ -60,7 +67,7 @@ public class WebSiteGenerator {
         jsonObject.put("date", bingImages.get(0).getDate());
         jsonObject.put("region", Wallpaper.CURRENT_REGION);
         jsonObject.put("desc", bingImages.get(0).getDesc());
-        HtmlFileUtils.writeToday(jsonObject.toString(Feature.PrettyFormat));
+        HtmlFileUtils.writeToday(jsonObject.toString());
     }
 
     public void htmlGeneratorIndex(List<Images> bingImages, Map<String, List<Images>> monthMap) throws IOException {
@@ -171,13 +178,30 @@ public class WebSiteGenerator {
      * @return
      */
     public String replaceMonthHistoryWithCalendar(String html, List<Images> bingImages, String nowMonth) {
+        System.out.println("🔧 开始替换月度历史为日历...");
+        System.out.println("📊 输入HTML长度: " + html.length());
+        System.out.println("📊 壁纸数量: " + bingImages.size());
+        
         // 构建日历数据
         Map<String, Object> calendarData = buildCalendarData(bingImages);
         
         // 生成Fluent Design日历
         String calendarHtml = MonthHistory.getFluentCalendar(calendarData);
+        System.out.println("📅 生成的日历HTML长度: " + calendarHtml.length());
         
-        return html.replace(MonthHistory.VAR_MONTH_HISTORY, calendarHtml);
+        // 替换占位符
+        String result = html.replace(MonthHistory.VAR_MONTH_HISTORY, calendarHtml);
+        System.out.println("📊 替换后HTML长度: " + result.length());
+        
+        // 检查是否成功替换
+        if (result.contains("calendar-preview-container")) {
+            System.out.println("✅ 日历HTML替换成功！");
+        } else {
+            System.out.println("❌ 日历HTML替换失败！");
+            System.out.println("🔍 查找占位符: " + html.contains(MonthHistory.VAR_MONTH_HISTORY));
+        }
+        
+        return result;
     }
     
     /**
@@ -211,9 +235,10 @@ public class WebSiteGenerator {
                 // 统计每日数量
                 wallpaperCounts.put(date, wallpaperCounts.getOrDefault(date, 0) + 1);
                 
-                // 构建壁纸详细数据
+                // 构建壁纸详细数据 - 使用更大的预览尺寸
                 Map<String, String> data = new HashMap<>();
-                data.put("previewUrl", image.getSimpleUrl() + "&pid=hp&w=800&h=450&rs=1&c=4");
+                // 使用更大的预览尺寸，确保图片质量
+                data.put("previewUrl", image.getSimpleUrl() + "&pid=hp&w=1920&h=1080&rs=1&c=4");
                 data.put("title", image.getDesc());
                 data.put("desc", image.getDesc());
                 data.put("downloadUrl", image.getUrl());
@@ -234,22 +259,117 @@ public class WebSiteGenerator {
     }
 
     /**
-     * 替换底部月度历史
+     * 替换底部月度历史 - 使用新的日历系统
      * @param html
      * @param monthMap
      * @param nowMonth
      * @return
      */
     public String replaceMonthHistory(String html, Map<String, List<Images>> monthMap, String nowMonth) {
-        StringBuilder monthHistory = new StringBuilder();
-        for (String month : monthMap.keySet()) {
-            String history = MonthHistory.getMonthHistory(month + ".html", month);
-            if (month != null && month.equals(nowMonth)) {
-                history = history.replace(MonthHistory.VAR_MONTH_HISTORY_MONTH_COLOR, MonthHistory.VAR_MONTH_HISTORY_NOW_MONTH_COLOR);
+        // 🚀 使用新的日历系统替换月度历史
+        Map<String, Object> calendarData = prepareCalendarData(monthMap);
+        String calendarHtml = MonthHistory.getFluentCalendar(calendarData);
+        
+        return html.replace(MonthHistory.VAR_MONTH_HISTORY, calendarHtml);
+    }
+    
+    /**
+     * 准备日历数据
+     */
+    private Map<String, Object> prepareCalendarData(Map<String, List<Images>> monthMap) {
+        Map<String, Object> calendarData = new HashMap<>();
+        
+        // 设置当前年月（默认为最新数据）
+        calendarData.put("currentYear", 2026);
+        calendarData.put("currentMonth", 1);
+        
+        // 处理壁纸数据
+        Map<String, Integer> wallpaperCounts = new HashMap<>();
+        Map<String, Map<String, String>> wallpaperData = new HashMap<>();
+        Map<Integer, Integer> yearStats = new HashMap<>();
+        
+        for (Map.Entry<String, List<Images>> entry : monthMap.entrySet()) {
+            String yearMonth = entry.getKey();
+            List<Images> images = entry.getValue();
+            
+            for (Images image : images) {
+                String date = image.getDate();
+                if (date != null && date.length() == 10) {
+                    wallpaperCounts.put(date, 1);
+                    
+                    // 构建壁纸数据
+                    Map<String, String> data = new HashMap<>();
+                    data.put("previewUrl", image.getSimpleUrl());
+                    data.put("title", image.getDesc());
+                    data.put("desc", image.getDesc());
+                    data.put("downloadUrl", image.getUrl());
+                    
+                    wallpaperData.put(date, data);
+                    
+                    // 统计年度数量
+                    int year = Integer.parseInt(date.substring(0, 4));
+                    yearStats.put(year, yearStats.getOrDefault(year, 0) + 1);
+                }
             }
-            monthHistory.append(history + " ");
         }
-        return html.replace(MonthHistory.VAR_MONTH_HISTORY, monthHistory.toString());
+        
+        calendarData.put("wallpaperCounts", wallpaperCounts);
+        calendarData.put("wallpaperData", wallpaperData);
+        calendarData.put("yearStats", yearStats);
+        
+        return calendarData;
+    }
+    
+    /**
+     * 🚀 第一阶段：生成日历数据文件（优化版本）
+     * 为所有历史月份生成JSON数据文件，供前端动态加载
+     * 使用智能增量更新，只在数据变化时重新生成
+     */
+    public void generateCalendarDataFiles(List<Images> bingImages) throws IOException {
+        System.out.println("=================================================");
+        System.out.println("🧠🧠🧠 开始智能日历数据生成检查... 🧠🧠🧠");
+        System.out.println("📊 壁纸数据数量: " + bingImages.size());
+        System.out.println("=================================================");
+        
+        try {
+            // 🚀 使用优化的智能生成器
+            CalendarDataGeneratorOptimized.generateCalendarDataFilesSmart(bingImages, "docs");
+            
+            System.out.println("=================================================");
+            System.out.println("✅✅✅ 智能日历数据生成完成！ ✅✅✅");
+            System.out.println("📁 文件位置: docs/data/calendar/");
+            System.out.println("📋 索引文件: docs/data/calendar-index.json");
+            System.out.println("🧠 指纹文件: docs/data/calendar-fingerprint.json");
+            System.out.println("=================================================");
+            
+        } catch (Exception e) {
+            System.err.println("❌❌❌ 智能日历数据生成失败: " + e.getMessage());
+            e.printStackTrace();
+            throw e;
+        }
+    }
+    
+    /**
+     * 🔧 强制重新生成所有日历数据文件（用于调试或手动刷新）
+     */
+    public void forceRegenerateCalendarDataFiles(List<Images> bingImages) throws IOException {
+        System.out.println("=================================================");
+        System.out.println("🔄🔄🔄 强制重新生成日历数据... 🔄🔄🔄");
+        System.out.println("📊 壁纸数据数量: " + bingImages.size());
+        System.out.println("=================================================");
+        
+        try {
+            CalendarDataGeneratorOptimized.forceRegenerateAll(bingImages, "docs");
+            
+            System.out.println("=================================================");
+            System.out.println("✅✅✅ 强制重新生成完成！ ✅✅✅");
+            System.out.println("=================================================");
+            
+        } catch (Exception e) {
+            System.err.println("❌❌❌ 强制重新生成失败: " + e.getMessage());
+            e.printStackTrace();
+            throw e;
+        }
     }
 
 }

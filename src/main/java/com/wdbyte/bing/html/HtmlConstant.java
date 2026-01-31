@@ -79,17 +79,24 @@ public class HtmlConstant {
         private static final String VAR_MONTH_HISTORY_HREF_URL = "${month_href_url}";
         private static final String VAR_MONTH_HISTORY_HREF_TITLE = "${month_href_title}";
         
-        // 新的Fluent Design日历结构 - 带预览区域
+        // 新的Fluent Design日历结构 - 带预览区域和年份选择器
         private static final String FLUENT_CALENDAR = ""
             + "<div class=\"calendar-preview-container\">\n"
             + "  <div class=\"calendar-section\">\n"
             + "    <div class=\"calendar-header-section\">\n"
             + "      <h3 class=\"calendar-title\">搜索历史壁纸</h3>\n"
             + "      <div class=\"calendar-nav\">\n"
-            + "        <button class=\"nav-button nav-prev\" onclick=\"calendarNavigate('prev')\">◀</button>\n"
-            + "        <div class=\"nav-year\" onclick=\"showYearSelector()\">2026</div>\n"
-            + "        <div class=\"nav-month\" onclick=\"showMonthSelector()\">1月</div>\n"
-            + "        <button class=\"nav-button nav-next\" onclick=\"calendarNavigate('next')\">▶</button>\n"
+            + "        <div class=\"nav-controls\">\n"
+            + "          <button class=\"nav-button nav-prev\" onclick=\"calendarNavigate('prev')\">◀</button>\n"
+            + "          <div class=\"nav-info\">\n"
+            + "            <div class=\"nav-year\" onclick=\"toggleYearSelector()\" style=\"cursor: pointer;\">2026</div>\n"
+            + "            <div class=\"nav-month\" onclick=\"showMonthSelector()\">1月</div>\n"
+            + "            <div class=\"year-selector\">\n"
+            + "              <!-- 年份列表将在这里动态生成 -->\n"
+            + "            </div>\n"
+            + "          </div>\n"
+            + "          <button class=\"nav-button nav-next\" onclick=\"calendarNavigate('next')\">▶</button>\n"
+            + "        </div>\n"
             + "      </div>\n"
             + "    </div>\n"
             + "    \n"

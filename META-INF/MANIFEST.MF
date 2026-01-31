@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Built-By: netpu
+Created-By: Apache Maven 3.9.12
+Build-Jdk: 1.8.0_472
+Main-Class: com.wdbyte.bing.Wallpaper
+

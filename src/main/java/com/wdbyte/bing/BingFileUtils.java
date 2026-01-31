@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,7 +41,7 @@ public class BingFileUtils {
             }
             Files.createFile(BING_PATH);
         }
-        List<String> allLines = Files.readAllLines(BING_PATH);
+        List<String> allLines = Files.readAllLines(BING_PATH, StandardCharsets.UTF_8);
         allLines = allLines.stream().filter(s -> !s.isEmpty()).collect(Collectors.toList());
         List<Images> imgList = new ArrayList<>();
         imgList.add(new Images());
@@ -88,7 +89,7 @@ public class BingFileUtils {
         if (!Files.exists(README_PATH)) {
             Files.createFile(README_PATH);
         }
-        List<String> allLines = Files.readAllLines(README_PATH);
+        List<String> allLines = Files.readAllLines(README_PATH, StandardCharsets.UTF_8);
         List<Images> imgList = new ArrayList<>();
         for (int i = 3; i < allLines.size(); i++) {
             String content = allLines.get(i);
