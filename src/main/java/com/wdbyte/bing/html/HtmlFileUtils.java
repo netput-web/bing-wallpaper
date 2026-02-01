@@ -21,7 +21,7 @@ public class HtmlFileUtils {
 
     public static String readImagesJson() throws IOException {
         byte[] bytes = Files.readAllBytes(BING_HTML_IMAGES_JSON);
-        return new String(bytes);
+        return new String(bytes, StandardCharsets.UTF_8);
     }
     public static void writeImagesJson(String json) throws IOException {
         Path path = BING_HTML_IMAGES_JSON;
@@ -30,12 +30,12 @@ public class HtmlFileUtils {
 
     public static String readIndexTemplateFile() throws IOException {
         byte[] bytes = Files.readAllBytes(BING_HTML_INDEX_TEMPLATE);
-        return new String(bytes);
+        return new String(bytes, StandardCharsets.UTF_8);
     }
 
     public static String readDetailTemplateFile() throws IOException {
         byte[] bytes = Files.readAllBytes(BING_HTML_DETAIL_TEMPLATE);
-        return new String(bytes);
+        return new String(bytes, StandardCharsets.UTF_8);
     }
 
     public static void writeIndexHtml(String html) throws IOException {

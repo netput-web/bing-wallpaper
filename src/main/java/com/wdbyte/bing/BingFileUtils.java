@@ -69,12 +69,12 @@ public class BingFileUtils {
         if (!Files.exists(BING_PATH)) {
             Files.createFile(BING_PATH);
         }
-        Files.write(BING_PATH, "## Bing Wallpaper".getBytes());
-        Files.write(BING_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
+        Files.write(BING_PATH, "## Bing Wallpaper".getBytes(StandardCharsets.UTF_8));
+        Files.write(BING_PATH, System.lineSeparator().getBytes(StandardCharsets.UTF_8), StandardOpenOption.APPEND);
         for (Images images : imgList) {
-            Files.write(BING_PATH, images.formatMarkdown().getBytes(), StandardOpenOption.APPEND);
-            Files.write(BING_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-            Files.write(BING_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
+            Files.write(BING_PATH, images.formatMarkdown().getBytes(StandardCharsets.UTF_8), StandardOpenOption.APPEND);
+            Files.write(BING_PATH, System.lineSeparator().getBytes(StandardCharsets.UTF_8), StandardOpenOption.APPEND);
+            Files.write(BING_PATH, System.lineSeparator().getBytes(StandardCharsets.UTF_8), StandardOpenOption.APPEND);
         }
         LogUtils.log("write bing wallpaper,path:%s,size:%d", BING_PATH.toString(), imgList.size());
     }
