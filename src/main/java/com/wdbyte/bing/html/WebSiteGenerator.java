@@ -35,7 +35,7 @@ public class WebSiteGenerator {
                 .collect(Collectors.toMap(
                     Images::getUrl, 
                     img -> img, 
-                    (existing, replacement) -> existing
+                    (existing, replacement) -> replacement // 保留最后一个（通常是正确的）
                 ))
                 .values()
                 .stream()
@@ -63,7 +63,7 @@ public class WebSiteGenerator {
                 .collect(Collectors.toMap(
                     Images::getUrl, 
                     img -> img, 
-                    (existing, replacement) -> existing
+                    (existing, replacement) -> replacement // 保留最后一个（通常是正确的）
                 ))
                 .values()
                 .stream()
