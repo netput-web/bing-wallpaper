@@ -55,7 +55,7 @@ public class HtmlConstant {
             + "<div style=\"width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box\">\n"
             +"  <img class=\"smallImg\" src=\"${img_card_url}&pid=hp&w=50\"  style=\"width:95%; position: absolute; top: 0; left: 2.5%;\" />"
             + "<a href=\"${img_detail_url}\"  target=\"_blank\"> <img class=\"bigImg w3-hover-shadow\" src=\"${img_card_download_url_preview}&pid=hp&w=384&h=216&rs=1&c=4\" style=\"width:95%; position: absolute; top: 0; left: 2.5%;\" onload=\"imgloading(this)\"></a>\n"
-            + " <div style=\"position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;\">${img_card_date} <a href=\"${img_card_download_url}\" target=\"_blank\">Download 4k</a> "
+            + " <div style=\"position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;\">${img_card_date} <a href=\"${img_detail_url}\" target=\"_blank\">Download 4k</a> "
             + "<button class=\"like-button img-btn\" onclick=\"updateLove('${img_card_region}','${img_card_date}')\">喜欢</button></div>\n"
             + "</div>";
 
