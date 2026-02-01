@@ -1,5 +1,5 @@
 ## Bing Wallpaper (2023-08)
-![](https://cn.bing.com/th?id=OHR.IronwoodCactus_ZH-CN9290037977_UHD.jpg&w=1000)Today: [巨人柱，铁木森林国家纪念地，亚利桑那州，美国 (? Jack Dykinga/Minden Pictures)](https://cn.bing.com/th?id=OHR.IronwoodCactus_ZH-CN9290037977_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
+![](https://cn.bing.com/th?id=OHR.IronwoodCactus_ZH-CN9290037977_UHD.jpg&w=1000)Today: [宸ㄤ汉鏌憋紝閾佹湪妫灄鍥藉绾康鍦帮紝浜氬埄妗戦偅宸烇紝缇庡浗 (漏 Jack Dykinga/Minden Pictures)](https://cn.bing.com/th?id=OHR.IronwoodCactus_ZH-CN9290037977_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
 |      |      |      |
 | :----: | :----: | :----: |
 |![](https://cn.bing.com/th?id=OHR.IronwoodCactus_ZH-CN9290037977_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-08-31 [download 4k](https://cn.bing.com/th?id=OHR.IronwoodCactus_ZH-CN9290037977_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.NingalooShark_ZH-CN9014712175_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-08-30 [download 4k](https://cn.bing.com/th?id=OHR.NingalooShark_ZH-CN9014712175_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.TetonBison_ZH-CN9384306649_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-08-29 [download 4k](https://cn.bing.com/th?id=OHR.TetonBison_ZH-CN9384306649_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|
