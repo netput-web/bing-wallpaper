@@ -501,9 +501,42 @@
       s.parentNode.insertBefore(hm, s);
     })();
     
+    // 🚀 智能日历默认月份设置
+    function getInitialCalendarDate() {
+        const today = new Date();
+        const currentYear = today.getFullYear();
+        const currentMonth = today.getMonth() + 1;
+        
+        // 从URL中提取年份和月份
+        const urlPath = window.location.pathname;
+        const urlFilename = urlPath.split('/').pop(); // 获取文件名，如 '2026-02.html'
+        
+        // 检查是否是月份页面 (格式: YYYY-MM.html)
+        const monthPageMatch = urlFilename.match(/^(\d{4})-(\d{2})\.html$/);
+        if (monthPageMatch) {
+            const urlYear = parseInt(monthPageMatch[1]);
+            const urlMonth = parseInt(monthPageMatch[2]);
+            console.log('📅 从URL提取日期:', urlYear, urlMonth);
+            return { year: urlYear, month: urlMonth };
+        }
+        
+        // 检查是否是年份页面 (格式: YYYY.html)
+        const yearPageMatch = urlFilename.match(/^(\d{4})\.html$/);
+        if (yearPageMatch) {
+            const urlYear = parseInt(yearPageMatch[1]);
+            console.log('📅 从URL提取年份:', urlYear, '默认1月');
+            return { year: urlYear, month: 1 };
+        }
+        
+        // 主页或默认情况：显示当前月份
+        console.log('📅 使用当前日期:', currentYear, currentMonth);
+        return { year: currentYear, month: currentMonth };
+    }
+    
     // 日历导航功能
-    let currentYear = 2026;
-    let currentMonth = 1;
+    let initialDate = getInitialCalendarDate();
+    let currentYear = initialDate.year;
+    let currentMonth = initialDate.month;
     let calendarMode = 'month'; // 'year' | 'month'
     
     function calendarNavigate(direction) {
@@ -905,6 +938,7 @@
                 quickNav.innerHTML = `
                     <button onclick="goToToday()">今天</button>
                     <button onclick="goToCurrentMonth()">当前月</button>
+                    <button onclick="goToLatestWallpaper()">最新壁纸</button>
                     <button onclick="goToRandomMonth()">随机月</button>
                 `;
                 
@@ -929,8 +963,32 @@
     }
     
     function goToCurrentMonth() {
-        currentYear = 2026;
-        currentMonth = 1;
+        const today = new Date();
+        currentYear = today.getFullYear();
+        currentMonth = today.getMonth() + 1;
+        refreshCalendar();
+    }
+    
+    function goToLatestWallpaper() {
+        // 获取最新的可用月份
+        const availableMonths = calendarDataManager.getAvailableMonths();
+        if (availableMonths.length === 0) {
+            console.log('❌ 没有可用的壁纸数据');
+            return;
+        }
+        
+        // 找到最新的月份
+        availableMonths.sort((a, b) => {
+            // 按年份和月份排序，最新的在前
+            if (a.year !== b.year) return b.year - a.year;
+            return b.month - a.month;
+        });
+        
+        const latestMonth = availableMonths[0];
+        currentYear = latestMonth.year;
+        currentMonth = latestMonth.month;
+        
+        console.log('🎯 跳转到最新壁纸:', currentYear, currentMonth);
         refreshCalendar();
     }
     
@@ -1414,7 +1472,7 @@
             <div class="w3-display-middle w3-padding-large w3-wide w3-text-light-grey w3-center">
                 <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge">Bing Wallpaper</h1>
                 <div class=" w3-padding-large w3-text-light-grey" style="max-width: 800px">
-                    <p>奥林达的彩色房子, 巴西 (© Robert Pekar/Alamy)</p>
+                    <p>濂ユ灄杈剧殑褰╄壊鎴垮瓙, 宸磋タ (漏 Robert Pekar/Alamy)</p>
                 </div>
                 <h5 class="w3-hide-large" style="white-space:nowrap">Bing Wallpaper</h5>
             </div>
@@ -1556,7 +1614,7 @@
       <div class="calendar-day-header">四</div>
       <div class="calendar-day-header">五</div>
       <div class="calendar-day-header">六</div>
-      <div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/01.html', 'https://cn.bing.com/th?id=OHR.Olinda_ZH-CN6216385346_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', '濂ユ灄杈剧殑褰╄壊鎴垮瓙, 宸磋タ (漏 Robert Pekar/Alamy)', '濂ユ灄杈剧殑褰╄壊鎴垮瓙, 宸磋タ (漏 Robert Pekar/Alamy)', 'https://cn.bing.com/th?id=OHR.Olinda_ZH-CN6216385346_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4')" data-count="2">
+      <div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/01.html', 'https://cn.bing.com/th?id=OHR.Olinda_ZH-CN6216385346_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', '奥林达的彩色房子, 巴西 (© Robert Pekar/Alamy)', '奥林达的彩色房子, 巴西 (© Robert Pekar/Alamy)', 'https://cn.bing.com/th?id=OHR.Olinda_ZH-CN6216385346_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4')" data-count="2">
   1
   <div class="wallpaper-count" data-count="2"></div>
 </div>
