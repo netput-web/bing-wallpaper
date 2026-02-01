@@ -1,5 +1,5 @@
 ## Bing Wallpaper (2025-01)
-![](https://cn.bing.com/th?id=OHR.PlainsZebra_ZH-CN1989542307_UHD.jpg&w=1000)Today: [ÈÕ³öÊ±µÄÆ½Ô­°ßÂí£¬Äª¿¨À­¹ú¼Ò¹«Ô°£¬ÄÏ·Ç (? EcoPrint/Shutterstock)](https://cn.bing.com/th?id=OHR.PlainsZebra_ZH-CN1989542307_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
+![](https://cn.bing.com/th?id=OHR.PlainsZebra_ZH-CN1989542307_UHD.jpg&w=1000)Today: [æ—¥å‡ºæ—¶çš„å¹³åŸæ–‘é©¬ï¼Œè«å¡æ‹‰å›½å®¶å…¬å›­ï¼Œå—é (Â© EcoPrint/Shutterstock)](https://cn.bing.com/th?id=OHR.PlainsZebra_ZH-CN1989542307_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
 |      |      |      |
 | :----: | :----: | :----: |
 |![](https://cn.bing.com/th?id=OHR.PlainsZebra_ZH-CN1989542307_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-01-31 [download 4k](https://cn.bing.com/th?id=OHR.PlainsZebra_ZH-CN1989542307_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.OrdesaSpain_ZH-CN1445868068_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-01-30 [download 4k](https://cn.bing.com/th?id=OHR.OrdesaSpain_ZH-CN1445868068_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.SpringFestival25Y_ZH-CN6133182159_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-01-29 [download 4k](https://cn.bing.com/th?id=OHR.SpringFestival25Y_ZH-CN6133182159_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|
