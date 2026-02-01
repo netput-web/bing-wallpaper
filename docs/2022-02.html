@@ -169,6 +169,37 @@
             margin-top: 16px !important;
         }
         
+        /* 图片卡片底部文字背景框 - 默认样式 */
+        #img_list > div > div[style*="bottom: -16px"] {
+            background: rgba(0, 0, 0, 0.7) !important;
+            border-radius: 4px;
+            color: #ffffff !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        }
+        
+        /* 图片卡片底部文字链接样式 - 默认 */
+        #img_list > div > div[style*="bottom: -16px"] a {
+            color: #4fc3f7 !important;
+            text-decoration: none;
+        }
+        
+        #img_list > div > div[style*="bottom: -16px"] a:hover {
+            color: #29b6f6 !important;
+            text-decoration: underline;
+        }
+        
+        /* 图片卡片底部喜欢按钮样式 - 默认 */
+        #img_list > div > div[style*="bottom: -16px"] .like-button {
+            background: rgba(255, 255, 255, 0.15) !important;
+            color: #ffffff !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        }
+        
+        #img_list > div > div[style*="bottom: -16px"] .like-button:hover {
+            background: rgba(255, 255, 255, 0.25) !important;
+        }
+        
         /* Fluent Design 日历样式 - 带预览区域 */
         .calendar-preview-container {
             display: flex;
@@ -1822,89 +1853,95 @@
 /* 黑暗模式下的图片卡片底部文字样式 */
 @media (prefers-color-scheme: dark) {
     #img_list > div > div[style*="bottom: -16px"] {
-        background: rgba(0, 0, 0, 0.8) !important;
+        background: rgba(20, 20, 30, 0.95) !important;
         border-radius: 4px;
         color: #ffffff !important;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+        border: 1px solid rgba(100, 150, 255, 0.3) !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
     }
     
     /* 黑暗模式下的图片卡片底部文字链接样式 */
     #img_list > div > div[style*="bottom: -16px"] a {
-        color: #4fc3f7 !important;
+        color: #64b5f6 !important;
         text-decoration: none;
     }
     
     #img_list > div > div[style*="bottom: -16px"] a:hover {
-        color: #29b6f6 !important;
+        color: #90caf9 !important;
         text-decoration: underline;
     }
     
     /* 黑暗模式下的喜欢按钮样式 */
     #img_list > div > div[style*="bottom: -16px"] .like-button {
-        background: rgba(255, 255, 255, 0.1) !important;
+        background: rgba(100, 150, 255, 0.2) !important;
         color: #ffffff !important;
-        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border: 1px solid rgba(100, 150, 255, 0.4) !important;
     }
     
     #img_list > div > div[style*="bottom: -16px"] .like-button:hover {
-        background: rgba(255, 255, 255, 0.2) !important;
+        background: rgba(100, 150, 255, 0.3) !important;
     }
 }
 
 /* 针对darkmode-js库的样式 */
 .darkmode #img_list > div > div[style*="bottom: -16px"] {
-    background: rgba(0, 0, 0, 0.8) !important;
+    background: rgba(20, 20, 30, 0.95) !important;
     border-radius: 4px;
     color: #ffffff !important;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(100, 150, 255, 0.3) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
 }
 
 .darkmode #img_list > div > div[style*="bottom: -16px"] a {
-    color: #4fc3f7 !important;
+    color: #64b5f6 !important;
     text-decoration: none;
 }
 
 .darkmode #img_list > div > div[style*="bottom: -16px"] a:hover {
-    color: #29b6f6 !important;
+    color: #90caf9 !important;
     text-decoration: underline;
 }
 
 .darkmode #img_list > div > div[style*="bottom: -16px"] .like-button {
-    background: rgba(255, 255, 255, 0.1) !important;
+    background: rgba(100, 150, 255, 0.2) !important;
     color: #ffffff !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(100, 150, 255, 0.4) !important;
 }
 
 .darkmode #img_list > div > div[style*="bottom: -16px"] .like-button:hover {
-    background: rgba(255, 255, 255, 0.2) !important;
+    background: rgba(100, 150, 255, 0.3) !important;
 }
 
 /* 备用选择器 */
 [data-theme="dark"] #img_list > div > div[style*="bottom: -16px"] {
-    background: rgba(0, 0, 0, 0.8) !important;
+    background: rgba(20, 20, 30, 0.95) !important;
     border-radius: 4px;
     color: #ffffff !important;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(100, 150, 255, 0.3) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
 }
 
 [data-theme="dark"] #img_list > div > div[style*="bottom: -16px"] a {
-    color: #4fc3f7 !important;
+    color: #64b5f6 !important;
     text-decoration: none;
 }
 
 [data-theme="dark"] #img_list > div > div[style*="bottom: -16px"] a:hover {
-    color: #29b6f6 !important;
+    color: #90caf9 !important;
     text-decoration: underline;
 }
 
 [data-theme="dark"] #img_list > div > div[style*="bottom: -16px"] .like-button {
-    background: rgba(255, 255, 255, 0.1) !important;
+    background: rgba(100, 150, 255, 0.2) !important;
     color: #ffffff !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(100, 150, 255, 0.4) !important;
 }
 
 [data-theme="dark"] #img_list > div > div[style*="bottom: -16px"] .like-button:hover {
-    background: rgba(255, 255, 255, 0.2) !important;
+    background: rgba(100, 150, 255, 0.3) !important;
 }
 </style>
 <script src="https://jsdelivr.wdbyte.com/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
