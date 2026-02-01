@@ -8,7 +8,7 @@
     <meta name="keywords" content="bing wallpaper, 必应壁纸, 必应4k壁纸, 必应超清壁纸, 壁纸">
     <link rel="stylesheet" href="/css/w3.css">
     <link rel="icon" href="/img/fav.jpg">
-    <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fuse.js/6.5.3/fuse.min.js" async></script>
+    <!-- <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fuse.js/6.5.3/fuse.min.js" async></script> -->
     <script src="/js/w3.js" async></script>
     <style>
         body,
@@ -105,6 +105,32 @@
             margin-left: auto !important;
             margin-right: auto !important;
             max-width: 1200px !important;
+            transition: none !important; /* 禁用w3.css的transition */
+        }
+        /* 禁用所有w3相关的transition */
+        .w3-ripple {
+            transition: none !important;
+        }
+        .w3-animate-input {
+            transition: none !important;
+        }
+        .w3-opacity,
+        .w3-hover-opacity:hover {
+            transition: none !important;
+        }
+        /* 禁用所有可能影响日历的transition */
+        * {
+            transition-property: none !important;
+        }
+        /* 覆盖w3.css的全局box-sizing设置 */
+        .calendar-day,
+        .calendar-grid,
+        .calendar-preview-container,
+        .calendar-section,
+        .preview-section,
+        .preview-image-container,
+        .preview-content {
+            box-sizing: content-box !important;
         }
         /* 在所有屏幕尺寸下都强制应用1200px宽度 */
         @media screen {
@@ -410,7 +436,8 @@
         }
         
         .calendar-day {
-            aspect-ratio: 1;
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -419,6 +446,7 @@
             cursor: pointer;
             position: relative;
             color: #333;
+            box-sizing: border-box;
         }
         
         .calendar-day:hover {
@@ -971,7 +999,11 @@
             
             if (wallpaperInfo) {
                 dayElement.classList.add('has-wallpaper');
-                dayElement.innerHTML = `${day}<div class="wallpaper-dot"></div>`;
+                // 统一使用DOM操作，避免innerHTML和textContent混用
+                dayElement.textContent = day;
+                const dot = document.createElement('div');
+                dot.className = 'wallpaper-dot';
+                dayElement.appendChild(dot);
                 
                 // 添加点击事件
                 dayElement.onclick = function() {
@@ -1065,78 +1097,6 @@
         const calendarGrid = document.querySelector('.calendar-grid');
         if (calendarGrid) {
             calendarGrid.style.opacity = '1';
-        }
-    }
-    
-    // 使用真实数据生成日历网格
-    function generateCalendarGridWithData(year, month, monthData) {
-        const calendarGrid = document.querySelector('.calendar-grid');
-        if (!calendarGrid) return;
-        
-        // 恢复透明度
-        calendarGrid.style.opacity = '1';
-        
-        // 清空现有内容，保留星期标题
-        const headers = calendarGrid.querySelectorAll('.calendar-day-header');
-        calendarGrid.innerHTML = '';
-        headers.forEach(header => calendarGrid.appendChild(header));
-        
-        // 计算月份第一天是星期几
-        const firstDay = new Date(year, month - 1, 1).getDay();
-        const daysInMonth = new Date(year, month, 0).getDate();
-        
-        // 添加空白日期
-        for (let i = 0; i < firstDay; i++) {
-            const emptyDay = document.createElement('div');
-            emptyDay.className = 'calendar-day empty';
-            calendarGrid.appendChild(emptyDay);
-        }
-        
-        // 添加月份日期
-        for (let day = 1; day <= daysInMonth; day++) {
-            const dayElement = document.createElement('div');
-            dayElement.className = 'calendar-day';
-            dayElement.textContent = day;
-            
-            // 🎯 添加data-date属性用于选中状态管理
-            const dateKey = String(day).padStart(2, '0');
-            const monthKey = String(month).padStart(2, '0');
-            dayElement.setAttribute('data-date', `${year}-${monthKey}-${dateKey}`);
-            
-            // 检查是否有壁纸数据
-            const wallpaperInfo = monthData.wallpapers[dateKey];
-            
-            if (wallpaperInfo) {
-                dayElement.classList.add('has-wallpaper');
-                // 使用appendChild而不是innerHTML，避免DOM结构变化
-                dayElement.textContent = day;
-                const dot = document.createElement('div');
-                dot.className = 'wallpaper-dot';
-                dayElement.appendChild(dot);
-                
-                // 添加点击事件
-                dayElement.onclick = function() {
-                    console.log('🖱️ 日历日期被点击:', {
-                        date: wallpaperInfo.dateUrl,
-                        preview: wallpaperInfo.previewUrl,
-                        title: wallpaperInfo.title
-                    });
-                    
-                    showPreview(
-                        wallpaperInfo.dateUrl,
-                        wallpaperInfo.previewUrl,
-                        wallpaperInfo.title,
-                        wallpaperInfo.desc,
-                        wallpaperInfo.downloadUrl
-                    );
-                };
-                dayElement.style.cursor = 'pointer';
-                
-                // 添加悬停提示
-                dayElement.title = wallpaperInfo.title;
-            }
-            
-            calendarGrid.appendChild(dayElement);
         }
     }
     
@@ -1428,15 +1388,8 @@
     }
     window.onload = headerImgloading; // 页面加载时执行
     function imgloading(oImg) {
-        var n = 0;
-        var timer = setInterval(function () {
-            n++;
-            oImg.style.opacity = n * n / 50;
-            if (n * n >= 50) {
-                clearInterval(timer);
-            }
-            ;
-        }, 50);
+        // 禁用opacity动画，避免布局重新计算导致跳跃
+        oImg.style.opacity = 1;
     };
 </script>
 <body>
@@ -1809,15 +1762,15 @@
     function w3_close() {
         document.getElementById("mySidebar").style.display = "none";
     }
-    // 监听滚动事件
-    window.addEventListener('scroll', function () {
-        var wenjuan = document.getElementById('wenjuan');
-        if (window.scrollY > 400) { // 如果向下滚动超过100px
-            wenjuan.style.display = 'block'; // 显示该div
-        } else {
-            wenjuan.style.display = 'none'; // 否则隐藏
-        }
-    });
+    // 监听滚动事件 - 禁用，避免意外触发导致跳跃
+    // window.addEventListener('scroll', function () {
+    //     var wenjuan = document.getElementById('wenjuan');
+    //     if (window.scrollY > 400) { // 如果向下滚动超过100px
+    //         wenjuan.style.display = 'block'; // 显示该div
+    //     } else {
+    //         wenjuan.style.display = 'none'; // 否则隐藏
+    //     }
+    // });
 </script>
 <script src="https://jsdelivr.wdbyte.com/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 <script>
