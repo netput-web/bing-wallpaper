@@ -1,5 +1,5 @@
 ## Bing Wallpaper (2023-06)
-![](https://cn.bing.com/th?id=OHR.ClamBears_ZH-CN5686721500_UHD.jpg&w=1000)Today: [棕熊妈妈和幼崽，克拉克湖国家公园和自然保护区，美国阿拉斯加州 (? Carlos Carreno/Getty Images)](https://cn.bing.com/th?id=OHR.ClamBears_ZH-CN5686721500_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
+![](https://cn.bing.com/th?id=OHR.ClamBears_ZH-CN5686721500_UHD.jpg&w=1000)Today: [妫曠唺濡堝鍜屽辜宕斤紝鍏嬫媺鍏嬫箹鍥藉鍏洯鍜岃嚜鐒朵繚鎶ゅ尯锛岀編鍥介樋鎷夋柉鍔犲窞 (漏 Carlos Carreno/Getty Images)](https://cn.bing.com/th?id=OHR.ClamBears_ZH-CN5686721500_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
 |      |      |      |
 | :----: | :----: | :----: |
 |![](https://cn.bing.com/th?id=OHR.ClamBears_ZH-CN5686721500_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-06-30 [download 4k](https://cn.bing.com/th?id=OHR.ClamBears_ZH-CN5686721500_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.BanyakIslands_ZH-CN6620304821_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-06-29 [download 4k](https://cn.bing.com/th?id=OHR.BanyakIslands_ZH-CN6620304821_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.ItalyCinqueTerre_ZH-CN6495965228_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-06-28 [download 4k](https://cn.bing.com/th?id=OHR.ItalyCinqueTerre_ZH-CN6495965228_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|

@@ -1,5 +1,5 @@
 ## Bing Wallpaper (2023-04)
-![](https://cn.bing.com/th?id=OHR.TempleE_ZH-CN9455488333_UHD.jpg&w=1000)Today: [塞利努斯的神庙，西西里岛，意大利 (? Antonino Bartuccio/eStock)](https://cn.bing.com/th?id=OHR.TempleE_ZH-CN9455488333_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
+![](https://cn.bing.com/th?id=OHR.TempleE_ZH-CN9455488333_UHD.jpg&w=1000)Today: [濉炲埄鍔柉鐨勭搴欙紝瑗胯タ閲屽矝锛屾剰澶у埄 (漏 Antonino Bartuccio/eStock)](https://cn.bing.com/th?id=OHR.TempleE_ZH-CN9455488333_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
 |      |      |      |
 | :----: | :----: | :----: |
 |![](https://cn.bing.com/th?id=OHR.TempleE_ZH-CN9455488333_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-04-30 [download 4k](https://cn.bing.com/th?id=OHR.TempleE_ZH-CN9455488333_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.JTNPMilkyWay_ZH-CN9128830420_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-04-29 [download 4k](https://cn.bing.com/th?id=OHR.JTNPMilkyWay_ZH-CN9128830420_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.MariposaGrove_ZH-CN8957145435_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-04-28 [download 4k](https://cn.bing.com/th?id=OHR.MariposaGrove_ZH-CN8957145435_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|

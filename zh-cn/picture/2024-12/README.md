@@ -1,5 +1,5 @@
 ## Bing Wallpaper (2024-12)
-![](https://cn.bing.com/th?id=OHR.CANYE24_ZH-CN3884754296_UHD.jpg&w=1000)Today: [╧З╩Аи╫ио©у╣дял??ё╛Двл╚╩╙ё╛╪сдц╢С (? naibank/Getty Images)](https://cn.bing.com/th?id=OHR.CANYE24_ZH-CN3884754296_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
+![](https://cn.bing.com/th?id=OHR.CANYE24_ZH-CN3884754296_UHD.jpg&w=1000)Today: [Е⌡╫Д╪ Е╠╠Д╦┼Г╘╨Г └Г┐÷О©╫О©╫О╪▄Ф╦╔Е╓╙Е█▌О╪▄Е┼═Ф▀©Е╓╖ (б╘ naibank/Getty Images)](https://cn.bing.com/th?id=OHR.CANYE24_ZH-CN3884754296_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
 |      |      |      |
 | :----: | :----: | :----: |
 |![](https://cn.bing.com/th?id=OHR.CANYE24_ZH-CN3884754296_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2024-12-31 [download 4k](https://cn.bing.com/th?id=OHR.CANYE24_ZH-CN3884754296_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.CANYE24_ZH-CN3884754296_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2024-12-31 [download 4k](https://cn.bing.com/th?id=OHR.CANYE24_ZH-CN3884754296_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.MountFieldNP_ZH-CN6004420782_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2024-12-30 [download 4k](https://cn.bing.com/th?id=OHR.MountFieldNP_ZH-CN6004420782_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|
