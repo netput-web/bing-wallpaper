@@ -12,6 +12,12 @@ on:
     - cron:  '2 16 * * *'
     # 每天UTC时间0点2分
     - cron:  '2 0 * * *'
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: '手动运行原因'
+        required: false
+        default: '手动更新壁纸'
 
 jobs:
   build:
@@ -19,13 +25,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Set up JDK 1.8
-      uses: actions/setup-java@v1
+      uses: actions/setup-java@v4
       with:
         java-version: 1.8
     - name: current date
       run: date
+    - name: Display manual trigger reason
+      if: github.event_name == 'workflow_dispatch'
+      run: |
+        echo "手动触发原因: ${{ github.event.inputs.reason }}"
+        echo "触发者: ${{ github.actor }}"
+        echo "触发时间: $(date)"
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Run Java Application
@@ -40,9 +52,13 @@ jobs:
          git add picture/*
          git add docs/*
          git add zh-cn/*
-         git commit -m "update readme.md" || echo "No changes to commit"
+         if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+           git commit -m "手动更新壁纸 - ${{ github.event.inputs.reason }}" || echo "No changes to commit"
+         else
+           git commit -m "自动更新壁纸 - $(date '+%Y-%m-%d')" || echo "No changes to commit"
+         fi
     - name: Push changes
-      uses: ad-m/github-push-action@v0.6.0
+      uses: ad-m/github-push-action@master
       with:
          github_token: ${{ secrets.GITHUB_TOKEN }}
          branch: main
