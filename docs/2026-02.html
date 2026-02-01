@@ -227,7 +227,7 @@
             position: relative;
             background: #000;
             display: flex;
-            align-items: center;
+            align-items: flex-end; /* 底部对齐 */
             justify-content: center;
             min-height: 225px; /* 16:9的最小高度 */
             overflow: hidden;
@@ -777,7 +777,7 @@
         }
     }
     
-    // 显示预览功能 - 彻底修复版本
+    // 显示预览功能 - 渐进式加载版本
     function showPreview(dateUrl, previewUrl, title, desc, downloadUrl) {
         console.log('🖼️ showPreview 被调用:', { dateUrl, previewUrl, title });
         
@@ -821,37 +821,97 @@
         placeholder.style.display = 'none';
         content.style.display = 'flex';
         
-        // 重置图片样式
-        previewImage.style.opacity = '0';
-        previewImage.style.transform = 'scale(1)';
-        previewImage.style.maxWidth = '100%';
-        previewImage.style.maxHeight = '100%';
-        previewImage.style.width = 'auto';
-        previewImage.style.height = 'auto';
-        previewImage.style.objectFit = 'contain';
+        // 🚀 双层叠加加载策略 - 模仿顶部大图方式
+        // 底层：小图（模糊），上层：大图（清晰）
+        const smallImageUrl = previewUrl + '&w=400';  // 匹配预览区尺寸
+        const largeImageUrl = previewUrl + '&w=1200'; // 清晰大图
         
-        // 添加加载效果
-        previewImage.onload = function() {
-            console.log('✅ 预览图片加载成功:', previewUrl);
-            console.log('📏 图片尺寸:', previewImage.naturalWidth + 'x' + previewImage.naturalHeight);
+        // 获取预览容器，确保存在
+        const previewContainer = document.querySelector('.preview-image-container');
+        if (!previewContainer) {
+            console.error('❌ 预览容器不存在');
+            return;
+        }
+        
+        // 清空容器，创建双层结构
+        previewContainer.innerHTML = '';
+        
+        // 创建底层小图
+        const smallImg = document.createElement('img');
+        smallImg.className = 'preview-small-image';
+        smallImg.style.cssText = `
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 覆盖整个容器，更饱满 */
+            filter: blur(2px);
+            -webkit-filter: blur(2px);
+            opacity: 0.8;
+            z-index: 1;
+        `;
+        smallImg.src = smallImageUrl;
+        
+        // 创建上层大图
+        const largeImg = document.createElement('img');
+        largeImg.className = 'preview-large-image';
+        largeImg.style.cssText = `
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 覆盖整个容器，更饱满 */
+            opacity: 0;
+            z-index: 2;
+            transition: opacity 0.3s ease;
+        `;
+        
+        // 添加到容器
+        previewContainer.appendChild(smallImg);
+        previewContainer.appendChild(largeImg);
+        
+        // 预加载大图
+        const preloadImg = new Image();
+        preloadImg.src = largeImageUrl;
+        
+        preloadImg.onload = function() {
+            console.log('✅ 大图预加载成功:', largeImageUrl);
+            console.log('📏 大图尺寸:', preloadImg.naturalWidth + 'x' + preloadImg.naturalHeight);
             
             // 检查图片是否正确加载
-            if (previewImage.naturalWidth === 0 || previewImage.naturalHeight === 0) {
-                console.error('❌ 图片尺寸异常');
+            if (preloadImg.naturalWidth === 0 || preloadImg.naturalHeight === 0) {
+                console.error('❌ 大图尺寸异常');
                 return;
             }
             
-            previewImage.style.opacity = '1';
+            // 设置大图源并显示
+            largeImg.src = largeImageUrl;
+            
+            // 使用imgloading函数进行淡入
+            imgloading(largeImg);
         };
         
-        previewImage.onerror = function() {
-            console.error('❌ 预览图片加载失败:', previewUrl);
-            previewImage.style.opacity = '0.3';
-            previewImage.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik04NSA1MEgxMTVWMTAwSDg1VjUwWiIgZmlsbD0iI0NDQyIvPgo8cGF0aCBkPSJNMTAwIDYwTDkwIDgwSDEwMEwxMTAgNjBIMTAwWiIgZmlsbD0iI0NDQyIvPgo8dGV4dCB4PSIxMDAiIHk9IjEyMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzk5OTk5OSIgZm9udC1zaXplPSIxNCI+5Zu+54mH5b2T5LiN5a2Y5ZyoPC90ZXh0Pgo8L3N2Zz4K';
-        };
+        // imgloading函数 - 模仿顶部大图的淡入效果
+        function imgloading(oImg) {
+            var n = 0;
+            var timer = setInterval(function () {
+                n++;
+                oImg.style.opacity = n * n / 50;
+                if (n * n >= 50) {
+                    clearInterval(timer);
+                    // 大图完全显示后，隐藏小图
+                    smallImg.style.opacity = '0';
+                }
+            }, 50);
+        }
         
-        // 设置图片源
-        previewImage.src = previewUrl;
+        // 错误处理
+        smallImg.onerror = function() {
+            console.error('❌ 预览图片加载失败:', smallImageUrl);
+            smallImg.style.opacity = '0.3';
+        };
     }
     
     // 🚀 第三阶段：高级交互功能
