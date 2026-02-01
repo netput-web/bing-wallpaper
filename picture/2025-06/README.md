@@ -1,5 +1,5 @@
 ## Bing Wallpaper (2025-06)
-![](https://cn.bing.com/th?id=OHR.BandaIsland_EN-US9494080788_UHD.jpg&w=1000)Today: [Blue lagoon at Pulau Ay, Banda Islands, Indonesia (© fabio lamanna/Alamy)](https://cn.bing.com/th?id=OHR.BandaIsland_EN-US9494080788_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
+![](https://cn.bing.com/th?id=OHR.BandaIsland_EN-US9494080788_UHD.jpg&w=1000)Today: [Blue lagoon at Pulau Ay, Banda Islands, Indonesia (? fabio lamanna/Alamy)](https://cn.bing.com/th?id=OHR.BandaIsland_EN-US9494080788_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
 |      |      |      |
 | :----: | :----: | :----: |
 |![](https://cn.bing.com/th?id=OHR.BandaIsland_EN-US9494080788_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-06-30 [download 4k](https://cn.bing.com/th?id=OHR.BandaIsland_EN-US9494080788_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.PrideParade_EN-US9405333794_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-06-29 [download 4k](https://cn.bing.com/th?id=OHR.PrideParade_EN-US9405333794_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.SplendidFrog_EN-US9346105347_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-06-28 [download 4k](https://cn.bing.com/th?id=OHR.SplendidFrog_EN-US9346105347_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|

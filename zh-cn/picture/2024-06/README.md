@@ -1,5 +1,5 @@
 ## Bing Wallpaper (2024-06)
-![](https://cn.bing.com/th?id=OHR.UbudBali_ZH-CN4891348277_UHD.jpg&w=1000)Today: [‰πåÂ∏ÉÂØ∫Â∫ôÁöÑÁü≥Èõï,Â∑¥ÂéòÂ≤õ,Âç∞Â∫¶Â∞ºË•ø‰∫ö (¬© R. Sch√∂nebaum/plainpicture)](https://cn.bing.com/th?id=OHR.UbudBali_ZH-CN4891348277_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
+![](https://cn.bing.com/th?id=OHR.UbudBali_ZH-CN4891348277_UHD.jpg&w=1000)Today: [Œ⁄≤ºÀ¬√Ìµƒ ØµÒ,∞Õ¿Âµ∫,”°∂»ƒ·Œ˜—« (? R. Sch?nebaum/plainpicture)](https://cn.bing.com/th?id=OHR.UbudBali_ZH-CN4891348277_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
 |      |      |      |
 | :----: | :----: | :----: |
 |![](https://cn.bing.com/th?id=OHR.UbudBali_ZH-CN4891348277_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2024-06-30 [download 4k](https://cn.bing.com/th?id=OHR.UbudBali_ZH-CN4891348277_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.NienhagenMecklenburg_ZH-CN4482269700_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2024-06-29 [download 4k](https://cn.bing.com/th?id=OHR.NienhagenMecklenburg_ZH-CN4482269700_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.ChauseyIslands_ZH-CN4241103934_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2024-06-28 [download 4k](https://cn.bing.com/th?id=OHR.ChauseyIslands_ZH-CN4241103934_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|

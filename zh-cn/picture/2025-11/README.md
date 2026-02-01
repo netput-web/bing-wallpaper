@@ -1,5 +1,5 @@
 ## Bing Wallpaper (2025-11)
-![](https://cn.bing.com/th?id=OHR.LeipzigMarket_ZH-CN1517513161_UHD.jpg&w=1000)Today: [èŽ±æ¯”é”¡åœ£è¯žé›†å¸‚, å¾·å›½ (Â© Krzysztof Baranowski/Getty Images)](https://cn.bing.com/th?id=OHR.LeipzigMarket_ZH-CN1517513161_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
+![](https://cn.bing.com/th?id=OHR.LeipzigMarket_ZH-CN1517513161_UHD.jpg&w=1000)Today: [À³±ÈÎýÊ¥µ®¼¯ÊÐ, µÂ¹ú (? Krzysztof Baranowski/Getty Images)](https://cn.bing.com/th?id=OHR.LeipzigMarket_ZH-CN1517513161_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
 |      |      |      |
 | :----: | :----: | :----: |
 |![](https://cn.bing.com/th?id=OHR.LeipzigMarket_ZH-CN1517513161_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-11-30 [download 4k](https://cn.bing.com/th?id=OHR.LeipzigMarket_ZH-CN1517513161_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.DeerVeluwe_ZH-CN1438758687_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-11-29 [download 4k](https://cn.bing.com/th?id=OHR.DeerVeluwe_ZH-CN1438758687_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.InvernoItalia_ZH-CN1329490862_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-11-28 [download 4k](https://cn.bing.com/th?id=OHR.InvernoItalia_ZH-CN1329490862_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|
