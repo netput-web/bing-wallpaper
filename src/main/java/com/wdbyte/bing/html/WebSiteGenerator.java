@@ -30,6 +30,17 @@ public class WebSiteGenerator {
 
         List<Images> bingImages = BingFileUtils.readBing();
         bingImages = bingImages.stream().filter(img -> img.getUrl() != null).collect(Collectors.toList());
+        // 基于URL去重处理，避免重复显示相同图片
+        bingImages = bingImages.stream()
+                .collect(Collectors.toMap(
+                    Images::getUrl, 
+                    img -> img, 
+                    (existing, replacement) -> existing
+                ))
+                .values()
+                .stream()
+                .sorted((a, b) -> b.getDate().compareTo(a.getDate())) // 按日期倒序排列
+                .collect(Collectors.toList());
 
         Map<String, List<Images>> monthMap = BingFileUtils.convertImgListToMonthMap(bingImages);
         generator.htmlGeneratorIndex(bingImages, monthMap);
@@ -47,6 +58,17 @@ public class WebSiteGenerator {
     public void htmlGenerator() throws IOException {
         List<Images> bingImages = BingFileUtils.readBing();
         bingImages = bingImages.stream().filter(img -> img.getUrl() != null).collect(Collectors.toList());
+        // 基于URL去重处理，避免重复显示相同图片
+        bingImages = bingImages.stream()
+                .collect(Collectors.toMap(
+                    Images::getUrl, 
+                    img -> img, 
+                    (existing, replacement) -> existing
+                ))
+                .values()
+                .stream()
+                .sorted((a, b) -> b.getDate().compareTo(a.getDate())) // 按日期倒序排列
+                .collect(Collectors.toList());
         Map<String, List<Images>> monthMap = BingFileUtils.convertImgListToMonthMap(bingImages);
         htmlGeneratorIndex(bingImages, monthMap);
         htmlGeneratorToday(bingImages);
