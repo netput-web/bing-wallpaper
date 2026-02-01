@@ -162,7 +162,7 @@
             border: 1px solid rgba(0, 0, 0, 0.04);
             backdrop-filter: blur(20px);
             padding: 24px;
-            flex: 0 0 450px; /* 增加到450px */
+            flex: 0 0 500px; /* 增加到500px，确保7列网格有足够空间 */
             min-height: 600px;
             display: flex;
             flex-direction: column;
@@ -394,10 +394,11 @@
         
         .calendar-grid {
             display: grid;
-            grid-template-columns: repeat(7, 1fr);
+            grid-template-columns: repeat(7, 60px); /* 固定宽度，避免动态计算 */
             gap: 8px;
             margin-bottom: 20px;
             flex: 1;
+            justify-content: center; /* 居中对齐 */
         }
         
         .calendar-day-header {
@@ -416,7 +417,6 @@
             border-radius: 8px;
             font-size: 16px;
             cursor: pointer;
-            transition: all 0.2s ease;
             position: relative;
             color: #333;
         }
@@ -447,14 +447,11 @@
             background: #0078d4;
             color: white;
             font-weight: 600;
-            border: 2px solid #005a9e;
-            box-shadow: 0 4px 12px rgba(0, 120, 215, 0.3);
-            transform: scale(1.05);
+            border-radius: 8px;
         }
         
         .calendar-day.selected:hover {
             background: #005a9e;
-            transform: scale(1.08);
         }
         
         .wallpaper-dot {
@@ -465,94 +462,6 @@
             height: 6px;
             background: #0078d4;
             border-radius: 50%;
-        }
-        
-        .wallpaper-count {
-            position: absolute;
-            top: 2px;
-            right: 2px;
-            background: #0078d4;
-            color: white;
-            font-size: 10px;
-            padding: 1px 3px;
-            border-radius: 8px;
-            min-width: 14px;
-            text-align: center;
-            line-height: 1;
-        }
-        
-        .calendar-stats {
-            text-align: center;
-            font-size: 14px;
-            color: #666;
-            padding: 12px 0;
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
-        }
-        
-        .quick-nav {
-            display: flex;
-            gap: 8px;
-            margin-top: 10px;
-            justify-content: center;
-        }
-        
-        .quick-nav button {
-            padding: 6px 12px;
-            border: 1px solid #ddd;
-            background: white;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 12px;
-            transition: all 0.2s;
-        }
-        
-        .quick-nav button:hover {
-            background: #f8f9fa;
-            border-color: #0078d4;
-        }
-        
-        .loading-spinner {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            border: 2px solid #f3f3f3;
-            border-top: 2px solid #0078d4;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-right: 8px;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.3s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .calendar-day {
-            transition: all 0.2s ease;
-        }
-        
-        .calendar-day:hover {
-            transform: scale(1.05);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .wallpaper-dot {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-            100% { transform: scale(1); opacity: 1; }
         }
     </style>
     <script>
@@ -865,7 +774,7 @@
             object-fit: cover; /* 覆盖整个容器，更饱满 */
             opacity: 0;
             z-index: 2;
-            transition: opacity 0.3s ease;
+            /* 移除transition，避免跳跃 */
         `;
         
         // 添加到容器
@@ -886,26 +795,12 @@
                 return;
             }
             
-            // 设置大图源并显示
+            // 设置大图源并直接显示，无动画
             largeImg.src = largeImageUrl;
-            
-            // 使用imgloading函数进行淡入
-            imgloading(largeImg);
+            largeImg.style.opacity = '1';
+            // 直接隐藏小图，无动画
+            smallImg.style.opacity = '0';
         };
-        
-        // imgloading函数 - 模仿顶部大图的淡入效果
-        function imgloading(oImg) {
-            var n = 0;
-            var timer = setInterval(function () {
-                n++;
-                oImg.style.opacity = n * n / 50;
-                if (n * n >= 50) {
-                    clearInterval(timer);
-                    // 大图完全显示后，隐藏小图
-                    smallImg.style.opacity = '0';
-                }
-            }, 50);
-        }
         
         // 错误处理
         smallImg.onerror = function() {
@@ -1040,9 +935,9 @@
         const calendarGrid = document.querySelector('.calendar-grid');
         if (!calendarGrid) return;
         
-        // 恢复透明度并添加动画
+        // 恢复透明度，不添加动画避免跳跃
         calendarGrid.style.opacity = '1';
-        calendarGrid.classList.add('fade-in');
+        // 移除fade-in动画，避免每次刷新时的跳跃效果
         
         // 清空现有内容，保留星期标题
         const headers = calendarGrid.querySelectorAll('.calendar-day-header');
