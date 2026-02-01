@@ -1108,7 +1108,11 @@
             
             if (wallpaperInfo) {
                 dayElement.classList.add('has-wallpaper');
-                dayElement.innerHTML = `${day}<div class="wallpaper-dot"></div>`;
+                // 使用appendChild而不是innerHTML，避免DOM结构变化
+                dayElement.textContent = day;
+                const dot = document.createElement('div');
+                dot.className = 'wallpaper-dot';
+                dayElement.appendChild(dot);
                 
                 // 添加点击事件
                 dayElement.onclick = function() {

@@ -1108,7 +1108,11 @@
             
             if (wallpaperInfo) {
                 dayElement.classList.add('has-wallpaper');
-                dayElement.innerHTML = `${day}<div class="wallpaper-dot"></div>`;
+                // 使用appendChild而不是innerHTML，避免DOM结构变化
+                dayElement.textContent = day;
+                const dot = document.createElement('div');
+                dot.className = 'wallpaper-dot';
+                dayElement.appendChild(dot);
                 
                 // 添加点击事件
                 dayElement.onclick = function() {
@@ -1744,23 +1748,24 @@
   <div class="preview-section">
     <div class="preview-header">
       <h3>壁纸预览</h3>
-      <div class="preview-date" id="preview-date">请选择日期</div>
+      <div class="preview-date" id="preview-date">2026年1月3日</div>
     </div>
     <div class="preview-container">
-      <div class="preview-placeholder" id="preview-placeholder">
+      <div class="preview-placeholder" id="preview-placeholder" style="display: none;">
         <div class="preview-icon">📅</div>
         <p>点击日历中的日期查看壁纸</p>
       </div>
-      <div class="preview-content" id="preview-content" style="display: none;">
+      <div class="preview-content" id="preview-content" style="display: flex;">
         <div class="preview-image-container">
-          <img id="preview-image" src="" alt="壁纸预览" />
+          <div class="preview-small-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://www.bing.com/th?id=OHR.VeniceView_EN-US3244163136_UHD.jpg&pid=hp&w=400'); background-position: center; background-repeat: no-repeat; background-size: cover; filter: blur(2px); -webkit-filter: blur(2px); opacity: 0.8; z-index: 1;"></div>
+          <div class="preview-large-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://www.bing.com/th?id=OHR.VeniceView_EN-US3244163136_UHD.jpg&pid=hp&w=1200'); background-position: center; background-repeat: no-repeat; background-size: cover; z-index: 2;"></div>
         </div>
         <div class="preview-info">
-          <h4 id="preview-title">壁纸标题</h4>
-          <p id="preview-desc">壁纸描述</p>
+          <h4 id="preview-title">Aerial view of Venice, Italy (© Clement Leonard/Getty Images)</h4>
+          <p id="preview-desc">Aerial view of Venice, Italy (© Clement Leonard/Getty Images)</p>
           <div class="preview-actions">
-            <a id="preview-download" href="" target="_blank" class="preview-btn">下载4k</a>
-            <a id="preview-detail" href="" target="_blank" class="preview-btn">查看详情</a>
+            <a id="preview-download" href="https://www.bing.com/th?id=OHR.VeniceView_EN-US3244163136_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4" target="_blank" class="preview-btn">下载4k</a>
+            <a id="preview-detail" href="day/202601/03.html" target="_blank" class="preview-btn">查看详情</a>
           </div>
         </div>
       </div>
