@@ -320,6 +320,12 @@
             margin-bottom: 20px;
         }
         
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
         .calendar-header-section {
             margin-bottom: 20px;
             padding-bottom: 12px;
@@ -363,6 +369,23 @@
             padding: 4px 8px;
             border-radius: 4px;
             transition: all 0.2s ease;
+        }
+        
+        .nav-year-month {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-year-month:hover {
+            background: rgba(0, 0, 0, 0.04);
         }
         
         .nav-year:hover, .nav-month:hover {
@@ -615,13 +638,17 @@
     }
     
     function updateCalendarYear() {
-        document.querySelector('.nav-year').textContent = currentYear;
-        document.querySelector('.nav-month').textContent = '选择月份';
+        const navYearMonth = document.querySelector('.nav-year-month');
+        if (navYearMonth) {
+            navYearMonth.innerHTML = `<span class="nav-year">${currentYear}</span><span class="nav-month">选择月份</span>`;
+        }
     }
     
     function updateCalendarMonth() {
-        document.querySelector('.nav-year').textContent = currentYear;
-        document.querySelector('.nav-month').textContent = currentMonth + '月';
+        const navYearMonth = document.querySelector('.nav-year-month');
+        if (navYearMonth) {
+            navYearMonth.innerHTML = `<span class="nav-year">${currentYear}</span><span class="nav-month">${currentMonth}月</span>`;
+        }
     }
     
     function goToDate(dateUrl) {
@@ -725,8 +752,10 @@
                         document.querySelector('.nav-controls').innerHTML = `
                             <button onclick="calendarNavigate('prev')" class="nav-btn">‹</button>
                             <div class="nav-info">
-                                <div class="nav-year" onclick="toggleYearSelector()" style="cursor: pointer;">2026</div>
-                                <div class="nav-month">1月</div>
+                                <div class="nav-year-month" onclick="toggleYearSelector()" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                                    <span class="nav-year">2026</span>
+                                    <span class="nav-month">1月</span>
+                                </div>
                                 <div class="year-selector">
                                     <!-- 年份列表将在这里动态生成 -->
                                 </div>
@@ -762,7 +791,7 @@
         // 设置点击外部关闭
         setupClickOutsideHandler() {
             document.addEventListener('click', (e) => {
-                const yearNav = document.querySelector('.nav-year');
+                const yearNav = document.querySelector('.nav-year-month');
                 const yearSelector = document.querySelector('.year-selector');
                 
                 if (yearNav && yearSelector && 

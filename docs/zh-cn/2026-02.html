@@ -320,6 +320,12 @@
             margin-bottom: 20px;
         }
         
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
         .calendar-header-section {
             margin-bottom: 20px;
             padding-bottom: 12px;
@@ -363,6 +369,23 @@
             padding: 4px 8px;
             border-radius: 4px;
             transition: all 0.2s ease;
+        }
+        
+        .nav-year-month {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-year-month:hover {
+            background: rgba(0, 0, 0, 0.04);
         }
         
         .nav-year:hover, .nav-month:hover {
@@ -615,13 +638,17 @@
     }
     
     function updateCalendarYear() {
-        document.querySelector('.nav-year').textContent = currentYear;
-        document.querySelector('.nav-month').textContent = '选择月份';
+        const navYearMonth = document.querySelector('.nav-year-month');
+        if (navYearMonth) {
+            navYearMonth.innerHTML = `<span class="nav-year">${currentYear}</span><span class="nav-month">选择月份</span>`;
+        }
     }
     
     function updateCalendarMonth() {
-        document.querySelector('.nav-year').textContent = currentYear;
-        document.querySelector('.nav-month').textContent = currentMonth + '月';
+        const navYearMonth = document.querySelector('.nav-year-month');
+        if (navYearMonth) {
+            navYearMonth.innerHTML = `<span class="nav-year">${currentYear}</span><span class="nav-month">${currentMonth}月</span>`;
+        }
     }
     
     function goToDate(dateUrl) {
@@ -725,8 +752,10 @@
                         document.querySelector('.nav-controls').innerHTML = `
                             <button onclick="calendarNavigate('prev')" class="nav-btn">‹</button>
                             <div class="nav-info">
-                                <div class="nav-year" onclick="toggleYearSelector()" style="cursor: pointer;">2026</div>
-                                <div class="nav-month">1月</div>
+                                <div class="nav-year-month" onclick="toggleYearSelector()" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                                    <span class="nav-year">2026</span>
+                                    <span class="nav-month">1月</span>
+                                </div>
                                 <div class="year-selector">
                                     <!-- 年份列表将在这里动态生成 -->
                                 </div>
@@ -762,7 +791,7 @@
         // 设置点击外部关闭
         setupClickOutsideHandler() {
             document.addEventListener('click', (e) => {
-                const yearNav = document.querySelector('.nav-year');
+                const yearNav = document.querySelector('.nav-year-month');
                 const yearSelector = document.querySelector('.year-selector');
                 
                 if (yearNav && yearSelector && 
@@ -1397,7 +1426,7 @@
             <div class="w3-display-middle w3-padding-large w3-wide w3-text-light-grey w3-center">
                 <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge">Bing Wallpaper(2026-02)</h1>
                 <div class=" w3-padding-large w3-text-light-grey" style="max-width: 800px">
-                    <p>奥林达的彩色房子, 巴西 (© Robert Pekar/Alamy)</p>
+                    <p>濂ユ灄杈剧殑褰╄壊鎴垮瓙, 宸磋タ (漏 Robert Pekar/Alamy)</p>
                 </div>
                 <h5 class="w3-hide-large" style="white-space:nowrap">Bing Wallpaper</h5>
             </div>
@@ -1419,6 +1448,9 @@
         <div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
   <img class="smallImg" src="https://cn.bing.com/th?id=OHR.Olinda_ZH-CN6216385346_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202602/01.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.Olinda_ZH-CN6216385346_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
  <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2026-02-01 <a href="https://cn.bing.com/th?id=OHR.Olinda_ZH-CN6216385346_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('zh-cn','2026-02-01')">喜欢</button></div>
+</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
+  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.Olinda_ZH-CN6216385346_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202602/01.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.Olinda_ZH-CN6216385346_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
+ <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2026-02-01 <a href="https://cn.bing.com/th?id=OHR.Olinda_ZH-CN6216385346_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('zh-cn','2026-02-01')">喜欢</button></div>
 </div>
     </div>
     
@@ -1431,8 +1463,10 @@
         <div class="nav-controls">
           <button class="nav-button nav-prev" onclick="calendarNavigate('prev')">◀</button>
           <div class="nav-info">
-            <div class="nav-year" onclick="toggleYearSelector()" style="cursor: pointer;">2026</div>
-            <div class="nav-month" onclick="showMonthSelector()">1月</div>
+            <div class="nav-year-month" onclick="toggleYearSelector()" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+              <span class="nav-year">2026</span>
+              <span class="nav-month">1月</span>
+            </div>
             <div class="year-selector">
               <!-- 年份列表将在这里动态生成 -->
             </div>
@@ -1582,7 +1616,7 @@
     </div>
     
     <div class="calendar-stats">
-      📊 <span class="stats-text">2026年共有 36 张壁纸</span>
+      📊 <span class="stats-text">2026年共有 37 张壁纸</span>
     </div>
   </div>
   

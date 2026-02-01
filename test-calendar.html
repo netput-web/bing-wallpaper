@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>日历测试</title>
+    <style>
+        .nav-year-month {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #f0f0f0;
+        }
+        
+        .nav-year-month:hover {
+            background: rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-year, .nav-month {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>日历横向显示测试</h1>
+    
+    <div class="nav-year-month">
+        <span class="nav-year">2026</span>
+        <span class="nav-month">2月</span>
+    </div>
+    
+    <p>上面应该显示为：2026 2月 横向排列</p>
+</body>
+</html>
