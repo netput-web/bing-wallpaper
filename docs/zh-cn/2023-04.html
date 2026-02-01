@@ -1824,6 +1824,95 @@
     //     }
     // });
 </script>
+<style>
+/* 黑暗模式下的图片卡片底部文字样式 */
+@media (prefers-color-scheme: dark) {
+    #img_list > div > div[style*="bottom: -16px"] {
+        background: rgba(0, 0, 0, 0.8) !important;
+        border-radius: 4px;
+        color: #ffffff !important;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* 黑暗模式下的图片卡片底部文字链接样式 */
+    #img_list > div > div[style*="bottom: -16px"] a {
+        color: #4fc3f7 !important;
+        text-decoration: none;
+    }
+    
+    #img_list > div > div[style*="bottom: -16px"] a:hover {
+        color: #29b6f6 !important;
+        text-decoration: underline;
+    }
+    
+    /* 黑暗模式下的喜欢按钮样式 */
+    #img_list > div > div[style*="bottom: -16px"] .like-button {
+        background: rgba(255, 255, 255, 0.1) !important;
+        color: #ffffff !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    #img_list > div > div[style*="bottom: -16px"] .like-button:hover {
+        background: rgba(255, 255, 255, 0.2) !important;
+    }
+}
+
+/* 针对darkmode-js库的样式 */
+.darkmode #img_list > div > div[style*="bottom: -16px"] {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border-radius: 4px;
+    color: #ffffff !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.darkmode #img_list > div > div[style*="bottom: -16px"] a {
+    color: #4fc3f7 !important;
+    text-decoration: none;
+}
+
+.darkmode #img_list > div > div[style*="bottom: -16px"] a:hover {
+    color: #29b6f6 !important;
+    text-decoration: underline;
+}
+
+.darkmode #img_list > div > div[style*="bottom: -16px"] .like-button {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.darkmode #img_list > div > div[style*="bottom: -16px"] .like-button:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* 备用选择器 */
+[data-theme="dark"] #img_list > div > div[style*="bottom: -16px"] {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border-radius: 4px;
+    color: #ffffff !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] #img_list > div > div[style*="bottom: -16px"] a {
+    color: #4fc3f7 !important;
+    text-decoration: none;
+}
+
+[data-theme="dark"] #img_list > div > div[style*="bottom: -16px"] a:hover {
+    color: #29b6f6 !important;
+    text-decoration: underline;
+}
+
+[data-theme="dark"] #img_list > div > div[style*="bottom: -16px"] .like-button {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-theme="dark"] #img_list > div > div[style*="bottom: -16px"] .like-button:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+</style>
 <script src="https://jsdelivr.wdbyte.com/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 <script>
     function addDarkmodeWidget() {
