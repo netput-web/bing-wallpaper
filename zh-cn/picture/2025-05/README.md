@@ -1,5 +1,5 @@
 ## Bing Wallpaper (2025-05)
-![](https://cn.bing.com/th?id=OHR.DuanwuFestivalY25_ZH-CN7343005503_UHD.jpg&w=1000)Today: [用彩色丝线串成的香囊，端午节前夕的庙会上，吉林省吉林市，中国 (? Visual China Group/Getty Images)](https://cn.bing.com/th?id=OHR.DuanwuFestivalY25_ZH-CN7343005503_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
+![](https://cn.bing.com/th?id=OHR.DuanwuFestivalY25_ZH-CN7343005503_UHD.jpg&w=1000)Today: [鐢ㄥ僵鑹蹭笣绾夸覆鎴愮殑棣欏泭锛岀鍗堣妭鍓嶅鐨勫簷浼氫笂锛屽悏鏋楃渷鍚夋灄甯傦紝涓浗 (漏 Visual China Group/Getty Images)](https://cn.bing.com/th?id=OHR.DuanwuFestivalY25_ZH-CN7343005503_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
 |      |      |      |
 | :----: | :----: | :----: |
 |![](https://cn.bing.com/th?id=OHR.DuanwuFestivalY25_ZH-CN7343005503_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-05-31 [download 4k](https://cn.bing.com/th?id=OHR.DuanwuFestivalY25_ZH-CN7343005503_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.LittlePigeonRiver_ZH-CN6554251943_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-05-30 [download 4k](https://cn.bing.com/th?id=OHR.LittlePigeonRiver_ZH-CN6554251943_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.MiravetSpain_ZH-CN8584568741_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-05-29 [download 4k](https://cn.bing.com/th?id=OHR.MiravetSpain_ZH-CN8584568741_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|

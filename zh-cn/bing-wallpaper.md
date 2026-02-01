@@ -1,4 +1,6 @@
 ## Bing Wallpaper
+2026-02-02 | [阿尔卑斯山土拨鼠, 霍赫陶恩国家公园, 奥地利 (© Raimund Linke/Getty Images)](https://cn.bing.com/th?id=OHR.AlpineMarmots_ZH-CN6323637910_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4) 
+
 2026-02-02 | [闃垮皵鍗戞柉灞卞湡鎷ㄩ紶, 闇嶈但闄舵仼鍥藉鍏洯, 濂ュ湴鍒� (漏 Raimund Linke/Getty Images)](https://cn.bing.com/th?id=OHR.AlpineMarmots_ZH-CN6323637910_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4) 
 
 2026-02-01 | [濂ユ灄杈剧殑褰╄壊鎴垮瓙, 宸磋タ (漏 Robert Pekar/Alamy)](https://cn.bing.com/th?id=OHR.Olinda_ZH-CN6216385346_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4) 
