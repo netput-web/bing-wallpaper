@@ -20,9 +20,9 @@ public class HtmlConstant {
         public static final String VAR_SIDABAR_NOW_COLOR = "w3-green";
         public static final String VAR_SIDABAR_COLOR = "w3-hover-green";
         /**
-         * <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-text-green w3-large">2022-08</a>
+         * <a href="#" class="w3-bar-item w3-button w3-hover-text-green w3-large">2022-08</a>
          */
-        private static final String SIDABAR_MENU = "<a href=\"${sidabar_href_url}\" onclick=\"w3_close()\" class=\"w3-bar-item w3-button w3-hover-green w3-large\">${sidabar_href_title}</a>";
+        private static final String SIDABAR_MENU = "<a href=\"${sidabar_href_url}\" class=\"w3-bar-item w3-button w3-hover-green w3-large\">${sidabar_href_title}</a>";
 
         public static String getSidabarMenuList(String hrefUrl, String hrefTitle) {
             String result = SIDABAR_MENU.replace("${sidabar_href_url}", hrefUrl);
