@@ -65,34 +65,10 @@ public class HtmlConstant {
             result = result.replace(VAR_IMG_CARD_DOWNLOAD_URL, bingImage.getUrl());
             result = result.replace(VAR_IMG_DETAIL_URL, bingImage.getDetailUrlPath());
             result = result.replace(VAR_IMG_DETAIL_URL, bingImage.getDetailUrlPath());
-            result = result.replace(VAR_IMG_CRARD_REGION, Wallpaper.CURRENT_REGION.toLowerCase());
-            return result.replace(VAR_IMG_CARD_DATE, bingImage.getDate());
-        }
-    }
-    /**
-     * 底部归档 - Fluent Design 日历
-     */
-    public static class MonthHistory{
-        public static final String VAR_MONTH_HISTORY = "${month_history}";
-        public static final String VAR_MONTH_HISTORY_NOW_MONTH_COLOR = "w3-green";
-        public static final String VAR_MONTH_HISTORY_MONTH_COLOR = "w3-light-grey";
-        private static final String VAR_MONTH_HISTORY_HREF_URL = "${month_href_url}";
-        private static final String VAR_MONTH_HISTORY_HREF_TITLE = "${month_href_title}";
         
-        // 新增预览区域变量
-        private static final String VAR_PREVIEW_IMG_URL = "${preview_img_url}";
-        private static final String VAR_PREVIEW_TITLE = "${preview_title}";
-        private static final String VAR_PREVIEW_DESC = "${preview_desc}";
-        private static final String VAR_PREVIEW_DOWNLOAD_URL = "${preview_download_url}";
-        private static final String VAR_PREVIEW_DETAIL_URL = "${preview_detail_url}";
-        private static final String VAR_PREVIEW_DATE = "${preview_date}";
-        
-        // 新的Fluent Design日历结构 - 带预览区域和年份选择器
-        private static final String FLUENT_CALENDAR = ""
-            + "<div class=\"calendar-preview-container\">\n"
-            + "  <div class=\"calendar-section\">\n"
-            + "    <div class=\"calendar-header-section\">\n"
-            + "      <h3 class=\"calendar-title\">搜索历史壁纸</h3>\n"
+        public static String getSidabarMenuList(String hrefUrl, String hrefTitle) {
+            String result = SIDABAR_MENU.replace("${sidabar_href_url}", hrefUrl);
+            return result.replace("${sidabar_href_title}", hrefTitle);
             + "      <div class=\"calendar-nav\">\n"
             + "        <div class=\"nav-controls\">\n"
             + "          <button class=\"nav-button nav-prev\" onclick=\"calendarNavigate('prev')\">◀</button>\n"
@@ -129,7 +105,7 @@ public class HtmlConstant {
             + "  <div class=\"preview-section\">\n"
             + "    <div class=\"preview-header\">\n"
             + "      <h3>壁纸预览</h3>\n"
-            + "      <div class=\"preview-date\" id=\"preview-date\">${preview_date}</div>\n"
+            + "      <div class=\"preview-date\" id=\"preview-date\">2026年1月3日</div>\n"
             + "    </div>\n"
             + "    <div class=\"preview-container\">\n"
             + "      <div class=\"preview-placeholder\" id=\"preview-placeholder\" style=\"display: none;\">\n"
@@ -197,14 +173,12 @@ public class HtmlConstant {
             String defaultDesc = (String) calendarData.get("defaultPreviewDesc");
             String defaultDownloadUrl = (String) calendarData.get("defaultPreviewDownloadUrl");
             String defaultDetailUrl = (String) calendarData.get("defaultPreviewDetailUrl");
-            String defaultDate = (String) calendarData.get("defaultPreviewDate");
             
             result = result.replace("${preview_img_url}", defaultImgUrl != null ? defaultImgUrl : "https://www.bing.com/th?id=OHR.VeniceView_EN-US3244163136_UHD.jpg");
             result = result.replace("${preview_title}", defaultTitle != null ? defaultTitle : "Aerial view of Venice, Italy (© Clement Leonard/Getty Images)");
             result = result.replace("${preview_desc}", defaultDesc != null ? defaultDesc : "Aerial view of Venice, Italy (© Clement Leonard/Getty Images)");
             result = result.replace("${preview_download_url}", defaultDownloadUrl != null ? defaultDownloadUrl : "https://www.bing.com/th?id=OHR.VeniceView_EN-US3244163136_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4");
             result = result.replace("${preview_detail_url}", defaultDetailUrl != null ? defaultDetailUrl : "day/202601/03.html");
-            result = result.replace("${preview_date}", defaultDate != null ? defaultDate : "2026年1月3日");
             
             return result;
         }

@@ -247,6 +247,9 @@ public class WebSiteGenerator {
         Map<String, Map<String, String>> wallpaperData = new HashMap<>();
         Map<Integer, Integer> yearStats = new HashMap<>();
         
+        // 设置默认预览图片（最新的一张图片）
+        Images defaultPreviewImage = !bingImages.isEmpty() ? bingImages.get(0) : null;
+        
         for (Images image : bingImages) {
             String date = image.getDate();
             String[] dateParts = date.split("-");
@@ -273,6 +276,26 @@ public class WebSiteGenerator {
             }
         }
         
+        // 设置默认预览数据 - 首页版本
+        if (defaultPreviewImage != null) {
+            calendarData.put("defaultPreviewImgUrl", defaultPreviewImage.getSimpleUrl());
+            calendarData.put("defaultPreviewTitle", defaultPreviewImage.getDesc());
+            calendarData.put("defaultPreviewDesc", defaultPreviewImage.getDesc());
+            calendarData.put("defaultPreviewDownloadUrl", defaultPreviewImage.getUrl());
+            calendarData.put("defaultPreviewDetailUrl", defaultPreviewImage.getDetailUrlPath());
+            
+            // 格式化日期显示 - 首页版本
+            String date = defaultPreviewImage.getDate();
+            if (date != null && date.length() == 10) {
+                String[] dateParts = date.split("-");
+                String formattedDate = String.format("%d年%d月%d日", 
+                    Integer.parseInt(dateParts[0]), 
+                    Integer.parseInt(dateParts[1]), 
+                    Integer.parseInt(dateParts[2]));
+                calendarData.put("defaultPreviewDate", formattedDate);
+            }
+        }
+        
         calendarData.put("wallpaperCounts", wallpaperCounts);
         calendarData.put("wallpaperData", wallpaperData);
         calendarData.put("yearStats", yearStats);
@@ -289,7 +312,7 @@ public class WebSiteGenerator {
      */
     public String replaceMonthHistory(String html, Map<String, List<Images>> monthMap, String nowMonth) {
         // 🚀 使用新的日历系统替换月度历史
-        Map<String, Object> calendarData = prepareCalendarData(monthMap);
+        Map<String, Object> calendarData = prepareCalendarData(monthMap, nowMonth);
         String calendarHtml = MonthHistory.getFluentCalendar(calendarData);
         
         return html.replace(MonthHistory.VAR_MONTH_HISTORY, calendarHtml);
@@ -298,21 +321,37 @@ public class WebSiteGenerator {
     /**
      * 准备日历数据
      */
-    private Map<String, Object> prepareCalendarData(Map<String, List<Images>> monthMap) {
+    private Map<String, Object> prepareCalendarData(Map<String, List<Images>> monthMap, String currentMonth) {
         Map<String, Object> calendarData = new HashMap<>();
         
-        // 设置当前年月（默认为最新数据）
-        calendarData.put("currentYear", 2026);
-        calendarData.put("currentMonth", 1);
+        // 解析当前年月
+        int currentYear = 2026;
+        int currentMonthNum = 1;
+        if (currentMonth != null && currentMonth.matches("\\d{4}-\\d{2}")) {
+            currentYear = Integer.parseInt(currentMonth.substring(0, 4));
+            currentMonthNum = Integer.parseInt(currentMonth.substring(5, 7));
+        }
+        
+        // 设置当前年月
+        calendarData.put("currentYear", currentYear);
+        calendarData.put("currentMonth", currentMonthNum);
         
         // 处理壁纸数据
         Map<String, Integer> wallpaperCounts = new HashMap<>();
         Map<String, Map<String, String>> wallpaperData = new HashMap<>();
         Map<Integer, Integer> yearStats = new HashMap<>();
         
+        // 获取默认预览图片（当前月份的第一张图片）
+        Images defaultPreviewImage = null;
+        
         for (Map.Entry<String, List<Images>> entry : monthMap.entrySet()) {
             String yearMonth = entry.getKey();
             List<Images> images = entry.getValue();
+            
+            // 如果是当前月份，设置默认预览图片
+            if (yearMonth.equals(currentMonth) && !images.isEmpty() && defaultPreviewImage == null) {
+                defaultPreviewImage = images.get(0);
+            }
             
             for (Images image : images) {
                 String date = image.getDate();
@@ -332,6 +371,26 @@ public class WebSiteGenerator {
                     int year = Integer.parseInt(date.substring(0, 4));
                     yearStats.put(year, yearStats.getOrDefault(year, 0) + 1);
                 }
+            }
+        }
+        
+        // 设置默认预览数据 - 月份页面版本
+        if (defaultPreviewImage != null) {
+            calendarData.put("defaultPreviewImgUrl", defaultPreviewImage.getSimpleUrl());
+            calendarData.put("defaultPreviewTitle", defaultPreviewImage.getDesc());
+            calendarData.put("defaultPreviewDesc", defaultPreviewImage.getDesc());
+            calendarData.put("defaultPreviewDownloadUrl", defaultPreviewImage.getUrl());
+            calendarData.put("defaultPreviewDetailUrl", defaultPreviewImage.getDetailUrlPath());
+            
+            // 格式化日期显示
+            String date = defaultPreviewImage.getDate();
+            if (date != null && date.length() == 10) {
+                String[] dateParts = date.split("-");
+                String formattedDate = String.format("%d年%d月%d日", 
+                    Integer.parseInt(dateParts[0]), 
+                    Integer.parseInt(dateParts[1]), 
+                    Integer.parseInt(dateParts[2]));
+                calendarData.put("defaultPreviewDate", formattedDate);
             }
         }
         

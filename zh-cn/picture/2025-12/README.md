@@ -1,5 +1,5 @@
 ## Bing Wallpaper (2025-12)
-![](https://cn.bing.com/th?id=OHR.GermanyNewYear_ZH-CN9155122755_UHD.jpg&w=1000)Today: [é™¤å¤•å¤œï¼Œå¥¥ä¼¯é²å§†æ¡¥ï¼ŒæŸæ—ï¼Œå¾·å›½ (Â© spreephoto.de/Getty Images)](https://cn.bing.com/th?id=OHR.GermanyNewYear_ZH-CN9155122755_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
+![](https://cn.bing.com/th?id=OHR.GermanyNewYear_ZH-CN9155122755_UHD.jpg&w=1000)Today: [³ıÏ¦Ò¹£¬°Â²®±«Ä·ÇÅ£¬°ØÁÖ£¬µÂ¹ú (? spreephoto.de/Getty Images)](https://cn.bing.com/th?id=OHR.GermanyNewYear_ZH-CN9155122755_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
 |      |      |      |
 | :----: | :----: | :----: |
 |![](https://cn.bing.com/th?id=OHR.GermanyNewYear_ZH-CN9155122755_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-12-31 [download 4k](https://cn.bing.com/th?id=OHR.GermanyNewYear_ZH-CN9155122755_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.SwedenSolstice_ZH-CN8975506700_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-12-30 [download 4k](https://cn.bing.com/th?id=OHR.SwedenSolstice_ZH-CN8975506700_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.AniTurkey_ZH-CN5838141955_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-12-29 [download 4k](https://cn.bing.com/th?id=OHR.AniTurkey_ZH-CN5838141955_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|

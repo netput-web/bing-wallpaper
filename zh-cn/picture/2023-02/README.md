@@ -1,5 +1,5 @@
 ## Bing Wallpaper (2023-02)
-![](https://cn.bing.com/th?id=OHR.AtraniAmalfi_ZH-CN6391731688_UHD.jpg&w=1000)Today: [ÈòøÁâπÊãâÂ∞ºÔºåÈòøÈ©¨Â∞îËè≤Êµ∑Â≤∏ÔºåÊÑèÂ§ßÂà© (¬© Amazing Aerial/Shutterstock)](https://cn.bing.com/th?id=OHR.AtraniAmalfi_ZH-CN6391731688_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
+![](https://cn.bing.com/th?id=OHR.AtraniAmalfi_ZH-CN6391731688_UHD.jpg&w=1000)Today: [∞¢Ãÿ¿≠ƒ·£¨∞¢¬Ì∂˚∑∆∫£∞∂£¨“‚¥Û¿˚ (? Amazing Aerial/Shutterstock)](https://cn.bing.com/th?id=OHR.AtraniAmalfi_ZH-CN6391731688_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
 |      |      |      |
 | :----: | :----: | :----: |
 |![](https://cn.bing.com/th?id=OHR.AtraniAmalfi_ZH-CN6391731688_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-02-28 [download 4k](https://cn.bing.com/th?id=OHR.AtraniAmalfi_ZH-CN6391731688_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.PolarBearFrost_ZH-CN5918160947_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-02-27 [download 4k](https://cn.bing.com/th?id=OHR.PolarBearFrost_ZH-CN5918160947_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.CanopyPeru_ZH-CN5659581553_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-02-26 [download 4k](https://cn.bing.com/th?id=OHR.CanopyPeru_ZH-CN5659581553_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|
