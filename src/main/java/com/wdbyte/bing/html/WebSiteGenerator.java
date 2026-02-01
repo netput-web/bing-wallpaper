@@ -332,14 +332,18 @@ public class WebSiteGenerator {
         System.out.println("=================================================");
         
         try {
-            // 🚀 使用优化的智能生成器
-            CalendarDataGeneratorOptimized.generateCalendarDataFilesSmart(bingImages, "docs");
+            // 🚀 获取当前区域的HTML根目录
+            String dataRoot = HtmlFileUtils.BING_HTML_ROOT.toString();
+            System.out.println("🌍 当前区域数据根目录: " + dataRoot);
+            
+            // 🚀 使用优化的智能生成器，传入当前区域的数据根目录
+            CalendarDataGeneratorOptimized.generateCalendarDataFilesSmart(bingImages, dataRoot);
             
             System.out.println("=================================================");
             System.out.println("✅✅✅ 智能日历数据生成完成！ ✅✅✅");
-            System.out.println("📁 文件位置: docs/data/calendar/");
-            System.out.println("📋 索引文件: docs/data/calendar-index.json");
-            System.out.println("🧠 指纹文件: docs/data/calendar-fingerprint.json");
+            System.out.println("📁 文件位置: " + dataRoot + "/data/calendar/");
+            System.out.println("📋 索引文件: " + dataRoot + "/data/calendar-index.json");
+            System.out.println("🧠 指纹文件: " + dataRoot + "/data/calendar-fingerprint.json");
             System.out.println("=================================================");
             
         } catch (Exception e) {

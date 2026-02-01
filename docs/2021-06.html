@@ -443,6 +443,20 @@
             background: rgba(0, 120, 215, 0.12);
         }
         
+        .calendar-day.selected {
+            background: #0078d4;
+            color: white;
+            font-weight: 600;
+            border: 2px solid #005a9e;
+            box-shadow: 0 4px 12px rgba(0, 120, 215, 0.3);
+            transform: scale(1.05);
+        }
+        
+        .calendar-day.selected:hover {
+            background: #005a9e;
+            transform: scale(1.08);
+        }
+        
         .wallpaper-dot {
             position: absolute;
             top: 4px;
@@ -653,18 +667,95 @@
     
     function goToDate(dateUrl) {
         if (dateUrl && dateUrl !== '#') {
-            window.open(dateUrl, '_blank');
+            const smartUrl = buildSmartUrl(dateUrl);
+            console.log('🌍 智能跳转:', dateUrl, '→', smartUrl);
+            window.open(smartUrl, '_blank');
+        }
+    }
+    
+    // 🌍 智能地区检测
+    function getCurrentRegion() {
+        const pathname = window.location.pathname;
+        return pathname.includes('/zh-cn/') ? 'zh-cn' : 'en-us';
+    }
+    
+    // 🎯 智能数据路径构建
+    function getDataPath(path) {
+        const currentRegion = getCurrentRegion();
+        const isZhCn = currentRegion === 'zh-cn';
+        
+        // 如果是中国区，使用中国区的数据路径
+        if (isZhCn) {
+            if (path.startsWith('/data/')) {
+                return '/zh-cn' + path;
+            }
+        }
+        
+        return path;
+    }
+    
+    // 🎯 智能URL构建
+    function buildSmartUrl(dateUrl) {
+        if (!dateUrl || dateUrl === '#') return '';
+        
+        const currentRegion = getCurrentRegion();
+        const isZhCn = currentRegion === 'zh-cn';
+        
+        // 如果当前是中国区，确保URL指向中国区页面
+        if (isZhCn && !dateUrl.includes('/zh-cn/')) {
+            // 将相对URL转换为中国区URL
+            if (dateUrl.startsWith('day/')) {
+                return '/zh-cn/' + dateUrl;
+            } else if (dateUrl.startsWith('/day/')) {
+                return '/zh-cn' + dateUrl;
+            }
+        }
+        
+        return dateUrl;
+    }
+    
+    // 🎯 日历选中状态管理
+    let selectedDateUrl = null;
+    
+    function updateCalendarSelection(dateUrl) {
+        // 清除之前的选中状态
+        document.querySelectorAll('.calendar-day.selected').forEach(day => {
+            day.classList.remove('selected');
+        });
+        
+        // 设置新的选中状态
+        if (dateUrl && dateUrl !== '#') {
+            selectedDateUrl = dateUrl;
+            
+            // 从URL中提取日期
+            const dateMatch = dateUrl.match(/day\/(\d{4})(\d{2})\/(\d{2})\.html/);
+            if (dateMatch) {
+                const [, year, month, day] = dateMatch;
+                const dayElement = document.querySelector(`.calendar-day[data-date="${year}-${month}-${day}"]`);
+                if (dayElement) {
+                    dayElement.classList.add('selected');
+                    console.log('🎯 选中日期:', `${year}-${month}-${day}`);
+                }
+            }
+        } else {
+            selectedDateUrl = null;
         }
     }
     
     // 显示预览功能 - 彻底修复版本
     function showPreview(dateUrl, previewUrl, title, desc, downloadUrl) {
+        console.log('🖼️ showPreview 被调用:', { dateUrl, previewUrl, title });
+        
         if (!previewUrl || previewUrl === '') {
             console.warn('⚠️ 预览URL为空，无法显示预览');
             return;
         }
         
         console.log('🖼️ 开始加载预览:', previewUrl);
+        
+        // 🎯 添加选中状态管理
+        console.log('🎯 准备调用选中状态管理:', dateUrl);
+        updateCalendarSelection(dateUrl);
         
         // 更新预览内容
         const placeholder = document.getElementById('preview-placeholder');
@@ -959,9 +1050,13 @@
             dayElement.className = 'calendar-day';
             dayElement.textContent = day;
             
+            // 🎯 添加data-date属性用于选中状态管理
+            const dateKey = String(day).padStart(2, '0');
+            const monthKey = String(month).padStart(2, '0');
+            dayElement.setAttribute('data-date', `${year}-${monthKey}-${dateKey}`);
+            
             // 检查是否有壁纸数据
-            const dayKey = String(day).padStart(2, '0');
-            const wallpaperInfo = monthData.wallpapers[dayKey];
+            const wallpaperInfo = monthData.wallpapers[dateKey];
             
             if (wallpaperInfo) {
                 dayElement.classList.add('has-wallpaper');
@@ -969,6 +1064,12 @@
                 
                 // 添加点击事件
                 dayElement.onclick = function() {
+                    console.log('🖱️ 日历日期被点击:', {
+                        date: wallpaperInfo.dateUrl,
+                        preview: wallpaperInfo.previewUrl,
+                        title: wallpaperInfo.title
+                    });
+                    
                     showPreview(
                         wallpaperInfo.dateUrl,
                         wallpaperInfo.previewUrl,
@@ -1082,9 +1183,13 @@
             dayElement.className = 'calendar-day';
             dayElement.textContent = day;
             
+            // 🎯 添加data-date属性用于选中状态管理
+            const dateKey = String(day).padStart(2, '0');
+            const monthKey = String(month).padStart(2, '0');
+            dayElement.setAttribute('data-date', `${year}-${monthKey}-${dateKey}`);
+            
             // 检查是否有壁纸数据
-            const dayKey = String(day).padStart(2, '0');
-            const wallpaperInfo = monthData.wallpapers[dayKey];
+            const wallpaperInfo = monthData.wallpapers[dateKey];
             
             if (wallpaperInfo) {
                 dayElement.classList.add('has-wallpaper');
@@ -1092,6 +1197,12 @@
                 
                 // 添加点击事件
                 dayElement.onclick = function() {
+                    console.log('🖱️ 日历日期被点击:', {
+                        date: wallpaperInfo.dateUrl,
+                        preview: wallpaperInfo.previewUrl,
+                        title: wallpaperInfo.title
+                    });
+                    
                     showPreview(
                         wallpaperInfo.dateUrl,
                         wallpaperInfo.previewUrl,
@@ -1184,7 +1295,8 @@
             if (this.indexData) return;
             
             try {
-                const response = await fetch('/data/calendar-index.json');
+                const indexPath = getDataPath('/data/calendar-index.json');
+                const response = await fetch(indexPath);
                 if (!response.ok) {
                     throw new Error('Failed to load calendar index');
                 }
@@ -1229,7 +1341,8 @@
         // 加载月份数据
         async loadMonthData(key) {
             try {
-                const response = await fetch(`/data/calendar/${key}.json`);
+                const dataPath = getDataPath(`/data/calendar/${key}.json`);
+                const response = await fetch(dataPath);
                 if (!response.ok) {
                     console.warn(`⚠️ 月份数据不存在: ${key}`);
                     return this.generateEmptyMonthData(key);
