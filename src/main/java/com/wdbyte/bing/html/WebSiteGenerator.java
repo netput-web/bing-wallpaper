@@ -177,7 +177,7 @@ public class WebSiteGenerator {
         html = html.replace(Head.HEAD_IMG_URL, images.getSimpleUrl());
         html = html.replace(Head.HEAD_IMG_DESC, images.getDesc());
         if (month != null) {
-            html = html.replace(Head.HEAD_TITLE, "Bing Wallpaper(" + month + ")");
+            html = html.replace(Head.HEAD_TITLE, "Bing Wallpaper\n(" + month + ")");
         } else {
             html = html.replace(Head.HEAD_TITLE, "Bing Wallpaper");
         }

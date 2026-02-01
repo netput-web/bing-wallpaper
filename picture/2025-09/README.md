@@ -1,5 +1,5 @@
 ## Bing Wallpaper (2025-09)
-![](https://cn.bing.com/th?id=OHR.HoutenHouses_EN-US8966537355_UHD.jpg&w=1000)Today: [The Rainbow Houses of Houten, Netherlands (© George Pachantouris/Getty Images)](https://cn.bing.com/th?id=OHR.HoutenHouses_EN-US8966537355_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
+![](https://cn.bing.com/th?id=OHR.HoutenHouses_EN-US8966537355_UHD.jpg&w=1000)Today: [The Rainbow Houses of Houten, Netherlands (? George Pachantouris/Getty Images)](https://cn.bing.com/th?id=OHR.HoutenHouses_EN-US8966537355_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
 |      |      |      |
 | :----: | :----: | :----: |
 |![](https://cn.bing.com/th?id=OHR.HoutenHouses_EN-US8966537355_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-09-30 [download 4k](https://cn.bing.com/th?id=OHR.HoutenHouses_EN-US8966537355_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.PienzaItaly_EN-US8831227247_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-09-29 [download 4k](https://cn.bing.com/th?id=OHR.PienzaItaly_EN-US8831227247_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.TankLakes_EN-US9278332978_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-09-28 [download 4k](https://cn.bing.com/th?id=OHR.TankLakes_EN-US9278332978_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|
