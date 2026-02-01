@@ -8,7 +8,7 @@
     <meta name="keywords" content="bing wallpaper, 必应壁纸, 必应4k壁纸, 必应超清壁纸, 壁纸">
     <link rel="stylesheet" href="/css/w3.css">
     <link rel="icon" href="/img/fav.jpg">
-    <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fuse.js/6.5.3/fuse.min.js" async></script>
+    <!-- <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fuse.js/6.5.3/fuse.min.js" async></script> -->
     <script src="/js/w3.js" async></script>
     <style>
         body,
@@ -105,6 +105,32 @@
             margin-left: auto !important;
             margin-right: auto !important;
             max-width: 1200px !important;
+            transition: none !important; /* 禁用w3.css的transition */
+        }
+        /* 禁用所有w3相关的transition */
+        .w3-ripple {
+            transition: none !important;
+        }
+        .w3-animate-input {
+            transition: none !important;
+        }
+        .w3-opacity,
+        .w3-hover-opacity:hover {
+            transition: none !important;
+        }
+        /* 禁用所有可能影响日历的transition */
+        * {
+            transition-property: none !important;
+        }
+        /* 覆盖w3.css的全局box-sizing设置 */
+        .calendar-day,
+        .calendar-grid,
+        .calendar-preview-container,
+        .calendar-section,
+        .preview-section,
+        .preview-image-container,
+        .preview-content {
+            box-sizing: content-box !important;
         }
         /* 在所有屏幕尺寸下都强制应用1200px宽度 */
         @media screen {
@@ -147,7 +173,7 @@
         .calendar-preview-container {
             display: flex;
             gap: 24px;
-            align-items: flex-start;
+            align-items: stretch; /* 改为stretch，让两个区域高度一致 */
             max-width: 1200px !important; /* Changed from width: 1200px to max-width for alignment */
             margin-left: auto !important;
             margin-right: auto !important;
@@ -162,7 +188,7 @@
             border: 1px solid rgba(0, 0, 0, 0.04);
             backdrop-filter: blur(20px);
             padding: 24px;
-            flex: 0 0 450px; /* 增加到450px */
+            flex: 0 0 500px; /* 增加到500px，确保7列网格有足够空间 */
             min-height: 600px;
             display: flex;
             flex-direction: column;
@@ -219,7 +245,7 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-            min-height: 400px; /* 设置最小高度 */
+            min-height: 500px; /* 增加最小高度，减少空白 */
         }
         
         .preview-image-container {
@@ -227,9 +253,9 @@
             position: relative;
             background: #000;
             display: flex;
-            align-items: center;
+            align-items: flex-end; /* 底部对齐 */
             justify-content: center;
-            min-height: 225px; /* 16:9的最小高度 */
+            min-height: 350px; /* 增加最小高度，让图片更大 */
             overflow: hidden;
         }
         
@@ -394,10 +420,11 @@
         
         .calendar-grid {
             display: grid;
-            grid-template-columns: repeat(7, 1fr);
+            grid-template-columns: repeat(7, 60px); /* 固定宽度，避免动态计算 */
             gap: 8px;
             margin-bottom: 20px;
             flex: 1;
+            justify-content: center; /* 居中对齐 */
         }
         
         .calendar-day-header {
@@ -409,16 +436,17 @@
         }
         
         .calendar-day {
-            aspect-ratio: 1;
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 8px;
             font-size: 16px;
             cursor: pointer;
-            transition: all 0.2s ease;
             position: relative;
             color: #333;
+            box-sizing: border-box;
         }
         
         .calendar-day:hover {
@@ -447,14 +475,11 @@
             background: #0078d4;
             color: white;
             font-weight: 600;
-            border: 2px solid #005a9e;
-            box-shadow: 0 4px 12px rgba(0, 120, 215, 0.3);
-            transform: scale(1.05);
+            border-radius: 8px;
         }
         
         .calendar-day.selected:hover {
             background: #005a9e;
-            transform: scale(1.08);
         }
         
         .wallpaper-dot {
@@ -465,133 +490,6 @@
             height: 6px;
             background: #0078d4;
             border-radius: 50%;
-        }
-        
-        .wallpaper-count {
-            position: absolute;
-            top: 2px;
-            right: 2px;
-            background: #0078d4;
-            color: white;
-            font-size: 10px;
-            padding: 1px 3px;
-            border-radius: 8px;
-            min-width: 14px;
-            text-align: center;
-            line-height: 1;
-        }
-        
-        .calendar-stats {
-            text-align: center;
-            font-size: 14px;
-            color: #666;
-            padding: 12px 0;
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
-        }
-        
-        .year-selector {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            z-index: 1000;
-            max-height: 300px;
-            overflow-y: auto;
-            display: none;
-        }
-        
-        .year-selector.active {
-            display: block;
-        }
-        
-        .year-item {
-            padding: 10px 15px;
-            cursor: pointer;
-            border-bottom: 1px solid #f0f0f0;
-            transition: background-color 0.2s;
-        }
-        
-        .year-item:hover {
-            background-color: #f8f9fa;
-        }
-        
-        .year-item.selected {
-            background-color: #0078d4;
-            color: white;
-        }
-        
-        .year-item:last-child {
-            border-bottom: none;
-        }
-        
-        .quick-nav {
-            display: flex;
-            gap: 8px;
-            margin-top: 10px;
-            justify-content: center;
-        }
-        
-        .quick-nav button {
-            padding: 6px 12px;
-            border: 1px solid #ddd;
-            background: white;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 12px;
-            transition: all 0.2s;
-        }
-        
-        .quick-nav button:hover {
-            background: #f8f9fa;
-            border-color: #0078d4;
-        }
-        
-        .loading-spinner {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            border: 2px solid #f3f3f3;
-            border-top: 2px solid #0078d4;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-right: 8px;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.3s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .calendar-day {
-            transition: all 0.2s ease;
-        }
-        
-        .calendar-day:hover {
-            transform: scale(1.05);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .wallpaper-dot {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-            100% { transform: scale(1); opacity: 1; }
         }
     </style>
     <script>
@@ -639,30 +537,104 @@
         // 切换到年份选择模式
         calendarMode = 'year';
         updateCalendarYear();
-        // 这里可以显示年份选择器
-        console.log('显示年份选择器');
+        refreshCalendar();
+        console.log('切换到年份选择模式');
     }
     
     function showMonthSelector() {
         // 切换到月份选择模式
         calendarMode = 'month';
         updateCalendarMonth();
-        // 这里可以显示月份选择器
-        console.log('显示月份选择器');
+        refreshCalendar();
+        console.log('切换到月份选择模式');
     }
     
     function updateCalendarYear() {
         const navYearMonth = document.querySelector('.nav-year-month');
         if (navYearMonth) {
-            navYearMonth.innerHTML = `<span class="nav-year">${currentYear}</span><span class="nav-month">选择月份</span>`;
+            navYearMonth.innerHTML = `<span class="nav-year" onclick="showYearSelector()" style="background: #0078d4; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${currentYear}</span><span class="nav-month" onclick="showMonthSelector()">${currentMonth}月</span>`;
         }
     }
     
     function updateCalendarMonth() {
         const navYearMonth = document.querySelector('.nav-year-month');
         if (navYearMonth) {
-            navYearMonth.innerHTML = `<span class="nav-year">${currentYear}</span><span class="nav-month">${currentMonth}月</span>`;
+            navYearMonth.innerHTML = `<span class="nav-year" onclick="showYearSelector()">${currentYear}</span><span class="nav-month" onclick="showMonthSelector()" style="background: #0078d4; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;">${currentMonth}月</span>`;
         }
+    }
+    
+    function selectYear(year) {
+        currentYear = year;
+        calendarMode = 'month';
+        updateCalendarMonth();
+        refreshCalendar();
+    }
+    
+    function selectMonth(month) {
+        currentMonth = month;
+        calendarMode = 'month';
+        updateCalendarMonth();
+        refreshCalendar();
+    }
+    
+    // 生成年份选择网格
+    function generateYearGrid() {
+        const calendarGrid = document.querySelector('.calendar-grid');
+        if (!calendarGrid) return;
+        
+        // 清空现有内容
+        calendarGrid.innerHTML = '';
+        calendarGrid.style.opacity = '1';
+        
+        // 生成年份列表（从2021到2026）
+        const years = [2021, 2022, 2023, 2024, 2025, 2026];
+        
+        years.forEach(year => {
+            const yearElement = document.createElement('div');
+            yearElement.className = 'calendar-day';
+            yearElement.textContent = year + '年';
+            yearElement.style.cursor = 'pointer';
+            yearElement.style.background = '#0078d4';
+            yearElement.style.color = 'white';
+            yearElement.style.fontWeight = '500';
+            
+            if (year === currentYear) {
+                yearElement.classList.add('selected');
+            }
+            
+            yearElement.onclick = () => selectYear(year);
+            calendarGrid.appendChild(yearElement);
+        });
+    }
+    
+    // 生成月份选择网格
+    function generateMonthGrid() {
+        const calendarGrid = document.querySelector('.calendar-grid');
+        if (!calendarGrid) return;
+        
+        // 清空现有内容
+        calendarGrid.innerHTML = '';
+        calendarGrid.style.opacity = '1';
+        
+        const months = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+        
+        months.forEach((month, index) => {
+            const monthNumber = index + 1;
+            const monthElement = document.createElement('div');
+            monthElement.className = 'calendar-day';
+            monthElement.textContent = month;
+            monthElement.style.cursor = 'pointer';
+            monthElement.style.background = '#0078d4';
+            monthElement.style.color = 'white';
+            monthElement.style.fontWeight = '500';
+            
+            if (monthNumber === currentMonth) {
+                monthElement.classList.add('selected');
+            }
+            
+            monthElement.onclick = () => selectMonth(monthNumber);
+            calendarGrid.appendChild(monthElement);
+        });
     }
     
     function goToDate(dateUrl) {
@@ -742,7 +714,7 @@
         }
     }
     
-    // 显示预览功能 - 彻底修复版本
+    // 显示预览功能 - 渐进式加载版本
     function showPreview(dateUrl, previewUrl, title, desc, downloadUrl) {
         console.log('🖼️ showPreview 被调用:', { dateUrl, previewUrl, title });
         
@@ -786,37 +758,83 @@
         placeholder.style.display = 'none';
         content.style.display = 'flex';
         
-        // 重置图片样式
-        previewImage.style.opacity = '0';
-        previewImage.style.transform = 'scale(1)';
-        previewImage.style.maxWidth = '100%';
-        previewImage.style.maxHeight = '100%';
-        previewImage.style.width = 'auto';
-        previewImage.style.height = 'auto';
-        previewImage.style.objectFit = 'contain';
+        // 🚀 双层叠加加载策略 - 模仿顶部大图方式
+        // 底层：小图（模糊），上层：大图（清晰）
+        const smallImageUrl = previewUrl + '&w=400';  // 匹配预览区尺寸
+        const largeImageUrl = previewUrl + '&w=1200'; // 清晰大图
         
-        // 添加加载效果
-        previewImage.onload = function() {
-            console.log('✅ 预览图片加载成功:', previewUrl);
-            console.log('📏 图片尺寸:', previewImage.naturalWidth + 'x' + previewImage.naturalHeight);
+        // 获取预览容器，确保存在
+        const previewContainer = document.querySelector('.preview-image-container');
+        if (!previewContainer) {
+            console.error('❌ 预览容器不存在');
+            return;
+        }
+        
+        // 清空容器，创建双层结构
+        previewContainer.innerHTML = '';
+        
+        // 创建底层小图
+        const smallImg = document.createElement('img');
+        smallImg.className = 'preview-small-image';
+        smallImg.style.cssText = `
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 覆盖整个容器，更饱满 */
+            filter: blur(2px);
+            -webkit-filter: blur(2px);
+            opacity: 0.8;
+            z-index: 1;
+        `;
+        smallImg.src = smallImageUrl;
+        
+        // 创建上层大图
+        const largeImg = document.createElement('img');
+        largeImg.className = 'preview-large-image';
+        largeImg.style.cssText = `
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 覆盖整个容器，更饱满 */
+            opacity: 0;
+            z-index: 2;
+            /* 移除transition，避免跳跃 */
+        `;
+        
+        // 添加到容器
+        previewContainer.appendChild(smallImg);
+        previewContainer.appendChild(largeImg);
+        
+        // 预加载大图
+        const preloadImg = new Image();
+        preloadImg.src = largeImageUrl;
+        
+        preloadImg.onload = function() {
+            console.log('✅ 大图预加载成功:', largeImageUrl);
+            console.log('📏 大图尺寸:', preloadImg.naturalWidth + 'x' + preloadImg.naturalHeight);
             
             // 检查图片是否正确加载
-            if (previewImage.naturalWidth === 0 || previewImage.naturalHeight === 0) {
-                console.error('❌ 图片尺寸异常');
+            if (preloadImg.naturalWidth === 0 || preloadImg.naturalHeight === 0) {
+                console.error('❌ 大图尺寸异常');
                 return;
             }
             
-            previewImage.style.opacity = '1';
+            // 设置大图源并直接显示，无动画
+            largeImg.src = largeImageUrl;
+            largeImg.style.opacity = '1';
+            // 直接隐藏小图，无动画
+            smallImg.style.opacity = '0';
         };
         
-        previewImage.onerror = function() {
-            console.error('❌ 预览图片加载失败:', previewUrl);
-            previewImage.style.opacity = '0.3';
-            previewImage.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik04NSA1MEgxMTVWMTAwSDg1VjUwWiIgZmlsbD0iI0NDQyIvPgo8cGF0aCBkPSJNMTAwIDYwTDkwIDgwSDEwMEwxMTAgNjBIMTAwWiIgZmlsbD0iI0NDQyIvPgo8dGV4dCB4PSIxMDAiIHk9IjEyMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzk5OTk5OSIgZm9udC1zaXplPSIxNCI+5Zu+54mH5b2T5LiN5a2Y5ZyoPC90ZXh0Pgo8L3N2Zz4K';
+        // 错误处理
+        smallImg.onerror = function() {
+            console.error('❌ 预览图片加载失败:', smallImageUrl);
+            smallImg.style.opacity = '0.3';
         };
-        
-        // 设置图片源
-        previewImage.src = previewUrl;
     }
     
     // 🚀 第三阶段：高级交互功能
@@ -829,7 +847,6 @@
         
         init() {
             this.setupKeyboardNavigation();
-            this.setupClickOutsideHandler();
             this.setupQuickNavigation();
         }
         
@@ -843,12 +860,9 @@
                         document.querySelector('.nav-controls').innerHTML = `
                             <button onclick="calendarNavigate('prev')" class="nav-btn">‹</button>
                             <div class="nav-info">
-                                <div class="nav-year-month" onclick="toggleYearSelector()" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
-                                    <span class="nav-year">2026</span>
-                                    <span class="nav-month">1月</span>
-                                </div>
-                                <div class="year-selector">
-                                    <!-- 年份列表将在这里动态生成 -->
+                                <div class="nav-year-month" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                                    <span class="nav-year" onclick="showYearSelector()">2026</span>
+                                    <span class="nav-month" onclick="showMonthSelector()">1月</span>
                                 </div>
                             </div>
                             <button onclick="calendarNavigate('next')" class="nav-btn">›</button>
@@ -873,25 +887,13 @@
                         refreshCalendar();
                         break;
                     case 'Escape':
-                        this.hideYearSelector();
+                        // 可以添加其他功能
                         break;
                 }
             });
         }
         
         // 设置点击外部关闭
-        setupClickOutsideHandler() {
-            document.addEventListener('click', (e) => {
-                const yearNav = document.querySelector('.nav-year-month');
-                const yearSelector = document.querySelector('.year-selector');
-                
-                if (yearNav && yearSelector && 
-                    !yearNav.contains(e.target) && 
-                    !yearSelector.contains(e.target)) {
-                    this.hideYearSelector();
-                }
-            });
-        }
         
         // 设置快速导航
         setupQuickNavigation() {
@@ -904,7 +906,6 @@
                     <button onclick="goToToday()">今天</button>
                     <button onclick="goToCurrentMonth()">当前月</button>
                     <button onclick="goToRandomMonth()">随机月</button>
-                    <button onclick="toggleYearSelector()">选择年份</button>
                 `;
                 
                 const navContainer = calendarSection.querySelector('.calendar-nav');
@@ -914,65 +915,6 @@
             }
         }
         
-        // 显示年份选择器
-        showYearSelector() {
-            const yearSelector = document.querySelector('.year-selector');
-            if (!yearSelector) return;
-            
-            // 生成年份列表
-            this.generateYearList();
-            
-            yearSelector.classList.add('active');
-            this.yearSelectorVisible = true;
-        }
-        
-        // 隐藏年份选择器
-        hideYearSelector() {
-            const yearSelector = document.querySelector('.year-selector');
-            if (yearSelector) {
-                yearSelector.classList.remove('active');
-            }
-            this.yearSelectorVisible = false;
-        }
-        
-        // 生成年份列表
-        generateYearList() {
-            const yearSelector = document.querySelector('.year-selector');
-            if (!yearSelector) return;
-            
-            const availableMonths = calendarDataManager.getAvailableMonths();
-            const years = [...new Set(availableMonths.map(m => m.year))].sort((a, b) => b - a);
-            
-            yearSelector.innerHTML = '';
-            
-            years.forEach(year => {
-                const yearItem = document.createElement('div');
-                yearItem.className = 'year-item';
-                if (year === currentYear) {
-                    yearItem.classList.add('selected');
-                }
-                yearItem.textContent = year + '年';
-                yearItem.onclick = () => this.selectYear(year);
-                yearSelector.appendChild(yearItem);
-            });
-        }
-        
-        // 选择年份
-        selectYear(year) {
-            currentYear = year;
-            currentMonth = 1; // 重置到1月
-            this.hideYearSelector();
-            refreshCalendar();
-        }
-        
-        // 切换年份选择器
-        toggleYearSelector() {
-            if (this.yearSelectorVisible) {
-                this.hideYearSelector();
-            } else {
-                this.showYearSelector();
-            }
-        }
     }
     
     // 全局UI控制器
@@ -1002,9 +944,6 @@
         refreshCalendar();
     }
     
-    function toggleYearSelector() {
-        calendarUIController.toggleYearSelector();
-    }
     
     // 🚀 第三阶段：增强的加载状态
     function showLoadingState() {
@@ -1024,9 +963,9 @@
         const calendarGrid = document.querySelector('.calendar-grid');
         if (!calendarGrid) return;
         
-        // 恢复透明度并添加动画
+        // 恢复透明度，不添加动画避免跳跃
         calendarGrid.style.opacity = '1';
-        calendarGrid.classList.add('fade-in');
+        // 移除fade-in动画，避免每次刷新时的跳跃效果
         
         // 清空现有内容，保留星期标题
         const headers = calendarGrid.querySelectorAll('.calendar-day-header');
@@ -1060,7 +999,11 @@
             
             if (wallpaperInfo) {
                 dayElement.classList.add('has-wallpaper');
-                dayElement.innerHTML = `${day}<div class="wallpaper-dot"></div>`;
+                // 统一使用DOM操作，避免innerHTML和textContent混用
+                dayElement.textContent = day;
+                const dot = document.createElement('div');
+                dot.className = 'wallpaper-dot';
+                dayElement.appendChild(dot);
                 
                 // 添加点击事件
                 dayElement.onclick = function() {
@@ -1110,7 +1053,11 @@
             const monthData = await calendarDataManager.getMonthData(currentYear, currentMonth);
             
             // 更新导航显示
-            updateCalendarMonth();
+            if (calendarMode === 'year') {
+                updateCalendarYear();
+            } else {
+                updateCalendarMonth();
+            }
             
             // 生成新的日历网格
             generateCalendarGridWithData(currentYear, currentMonth, monthData);
@@ -1150,74 +1097,6 @@
         const calendarGrid = document.querySelector('.calendar-grid');
         if (calendarGrid) {
             calendarGrid.style.opacity = '1';
-        }
-    }
-    
-    // 使用真实数据生成日历网格
-    function generateCalendarGridWithData(year, month, monthData) {
-        const calendarGrid = document.querySelector('.calendar-grid');
-        if (!calendarGrid) return;
-        
-        // 恢复透明度
-        calendarGrid.style.opacity = '1';
-        
-        // 清空现有内容，保留星期标题
-        const headers = calendarGrid.querySelectorAll('.calendar-day-header');
-        calendarGrid.innerHTML = '';
-        headers.forEach(header => calendarGrid.appendChild(header));
-        
-        // 计算月份第一天是星期几
-        const firstDay = new Date(year, month - 1, 1).getDay();
-        const daysInMonth = new Date(year, month, 0).getDate();
-        
-        // 添加空白日期
-        for (let i = 0; i < firstDay; i++) {
-            const emptyDay = document.createElement('div');
-            emptyDay.className = 'calendar-day empty';
-            calendarGrid.appendChild(emptyDay);
-        }
-        
-        // 添加月份日期
-        for (let day = 1; day <= daysInMonth; day++) {
-            const dayElement = document.createElement('div');
-            dayElement.className = 'calendar-day';
-            dayElement.textContent = day;
-            
-            // 🎯 添加data-date属性用于选中状态管理
-            const dateKey = String(day).padStart(2, '0');
-            const monthKey = String(month).padStart(2, '0');
-            dayElement.setAttribute('data-date', `${year}-${monthKey}-${dateKey}`);
-            
-            // 检查是否有壁纸数据
-            const wallpaperInfo = monthData.wallpapers[dateKey];
-            
-            if (wallpaperInfo) {
-                dayElement.classList.add('has-wallpaper');
-                dayElement.innerHTML = `${day}<div class="wallpaper-dot"></div>`;
-                
-                // 添加点击事件
-                dayElement.onclick = function() {
-                    console.log('🖱️ 日历日期被点击:', {
-                        date: wallpaperInfo.dateUrl,
-                        preview: wallpaperInfo.previewUrl,
-                        title: wallpaperInfo.title
-                    });
-                    
-                    showPreview(
-                        wallpaperInfo.dateUrl,
-                        wallpaperInfo.previewUrl,
-                        wallpaperInfo.title,
-                        wallpaperInfo.desc,
-                        wallpaperInfo.downloadUrl
-                    );
-                };
-                dayElement.style.cursor = 'pointer';
-                
-                // 添加悬停提示
-                dayElement.title = wallpaperInfo.title;
-            }
-            
-            calendarGrid.appendChild(dayElement);
         }
     }
     
@@ -1407,6 +1286,9 @@
             // 初始化当前日历
             await refreshCalendar();
             
+            // 初始化导航显示（默认月份模式，月份高亮，两个都可以点击）
+            updateCalendarMonth();
+            
             console.log('✅ 日历初始化完成！');
             
         } catch (error) {
@@ -1506,15 +1388,8 @@
     }
     window.onload = headerImgloading; // 页面加载时执行
     function imgloading(oImg) {
-        var n = 0;
-        var timer = setInterval(function () {
-            n++;
-            oImg.style.opacity = n * n / 50;
-            if (n * n >= 50) {
-                clearInterval(timer);
-            }
-            ;
-        }, 50);
+        // 禁用opacity动画，避免布局重新计算导致跳跃
+        oImg.style.opacity = 1;
     };
 </script>
 <body>
@@ -1666,9 +1541,9 @@
         <div class="nav-controls">
           <button class="nav-button nav-prev" onclick="calendarNavigate('prev')">◀</button>
           <div class="nav-info">
-            <div class="nav-year-month" onclick="toggleYearSelector()" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
-              <span class="nav-year">2026</span>
-              <span class="nav-month">1月</span>
+            <div class="nav-year-month" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+              <span class="nav-year" onclick="showYearSelector()">2026</span>
+              <span class="nav-month" onclick="showMonthSelector()">1月</span>
             </div>
             <div class="year-selector">
               <!-- 年份列表将在这里动态生成 -->
@@ -1826,23 +1701,24 @@
   <div class="preview-section">
     <div class="preview-header">
       <h3>壁纸预览</h3>
-      <div class="preview-date" id="preview-date">请选择日期</div>
+      <div class="preview-date" id="preview-date">2026年1月3日</div>
     </div>
     <div class="preview-container">
-      <div class="preview-placeholder" id="preview-placeholder">
+      <div class="preview-placeholder" id="preview-placeholder" style="display: none;">
         <div class="preview-icon">📅</div>
         <p>点击日历中的日期查看壁纸</p>
       </div>
-      <div class="preview-content" id="preview-content" style="display: none;">
+      <div class="preview-content" id="preview-content" style="display: flex;">
         <div class="preview-image-container">
-          <img id="preview-image" src="" alt="壁纸预览" />
+          <div class="preview-small-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://www.bing.com/th?id=OHR.VeniceView_EN-US3244163136_UHD.jpg&pid=hp&w=400'); background-position: center; background-repeat: no-repeat; background-size: cover; filter: blur(2px); -webkit-filter: blur(2px); opacity: 0.8; z-index: 1;"></div>
+          <div class="preview-large-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://www.bing.com/th?id=OHR.VeniceView_EN-US3244163136_UHD.jpg&pid=hp&w=1200'); background-position: center; background-repeat: no-repeat; background-size: cover; z-index: 2;"></div>
         </div>
         <div class="preview-info">
-          <h4 id="preview-title">壁纸标题</h4>
-          <p id="preview-desc">壁纸描述</p>
+          <h4 id="preview-title">Aerial view of Venice, Italy (© Clement Leonard/Getty Images)</h4>
+          <p id="preview-desc">Aerial view of Venice, Italy (© Clement Leonard/Getty Images)</p>
           <div class="preview-actions">
-            <a id="preview-download" href="" target="_blank" class="preview-btn">下载4k</a>
-            <a id="preview-detail" href="" target="_blank" class="preview-btn">查看详情</a>
+            <a id="preview-download" href="https://www.bing.com/th?id=OHR.VeniceView_EN-US3244163136_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4" target="_blank" class="preview-btn">下载4k</a>
+            <a id="preview-detail" href="day/202601/03.html" target="_blank" class="preview-btn">查看详情</a>
           </div>
         </div>
       </div>
@@ -1886,15 +1762,15 @@
     function w3_close() {
         document.getElementById("mySidebar").style.display = "none";
     }
-    // 监听滚动事件
-    window.addEventListener('scroll', function () {
-        var wenjuan = document.getElementById('wenjuan');
-        if (window.scrollY > 400) { // 如果向下滚动超过100px
-            wenjuan.style.display = 'block'; // 显示该div
-        } else {
-            wenjuan.style.display = 'none'; // 否则隐藏
-        }
-    });
+    // 监听滚动事件 - 禁用，避免意外触发导致跳跃
+    // window.addEventListener('scroll', function () {
+    //     var wenjuan = document.getElementById('wenjuan');
+    //     if (window.scrollY > 400) { // 如果向下滚动超过100px
+    //         wenjuan.style.display = 'block'; // 显示该div
+    //     } else {
+    //         wenjuan.style.display = 'none'; // 否则隐藏
+    //     }
+    // });
 </script>
 <script src="https://jsdelivr.wdbyte.com/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 <script>
