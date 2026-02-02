@@ -146,7 +146,7 @@ public class Wallpaper {
         if ("en-us".equalsIgnoreCase(region)) {
             BingFileUtils.README_PATH = Paths.get("README.md");
             BingFileUtils.BING_PATH = Paths.get("bing-wallpaper.md");
-            BingFileUtils.MONTH_PATH = Paths.get("picture/");
+            BingFileUtils.MONTH_PATH = Paths.get("docs/day/");  // 修改为docs/day/
             HtmlFileUtils.BING_HTML_ROOT = Paths.get("docs/");
         } else {
             BingFileUtils.README_PATH = Paths.get(region + "/README.md");

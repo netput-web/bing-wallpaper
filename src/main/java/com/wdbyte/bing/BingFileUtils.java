@@ -185,8 +185,9 @@ public class BingFileUtils {
 
         Files.write(README_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
         // 归档
-        Files.write(README_PATH, "### 历史归档：".getBytes(), StandardOpenOption.APPEND);
-        Files.write(README_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
+        String archiveHeader = "### 历史归档：";
+        Files.write(README_PATH, archiveHeader.getBytes("UTF-8"), StandardOpenOption.APPEND);
+        Files.write(README_PATH, System.lineSeparator().getBytes("UTF-8"), StandardOpenOption.APPEND);
         List<String> dateList = imgList.stream()
             .map(Images::getDate)
             .map(date -> date.substring(0, 7))
@@ -194,8 +195,11 @@ public class BingFileUtils {
             .collect(Collectors.toList());
         int i = 0;
         for (String date : dateList) {
-            String link = String.format("[%s](/%s/%s/) | ", date, MONTH_PATH.toString(), date);
-            Files.write(README_PATH, link.getBytes(), StandardOpenOption.APPEND);
+            // 将YYYY-MM格式转换为YYYYMM格式
+            String yearMonth = date.replace("-", "");
+            // 生成新的链接格式：docs/day/YYYYMM/
+            String link = String.format("[%s](%s%s/) | ", date, MONTH_PATH.toString(), yearMonth);
+            Files.write(README_PATH, link.getBytes("UTF-8"), StandardOpenOption.APPEND);
             i++;
             if (i % 8 == 0) {
                 Files.write(README_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
