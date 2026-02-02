@@ -1,5 +1,5 @@
 ## Bing Wallpaper (2023-07)
-![](https://cn.bing.com/th?id=OHR.RockHouse_ZH-CN7318310409_UHD.jpg&w=1000)Today: [霍金山州立公园的岩石屋，俄亥俄州，美国 (? Kenneth Keifer/Getty Images)](https://cn.bing.com/th?id=OHR.RockHouse_ZH-CN7318310409_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
+![](https://cn.bing.com/th?id=OHR.RockHouse_ZH-CN7318310409_UHD.jpg&w=1000)Today: [霍金山州立公园的岩石屋，俄亥俄州，美国](https://cn.bing.com/th?id=OHR.RockHouse_ZH-CN7318310409_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
 |      |      |      |
 | :----: | :----: | :----: |
 |![](https://cn.bing.com/th?id=OHR.RockHouse_ZH-CN7318310409_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-07-31 [download 4k](https://cn.bing.com/th?id=OHR.RockHouse_ZH-CN7318310409_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.PalouseHills_ZH-CN6864015897_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-07-30 [download 4k](https://cn.bing.com/th?id=OHR.PalouseHills_ZH-CN6864015897_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.TigerIndia_ZH-CN6657629375_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-07-29 [download 4k](https://cn.bing.com/th?id=OHR.TigerIndia_ZH-CN6657629375_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|

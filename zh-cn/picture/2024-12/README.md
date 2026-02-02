@@ -1,5 +1,5 @@
 ## Bing Wallpaper (2024-12)
-![](https://cn.bing.com/th?id=OHR.CANYE24_ZH-CN3884754296_UHD.jpg&w=1000)Today: [国会山上空的烟??，渥太华，加拿大 (? naibank/Getty Images)](https://cn.bing.com/th?id=OHR.CANYE24_ZH-CN3884754296_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
+![](https://cn.bing.com/th?id=OHR.CANYE24_ZH-CN3884754296_UHD.jpg&w=1000)Today: [国会山上空的烟??，渥太华，加拿大](https://cn.bing.com/th?id=OHR.CANYE24_ZH-CN3884754296_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
 |      |      |      |
 | :----: | :----: | :----: |
 |![](https://cn.bing.com/th?id=OHR.CANYE24_ZH-CN3884754296_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2024-12-31 [download 4k](https://cn.bing.com/th?id=OHR.CANYE24_ZH-CN3884754296_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.MountFieldNP_ZH-CN6004420782_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2024-12-30 [download 4k](https://cn.bing.com/th?id=OHR.MountFieldNP_ZH-CN6004420782_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.BorobudurBells_ZH-CN5291511365_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2024-12-29 [download 4k](https://cn.bing.com/th?id=OHR.BorobudurBells_ZH-CN5291511365_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|

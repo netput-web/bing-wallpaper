@@ -1,5 +1,5 @@
 ## Bing Wallpaper (2023-09)
-![](https://cn.bing.com/th?id=OHR.GuiyangMoon_EN-US2407385108_UHD.jpg&w=1000)Today: [Jiaxiu Tower under a full moon, Guiyang, Guizhou province, China (? Wang Yukun/Getty Images)](https://cn.bing.com/th?id=OHR.GuiyangMoon_EN-US2407385108_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
+![](https://cn.bing.com/th?id=OHR.GuiyangMoon_EN-US2407385108_UHD.jpg&w=1000)Today: [Jiaxiu Tower under a full moon, Guiyang, Guizhou province, China](https://cn.bing.com/th?id=OHR.GuiyangMoon_EN-US2407385108_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
 |      |      |      |
 | :----: | :----: | :----: |
 |![](https://cn.bing.com/th?id=OHR.GuiyangMoon_EN-US2407385108_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-09-30 [download 4k](https://cn.bing.com/th?id=OHR.GuiyangMoon_EN-US2407385108_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.MaritimeDay_EN-US2262770680_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-09-29 [download 4k](https://cn.bing.com/th?id=OHR.MaritimeDay_EN-US2262770680_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.CapriKrupp_EN-US2044781395_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-09-28 [download 4k](https://cn.bing.com/th?id=OHR.CapriKrupp_EN-US2044781395_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|

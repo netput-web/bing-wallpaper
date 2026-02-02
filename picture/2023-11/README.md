@@ -1,5 +1,5 @@
 ## Bing Wallpaper (2023-11)
-![](https://cn.bing.com/th?id=OHR.TreeLighting_EN-US4396317497_UHD.jpg&w=1000)Today: [Rockefeller Center Christmas tree, New York City (? Jonathan Orenstein/Getty Images)](https://cn.bing.com/th?id=OHR.TreeLighting_EN-US4396317497_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
+![](https://cn.bing.com/th?id=OHR.TreeLighting_EN-US4396317497_UHD.jpg&w=1000)Today: [Rockefeller Center Christmas tree, New York City](https://cn.bing.com/th?id=OHR.TreeLighting_EN-US4396317497_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
 |      |      |      |
 | :----: | :----: | :----: |
 |![](https://cn.bing.com/th?id=OHR.TreeLighting_EN-US4396317497_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-11-30 [download 4k](https://cn.bing.com/th?id=OHR.TreeLighting_EN-US4396317497_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.HumanKindness_EN-US4254216907_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-11-29 [download 4k](https://cn.bing.com/th?id=OHR.HumanKindness_EN-US4254216907_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.RioNegro_EN-US4106999854_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2023-11-28 [download 4k](https://cn.bing.com/th?id=OHR.RioNegro_EN-US4106999854_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|
