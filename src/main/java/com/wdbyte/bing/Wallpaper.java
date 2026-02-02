@@ -29,7 +29,7 @@ public class Wallpaper {
      *
      * {"en-US", "zh-CN", "ja-JP", "en-IN", "pt-BR", "fr-FR", "de-DE", "en-CA", "en-GB", "it-IT", "es-ES", "fr-CA"};
      */
-    private static String[] regions =  {"en-US", "zh-CN"};
+    private static String[] regions =  {"en-US", "zh-CN", "ja-JP", "en-IN", "pt-BR", "fr-FR", "de-DE", "en-CA", "en-GB", "it-IT", "es-ES", "fr-CA"};
 
     public static String CURRENT_REGION = "en-US";
 
@@ -143,12 +143,16 @@ public class Wallpaper {
     public static void changeConfig(String region) {
         region = region.toLowerCase();
         CURRENT_REGION = region;
+        
+        // 主要英文区 - 使用统一的docs/day/路径
         if ("en-us".equalsIgnoreCase(region)) {
             BingFileUtils.README_PATH = Paths.get("README.md");
             BingFileUtils.BING_PATH = Paths.get("bing-wallpaper.md");
-            BingFileUtils.MONTH_PATH = Paths.get("docs/day/");  // 修改为docs/day/
+            BingFileUtils.MONTH_PATH = Paths.get("docs/day/");
             HtmlFileUtils.BING_HTML_ROOT = Paths.get("docs/");
-        } else {
+        } 
+        // 其他区域 - 使用区域特定的路径
+        else {
             BingFileUtils.README_PATH = Paths.get(region + "/README.md");
             BingFileUtils.BING_PATH = Paths.get(region + "/bing-wallpaper.md");
             BingFileUtils.MONTH_PATH = Paths.get(region + "/picture/");

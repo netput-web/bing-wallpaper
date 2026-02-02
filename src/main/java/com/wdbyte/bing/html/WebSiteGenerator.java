@@ -249,6 +249,11 @@ public class WebSiteGenerator {
         html = html.replace(Head.HEAD_IMG_URL, images.getSimpleUrl());
         // 使用简化的描述，去掉括号中的版权信息
         html = html.replace(Head.HEAD_IMG_DESC, simplifyDescription(images.getDesc()));
+        
+        // 添加现代化导航栏
+        String modernNav = HtmlConstant.Navigation.getModernNavigation(Wallpaper.CURRENT_REGION);
+        html = html.replace("${navigation}", modernNav);
+        
         if (month != null) {
             html = html.replace(Head.HEAD_TITLE, "Bing Wallpaper\n(" + month + ")");
         } else {
