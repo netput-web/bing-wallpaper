@@ -1,5 +1,5 @@
 ## Bing Wallpaper (2025-04)
-![](https://cn.bing.com/th?id=OHR.FozdoIguacu2025_ZH-CN3781165595_UHD.jpg&w=1000)Today: [浠庡反鎷夐偅宸炵湅鍒扮殑浼婄摐鑻忕�戝竷, 宸磋タ (漏 agustavop/Getty Images)](https://cn.bing.com/th?id=OHR.FozdoIguacu2025_ZH-CN3781165595_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
+![](https://cn.bing.com/th?id=OHR.FozdoIguacu2025_ZH-CN3781165595_UHD.jpg&w=1000)Today: [从巴拉那州看到的伊瓜苏瀑布, 巴西 (? agustavop/Getty Images)](https://cn.bing.com/th?id=OHR.FozdoIguacu2025_ZH-CN3781165595_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)
 |      |      |      |
 | :----: | :----: | :----: |
 |![](https://cn.bing.com/th?id=OHR.FozdoIguacu2025_ZH-CN3781165595_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-04-30 [download 4k](https://cn.bing.com/th?id=OHR.FozdoIguacu2025_ZH-CN3781165595_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.GardensVillandry_ZH-CN3660934263_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-04-29 [download 4k](https://cn.bing.com/th?id=OHR.GardensVillandry_ZH-CN3660934263_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|![](https://cn.bing.com/th?id=OHR.OrangeImpala_ZH-CN3417660107_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4)2025-04-28 [download 4k](https://cn.bing.com/th?id=OHR.OrangeImpala_ZH-CN3417660107_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=3840&h=2160&rs=1&c=4)|

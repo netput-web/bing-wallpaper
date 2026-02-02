@@ -175,7 +175,8 @@ public class WebSiteGenerator {
      */
     public String replaceHead(String html, Images images, String month) {
         html = html.replace(Head.HEAD_IMG_URL, images.getSimpleUrl());
-        html = html.replace(Head.HEAD_IMG_DESC, images.getDesc());
+        // 使用简化的描述，去掉括号中的版权信息
+        html = html.replace(Head.HEAD_IMG_DESC, simplifyDescription(images.getDesc()));
         if (month != null) {
             html = html.replace(Head.HEAD_TITLE, "Bing Wallpaper\n(" + month + ")");
         } else {
@@ -264,8 +265,8 @@ public class WebSiteGenerator {
                 Map<String, String> data = new HashMap<>();
                 // 使用更大的预览尺寸，确保图片质量
                 data.put("previewUrl", image.getSimpleUrl() + "&pid=hp&w=1920&h=1080&rs=1&c=4");
-                data.put("title", image.getDesc());
-                data.put("desc", image.getDesc());
+                data.put("title", simplifyDescription(image.getDesc()));
+                data.put("desc", simplifyDescription(image.getDesc()));
                 data.put("downloadUrl", image.getUrl());
                 data.put("detailUrl", image.getDetailUrlPath());
                 
@@ -279,8 +280,8 @@ public class WebSiteGenerator {
         // 设置默认预览数据 - 首页版本
         if (defaultPreviewImage != null) {
             calendarData.put("defaultPreviewImgUrl", defaultPreviewImage.getSimpleUrl());
-            calendarData.put("defaultPreviewTitle", defaultPreviewImage.getDesc());
-            calendarData.put("defaultPreviewDesc", defaultPreviewImage.getDesc());
+            calendarData.put("defaultPreviewTitle", simplifyDescription(defaultPreviewImage.getDesc()));
+            calendarData.put("defaultPreviewDesc", simplifyDescription(defaultPreviewImage.getDesc()));
             calendarData.put("defaultPreviewDownloadUrl", defaultPreviewImage.getUrl());
             calendarData.put("defaultPreviewDetailUrl", defaultPreviewImage.getDetailUrlPath());
             
@@ -319,7 +320,30 @@ public class WebSiteGenerator {
     }
     
     /**
-     * 准备日历数据
+     * 简化描述，去掉括号中的版权信息
+     */
+    private String simplifyDescription(String desc) {
+        if (desc == null || desc.trim().isEmpty()) {
+            return desc;
+        }
+        
+        // 查找第一个括号的位置
+        int firstParenIndex = desc.indexOf('(');
+        if (firstParenIndex > 0) {
+            // 去掉括号及其内容
+            String simplified = desc.substring(0, firstParenIndex).trim();
+            // 去掉末尾可能的空格和标点
+            if (simplified.endsWith(",")) {
+                simplified = simplified.substring(0, simplified.length() - 1).trim();
+            }
+            return simplified;
+        }
+        
+        return desc;
+    }
+
+    /**
+     * 替换页面头部信息
      */
     private Map<String, Object> prepareCalendarData(Map<String, List<Images>> monthMap, String currentMonth) {
         Map<String, Object> calendarData = new HashMap<>();
@@ -361,8 +385,8 @@ public class WebSiteGenerator {
                     // 构建壁纸数据
                     Map<String, String> data = new HashMap<>();
                     data.put("previewUrl", image.getSimpleUrl());
-                    data.put("title", image.getDesc());
-                    data.put("desc", image.getDesc());
+                    data.put("title", simplifyDescription(image.getDesc()));
+                    data.put("desc", simplifyDescription(image.getDesc()));
                     data.put("downloadUrl", image.getUrl());
                     
                     wallpaperData.put(date, data);
@@ -377,8 +401,8 @@ public class WebSiteGenerator {
         // 设置默认预览数据 - 月份页面版本
         if (defaultPreviewImage != null) {
             calendarData.put("defaultPreviewImgUrl", defaultPreviewImage.getSimpleUrl());
-            calendarData.put("defaultPreviewTitle", defaultPreviewImage.getDesc());
-            calendarData.put("defaultPreviewDesc", defaultPreviewImage.getDesc());
+            calendarData.put("defaultPreviewTitle", simplifyDescription(defaultPreviewImage.getDesc()));
+            calendarData.put("defaultPreviewDesc", simplifyDescription(defaultPreviewImage.getDesc()));
             calendarData.put("defaultPreviewDownloadUrl", defaultPreviewImage.getUrl());
             calendarData.put("defaultPreviewDetailUrl", defaultPreviewImage.getDetailUrlPath());
             
