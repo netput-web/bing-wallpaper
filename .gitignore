@@ -1,4 +1,6 @@
 /target/
 
 # 开发文档 - 不提交到远程
+API_ANALYSIS.md
+DEVELOPMENT.md
 
