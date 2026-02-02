@@ -3,10 +3,13 @@ package com.wdbyte.bing.html;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.wdbyte.bing.BingFileUtils;
@@ -30,7 +33,8 @@ public class WebSiteGenerator {
         System.out.println("🎯 WebSiteGenerator main() 方法开始执行...");
         WebSiteGenerator generator = new WebSiteGenerator();
 
-        List<Images> bingImages = BingFileUtils.readBing();
+        WebSiteGenerator tempGenerator = new WebSiteGenerator();
+        List<Images> bingImages = tempGenerator.readFromJson();
         bingImages = bingImages.stream().filter(img -> img.getUrl() != null).collect(Collectors.toList());
         // 基于URL去重处理，避免重复显示相同图片
         bingImages = bingImages.stream()
@@ -57,8 +61,44 @@ public class WebSiteGenerator {
         System.out.println("🎯 WebSiteGenerator main() 方法执行完成！");
     }
 
+    /**
+     * 从JSON文件读取数据
+     */
+    private List<Images> readFromJson() throws IOException {
+        // JSON文件在docs/images.json，不分区域
+        Path jsonPath = Paths.get("docs", "images.json");
+        
+        if (!Files.exists(jsonPath)) {
+            System.out.println("JSON文件不存在: " + jsonPath);
+            return new ArrayList<>();
+        }
+        
+        String jsonContent = new String(Files.readAllBytes(jsonPath), "UTF-8");
+        JSONArray jsonArray = JSON.parseArray(jsonContent);
+        
+        List<Images> images = new ArrayList<>();
+        String currentRegion = Wallpaper.CURRENT_REGION.toLowerCase();
+        
+        for (int i = 0; i < jsonArray.size(); i++) {
+            JSONObject jsonObj = jsonArray.getJSONObject(i);
+            String region = jsonObj.getString("region");
+            
+            // 只读取当前区域的数据
+            if (currentRegion.equals(region)) {
+                String date = jsonObj.getString("date");
+                String url = jsonObj.getString("url");
+                String desc = jsonObj.getString("desc");
+                
+                images.add(new Images(desc, date, url));
+            }
+        }
+        
+        System.out.println("从JSON读取到 " + images.size() + " 条" + currentRegion + "数据");
+        return images;
+    }
+
     public void htmlGenerator() throws IOException {
-        List<Images> bingImages = BingFileUtils.readBing();
+        List<Images> bingImages = readFromJson();
         bingImages = bingImages.stream().filter(img -> img.getUrl() != null).collect(Collectors.toList());
         // 基于URL去重处理，避免重复显示相同图片
         bingImages = bingImages.stream()

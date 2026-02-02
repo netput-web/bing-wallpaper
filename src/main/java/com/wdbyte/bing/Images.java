@@ -11,6 +11,7 @@ public class Images {
     private String desc;
     private String date;
     private String url;
+    private String region;
 
     @Override
     public String toString() {
@@ -56,6 +57,14 @@ public class Images {
         return url;
     }
 
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
     public String getSimpleUrl() {
         if (url.contains("&")) {
             return url.substring(0, url.indexOf("&"));
@@ -66,7 +75,13 @@ public class Images {
     public String getDetailUrlPath() {
         String yyyymm = date.replace("-", "").substring(0, 6);
         String dd = date.substring(8);
-        return "day/" + yyyymm+"/" + dd+".html";
+        
+        // 根据区域确定路径
+        if (region != null && region.toLowerCase().equals("zh-cn")) {
+            return "day/" + yyyymm + "/" + dd + ".html";
+        } else {
+            return "day/" + yyyymm + "/" + dd + ".html";
+        }
     }
 
     public void setUrl(String url) {
@@ -80,6 +95,13 @@ public class Images {
         this.desc = desc;
         this.date = date;
         this.url = url;
+    }
+
+    public Images(String desc, String date, String url, String region) {
+        this.desc = desc;
+        this.date = date;
+        this.url = url;
+        this.region = region;
     }
 
     @Override

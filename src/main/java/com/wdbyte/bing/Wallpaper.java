@@ -1,18 +1,16 @@
 package com.wdbyte.bing;
 
-import java.io.IOException;
-import java.nio.file.Paths;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
 import com.wdbyte.bing.html.HtmlFileUtils;
 import com.wdbyte.bing.html.WebSiteGenerator;
+
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author niujinpeng
@@ -31,7 +29,7 @@ public class Wallpaper {
      *
      * {"en-US", "zh-CN", "ja-JP", "en-IN", "pt-BR", "fr-FR", "de-DE", "en-CA", "en-GB", "it-IT", "es-ES", "fr-CA"};
      */
-    private static String[] regions =  {"zh-CN"};
+    private static String[] regions =  {"en-US", "zh-CN"};
 
     public static String CURRENT_REGION = "en-US";
 
@@ -40,17 +38,84 @@ public class Wallpaper {
         System.setProperty("file.encoding", "UTF-8");
         System.setProperty("sun.jnu.encoding", "UTF-8");
         
+        System.out.println("=== Bing Wallpaper 数据处理开始 ===");
+        
+        // 显示当前数据统计
+        JsonDataManager.printStatistics();
+        
         for (String region : regions) {
+            System.out.println("\n--- 处理区域: " + region + " ---");
             changeConfig(region);
             
-            // 跳过API获取，直接生成HTML
-            List<Images> imagesList = BingFileUtils.readBing();
-            BingFileUtils.writeBing(imagesList);
-            
-            // 创建WebSiteGenerator实例并调用
-            WebSiteGenerator generator = new WebSiteGenerator();
-            generator.htmlGenerator();
+            try {
+                // 1. 从API获取新图片
+                System.out.println("检查新数据...");
+                boolean hasNewData = BingApiFetcher.hasNewData(region);
+                
+                List<Images> newImages = new ArrayList<>();
+                if (hasNewData) {
+                    System.out.println("发现新数据，开始获取...");
+                    newImages = BingApiFetcher.fetchLatestImages(region);
+                } else {
+                    System.out.println("没有新数据");
+                }
+                
+                // 2. 读取现有JSON数据
+                List<Images> existingData = JsonDataManager.readDataByRegion(region.toLowerCase());
+                
+                // 3. 合并数据
+                List<Images> allData = JsonDataManager.mergeData(existingData, newImages);
+                
+                // 4. 验证数据完整性
+                JsonDataManager.validateData(allData);
+                
+                // 5. 更新JSON文件（只更新当前区域的数据）
+                updateRegionDataInJson(region.toLowerCase(), allData);
+                
+                // 6. 生成HTML文件
+                System.out.println("生成HTML文件...");
+                WebSiteGenerator generator = new WebSiteGenerator();
+                generator.htmlGenerator();
+                
+                System.out.println("区域 " + region + " 处理完成");
+                
+            } catch (Exception e) {
+                System.err.println("处理区域 " + region + " 时出错: " + e.getMessage());
+                e.printStackTrace();
+            }
         }
+        
+        // 7. 生成MD备份文件
+        System.out.println("\n--- 生成MD备份文件 ---");
+        MarkdownBackupGenerator.generateMarkdownBackup();
+        MarkdownBackupGenerator.validateMarkdownFiles();
+        
+        // 8. 最终统计
+        System.out.println("\n=== 最终数据统计 ===");
+        JsonDataManager.printStatistics();
+        
+        System.out.println("=== Bing Wallpaper 数据处理完成 ===");
+    }
+    
+    /**
+     * 更新指定区域的数据到JSON文件
+     */
+    private static void updateRegionDataInJson(String region, List<Images> regionData) throws Exception {
+        // 读取所有数据
+        List<Images> allData = JsonDataManager.readAllData();
+        
+        // 移除当前区域的旧数据
+        allData = allData.stream()
+                .filter(img -> !region.equalsIgnoreCase(img.getRegion()))
+                .collect(Collectors.toList());
+        
+        // 添加当前区域的新数据
+        allData.addAll(regionData);
+        
+        // 重新写入JSON
+        JsonDataManager.writeData(allData);
+        
+        System.out.println("区域 " + region + " 数据已更新: " + regionData.size() + " 条");
     }
     
     /**

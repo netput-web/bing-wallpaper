@@ -68,24 +68,37 @@ public class BingFileUtils {
                     continue;
                 }
                 
+                // 找到描述的结束位置
+                int descStart = line.indexOf("[") + 1;
                 int descEnd = line.indexOf("]");
-                int urlStart = line.lastIndexOf("(") + 1;
+                
+                // 找到URL的开始和结束位置（最后一个括号对）
+                int lastOpenParen = line.lastIndexOf("(");
+                int lastCloseParen = line.lastIndexOf(")");
 
                 String date = line.substring(0, 10);
                 
                 // 安全检查描述内容
                 String descContent = "";
-                if (descEnd > 14) {
-                    descContent = line.substring(14, descEnd);
+                if (descEnd > descStart) {
+                    descContent = line.substring(descStart, descEnd);
                 } else {
                     System.out.println("DEBUG: 跳过格式错误的行: " + line);
                     continue;
                 }
                 
-                String url = line.substring(urlStart, line.length() - 1);
+                // 安全检查URL内容
+                String url = "";
+                if (lastOpenParen > descEnd && lastCloseParen > lastOpenParen) {
+                    url = line.substring(lastOpenParen + 1, lastCloseParen);
+                } else {
+                    System.out.println("DEBUG: 跳过URL格式错误的行: " + line);
+                    continue;
+                }
                 
                 // 调试输出，检查读取的内容
                 System.out.println("DEBUG: 读取的描述内容: " + descContent);
+                System.out.println("DEBUG: 读取的URL内容: " + url);
                 
                 imgList.add(new Images(descContent, date, url));
             }
