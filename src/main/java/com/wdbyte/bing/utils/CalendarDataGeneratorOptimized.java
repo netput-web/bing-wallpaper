@@ -6,6 +6,8 @@ import com.wdbyte.bing.Images;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
@@ -167,7 +169,7 @@ public class CalendarDataGeneratorOptimized {
             File outputFile = new File(calendarDataDir, yearMonth + ".json");
             String jsonContent = JSON.toJSONString(calendarData);
             
-            try (FileWriter writer = new FileWriter(outputFile)) {
+            try (OutputStreamWriter writer = new OutputStreamWriter(Files.newOutputStream(outputFile.toPath()), StandardCharsets.UTF_8)) {
                 writer.write(jsonContent);
             }
             
@@ -279,7 +281,7 @@ public class CalendarDataGeneratorOptimized {
         File indexFile = new File(outputDir, "data/calendar-index.json");
         String indexJsonContent = JSON.toJSONString(indexData);
         
-        try (FileWriter writer = new FileWriter(indexFile)) {
+        try (OutputStreamWriter writer = new OutputStreamWriter(Files.newOutputStream(indexFile.toPath()), StandardCharsets.UTF_8)) {
             writer.write(indexJsonContent);
         }
         
