@@ -185,7 +185,7 @@ public class BingFileUtils {
 
         Files.write(README_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
         // 归档
-        String archiveHeader = "### 历史归档：";
+        String archiveHeader = "### Historical Archive";
         Files.write(README_PATH, archiveHeader.getBytes("UTF-8"), StandardOpenOption.APPEND);
         Files.write(README_PATH, System.lineSeparator().getBytes("UTF-8"), StandardOpenOption.APPEND);
         List<String> dateList = imgList.stream()
