@@ -392,12 +392,53 @@ public class HtmlConstant {
                 String name = regionInfo[2];
                 String flag = regionInfo[3];
                 
+                // 映射到实际的目录名
+                String actualRegion;
+                switch (code) {
+                    case "jp":
+                        actualRegion = "ja-jp";
+                        break;
+                    case "in":
+                        actualRegion = "en-in";
+                        break;
+                    case "br":
+                        actualRegion = "pt-br";
+                        break;
+                    case "fr":
+                        actualRegion = "fr-fr";
+                        break;
+                    case "de":
+                        actualRegion = "de-de";
+                        break;
+                    case "ca":
+                        actualRegion = "en-ca";
+                        break;
+                    case "gb":
+                        actualRegion = "en-gb";
+                        break;
+                    case "it":
+                        actualRegion = "it-it";
+                        break;
+                    case "es":
+                        actualRegion = "es-es";
+                        break;
+                    case "cn":
+                        actualRegion = "zh-cn";
+                        break;
+                    case "fr-ca":
+                        actualRegion = "fr-ca";
+                        break;
+                    default:
+                        actualRegion = code;
+                        break;
+                }
+                
                 String regionOption = String.format(
-                    "<a href=\"/bing/%s\" class=\"dropdown-item\">\n" +
+                    "<a href=\"/%s/index.html\" class=\"dropdown-item\">\n" +
                     "  <span class=\"flag-icon\">%s</span>\n" +
                     "  <span class=\"region-name\">%s</span>\n" +
                     "</a>",
-                    code, flag, name
+                    actualRegion, flag, name
                 );
                 
                 regionOptions += regionOption;
