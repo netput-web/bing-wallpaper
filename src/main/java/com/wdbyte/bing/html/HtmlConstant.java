@@ -395,6 +395,9 @@ public class HtmlConstant {
                 // 映射到实际的目录名
                 String actualRegion;
                 switch (code) {
+                    case "us":
+                        actualRegion = ""; // 美国区域是根目录
+                        break;
                     case "jp":
                         actualRegion = "ja-jp";
                         break;
@@ -433,13 +436,25 @@ public class HtmlConstant {
                         break;
                 }
                 
-                String regionOption = String.format(
-                    "<a href=\"/%s/index.html\" class=\"dropdown-item\">\n" +
-                    "  <span class=\"flag-icon\">%s</span>\n" +
-                    "  <span class=\"region-name\">%s</span>\n" +
-                    "</a>",
-                    actualRegion, flag, name
-                );
+                // 为US区域生成特殊链接，其他区域生成标准链接
+                String regionOption;
+                if ("us".equals(code)) {
+                    regionOption = String.format(
+                        "<a href=\"/index.html\" class=\"dropdown-item\">\n" +
+                        "  <span class=\"flag-icon\">%s</span>\n" +
+                        "  <span class=\"region-name\">%s</span>\n" +
+                        "</a>",
+                        flag, name
+                    );
+                } else {
+                    regionOption = String.format(
+                        "<a href=\"/%s/index.html\" class=\"dropdown-item\">\n" +
+                        "  <span class=\"flag-icon\">%s</span>\n" +
+                        "  <span class=\"region-name\">%s</span>\n" +
+                        "</a>",
+                        actualRegion, flag, name
+                    );
+                }
                 
                 regionOptions += regionOption;
                 
