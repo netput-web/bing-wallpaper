@@ -1,6 +1,9 @@
 package com.wdbyte.bing;
 
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.BufferedReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -41,20 +44,53 @@ public class BingFileUtils {
             }
             Files.createFile(BING_PATH);
         }
-        List<String> allLines = Files.readAllLines(BING_PATH, StandardCharsets.UTF_8);
-        allLines = allLines.stream().filter(s -> !s.isEmpty()).collect(Collectors.toList());
+        
+        // 使用InputStreamReader确保UTF-8编码
         List<Images> imgList = new ArrayList<>();
         imgList.add(new Images());
-        for (int i = 1; i < allLines.size(); i++) {
-            String s = allLines.get(i).trim();
-            int descEnd = s.indexOf("]");
-            int urlStart = s.lastIndexOf("(") + 1;
+        
+        try (InputStreamReader reader = new InputStreamReader(
+                Files.newInputStream(BING_PATH), StandardCharsets.UTF_8);
+             BufferedReader bufferedReader = new BufferedReader(reader)) {
+            
+            String line;
+            boolean isFirstLine = true;
+            
+            while ((line = bufferedReader.readLine()) != null) {
+                line = line.trim();
+                if (line.isEmpty()) {
+                    continue;
+                }
+                
+                // 跳过第一行标题
+                if (isFirstLine) {
+                    isFirstLine = false;
+                    continue;
+                }
+                
+                int descEnd = line.indexOf("]");
+                int urlStart = line.lastIndexOf("(") + 1;
 
-            String date = s.substring(0, 10);
-            String desc = s.substring(14, descEnd);
-            String url = s.substring(urlStart, s.length() - 1);
-            imgList.add(new Images(desc, date, url));
+                String date = line.substring(0, 10);
+                
+                // 安全检查描述内容
+                String descContent = "";
+                if (descEnd > 14) {
+                    descContent = line.substring(14, descEnd);
+                } else {
+                    System.out.println("DEBUG: 跳过格式错误的行: " + line);
+                    continue;
+                }
+                
+                String url = line.substring(urlStart, line.length() - 1);
+                
+                // 调试输出，检查读取的内容
+                System.out.println("DEBUG: 读取的描述内容: " + descContent);
+                
+                imgList.add(new Images(descContent, date, url));
+            }
         }
+        
         LogUtils.log("read bing wallpaper,path:%s,size:%d", BING_PATH.toString(), imgList.size());
         return imgList;
     }
@@ -69,13 +105,22 @@ public class BingFileUtils {
         if (!Files.exists(BING_PATH)) {
             Files.createFile(BING_PATH);
         }
-        Files.write(BING_PATH, "## Bing Wallpaper".getBytes(StandardCharsets.UTF_8));
-        Files.write(BING_PATH, System.lineSeparator().getBytes(StandardCharsets.UTF_8), StandardOpenOption.APPEND);
-        for (Images images : imgList) {
-            Files.write(BING_PATH, images.formatMarkdown().getBytes(StandardCharsets.UTF_8), StandardOpenOption.APPEND);
-            Files.write(BING_PATH, System.lineSeparator().getBytes(StandardCharsets.UTF_8), StandardOpenOption.APPEND);
-            Files.write(BING_PATH, System.lineSeparator().getBytes(StandardCharsets.UTF_8), StandardOpenOption.APPEND);
+        
+        // 使用OutputStreamWriter确保UTF-8编码
+        try (OutputStreamWriter writer = new OutputStreamWriter(
+                Files.newOutputStream(BING_PATH), StandardCharsets.UTF_8)) {
+            writer.write("## Bing Wallpaper");
+            writer.write(System.lineSeparator());
+            writer.write(System.lineSeparator());
+            
+            for (Images images : imgList) {
+                writer.write(images.formatMarkdown());
+                writer.write(System.lineSeparator());
+                writer.write(System.lineSeparator());
+                writer.write(System.lineSeparator());
+            }
         }
+        
         LogUtils.log("write bing wallpaper,path:%s,size:%d", BING_PATH.toString(), imgList.size());
     }
 

@@ -1,6 +1,8 @@
 package com.wdbyte.bing.html;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -155,13 +157,43 @@ public class WebSiteGenerator {
 
     public String replaceSidebar(String html, Map<String, List<Images>> monthMap, String nowMonth) {
         StringBuilder sidebar = new StringBuilder();
-        for (String month : monthMap.keySet()) {
-            String sidabarMenu = Sidebar.getSidabarMenuList(month + ".html", month);
-            if (month != null && month.equals(nowMonth)) {
-                sidabarMenu = sidabarMenu.replace(Sidebar.VAR_SIDABAR_COLOR, Sidebar.VAR_SIDABAR_NOW_COLOR);
+        
+        try {
+            // 扫描所有实际存在的月度HTML文件
+            Path docsPath = HtmlFileUtils.BING_HTML_ROOT;
+            if (Files.exists(docsPath)) {
+                // 获取所有YYYY-MM.html格式的文件
+                List<String> monthFiles = Files.list(docsPath)
+                    .filter(path -> {
+                        String fileName = path.getFileName().toString();
+                        return fileName.matches("^\\d{4}-\\d{2}\\.html$");
+                    })
+                    .map(path -> path.getFileName().toString())
+                    .sorted((a, b) -> b.compareTo(a)) // 按日期倒序排列
+                    .collect(java.util.stream.Collectors.toList());
+                
+                // 为每个月度文件生成侧边栏链接
+                for (String monthFile : monthFiles) {
+                    String month = monthFile.replace(".html", "");
+                    String sidabarMenu = Sidebar.getSidabarMenuList(monthFile, month);
+                    if (month != null && month.equals(nowMonth)) {
+                        sidabarMenu = sidabarMenu.replace(Sidebar.VAR_SIDABAR_COLOR, Sidebar.VAR_SIDABAR_NOW_COLOR);
+                    }
+                    sidebar.append(sidabarMenu);
+                }
             }
-            sidebar.append(sidabarMenu);
+        } catch (Exception e) {
+            e.printStackTrace();
+            // 如果扫描失败，回退到原来的逻辑
+            for (String month : monthMap.keySet()) {
+                String sidabarMenu = Sidebar.getSidabarMenuList(month + ".html", month);
+                if (month != null && month.equals(nowMonth)) {
+                    sidabarMenu = sidabarMenu.replace(Sidebar.VAR_SIDABAR_COLOR, Sidebar.VAR_SIDABAR_NOW_COLOR);
+                }
+                sidebar.append(sidabarMenu);
+            }
         }
+        
         return html.replace(Sidebar.VAR_SIDABAR, sidebar.toString());
     }
 

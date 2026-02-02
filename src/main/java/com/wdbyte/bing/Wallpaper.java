@@ -31,40 +31,48 @@ public class Wallpaper {
      *
      * {"en-US", "zh-CN", "ja-JP", "en-IN", "pt-BR", "fr-FR", "de-DE", "en-CA", "en-GB", "it-IT", "es-ES", "fr-CA"};
      */
-    private static String[] regions =  {"en-US", "zh-CN"};
+    private static String[] regions =  {"zh-CN"};
 
     public static String CURRENT_REGION = "en-US";
 
     public static void main(String[] args) throws IOException {
+        // 强制设置系统编码为UTF-8
+        System.setProperty("file.encoding", "UTF-8");
+        System.setProperty("sun.jnu.encoding", "UTF-8");
+        
         for (String region : regions) {
-            String bingApi = String.format(BING_API_TEMPLATE, region);
             changeConfig(region);
-            String httpContent = HttpUtls.getHttpContent(bingApi);
-            JSONObject jsonObject = JSON.parseObject(httpContent);
-            JSONArray jsonArray = jsonObject.getJSONArray("images");
-
-            jsonObject = (JSONObject)jsonArray.get(0);
-            // 图片地址
-            String url = BING_URL + (String)jsonObject.get("url");
-
-            // 图片时间
-            String enddate = (String)jsonObject.get("enddate");
-            LocalDate localDate = LocalDate.parse(enddate, DateTimeFormatter.BASIC_ISO_DATE);
-            enddate = localDate.format(DateTimeFormatter.ISO_LOCAL_DATE);
-
-            // 图片版权
-            String copyright = (String)jsonObject.get("copyright");
-
+            
+            // 跳过API获取，直接生成HTML
             List<Images> imagesList = BingFileUtils.readBing();
-            imagesList.set(0,new Images(copyright, enddate, url));
-            imagesList = imagesList.stream().distinct().collect(Collectors.toList());
             BingFileUtils.writeBing(imagesList);
-            BingFileUtils.writeReadme(imagesList);
-            BingFileUtils.writeMonthInfo(imagesList);
+            
+            // 创建WebSiteGenerator实例并调用
             WebSiteGenerator generator = new WebSiteGenerator();
             generator.htmlGenerator();
-            generator.generateCalendarDataFiles(imagesList);
         }
+    }
+    
+    /**
+     * 简化描述，去掉括号中的版权信息
+     */
+    private static String simplifyDescription(String desc) {
+        if (desc == null || desc.trim().isEmpty()) {
+            return desc;
+        }
+        
+        // 查找第一个括号的位置
+        int firstParenIndex = desc.indexOf('(');
+        if (firstParenIndex > 0) {
+            // 去掉括号及其内容
+            String simplified = desc.substring(0, firstParenIndex).trim();
+            // 去掉末尾可能的空格和标点
+            if (simplified.endsWith(",")) {
+                simplified = simplified.substring(0, simplified.length() - 1).trim();
+            }
+            return simplified;
+        }
+        return desc;
     }
 
     public static void changeConfig(String region) {
