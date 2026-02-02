@@ -44,7 +44,7 @@ public class MarkdownBackupGenerator {
         List<Images> englishImages = JsonDataManager.readDataByRegion("en-us");
         
         StringBuilder content = new StringBuilder();
-        content.append("## Bing Wallpaper\n");
+        content.append("## Historical Archive\n");
         
         // 按日期倒序排列
         englishImages.stream()
@@ -59,10 +59,20 @@ public class MarkdownBackupGenerator {
                 });
         
         // 确保目录存在
-        Files.createDirectories(EN_MD_PATH.getParent());
+        Path parentDir = EN_MD_PATH.getParent();
+        if (parentDir != null) {
+            Files.createDirectories(parentDir);
+        }
         
-        // 写入文件
-        Files.write(EN_MD_PATH, content.toString().getBytes("UTF-8"));
+        // 写入文件 - 确保UTF-8编码
+        String contentStr = content.toString();
+        Files.write(EN_MD_PATH, contentStr.getBytes("UTF-8"));
+        
+        // 验证写入的编码
+        String verifyContent = new String(Files.readAllBytes(EN_MD_PATH), "UTF-8");
+        if (!verifyContent.contains("Türkiye") && contentStr.contains("Türkiye")) {
+            System.err.println("警告：英文区MD文件编码可能有问题");
+        }
         
         System.out.println("英文区MD文件生成完成: " + englishImages.size() + " 条数据");
     }
@@ -74,7 +84,7 @@ public class MarkdownBackupGenerator {
         List<Images> chineseImages = JsonDataManager.readDataByRegion("zh-cn");
         
         StringBuilder content = new StringBuilder();
-        content.append("## 必应壁纸\n");
+        content.append("## 历史归档\n");
         
         // 按日期倒序排列
         chineseImages.stream()
@@ -91,8 +101,15 @@ public class MarkdownBackupGenerator {
         // 确保目录存在
         Files.createDirectories(ZH_CN_MD_PATH.getParent());
         
-        // 写入文件
-        Files.write(ZH_CN_MD_PATH, content.toString().getBytes("UTF-8"));
+        // 写入文件 - 确保UTF-8编码
+        String contentStr = content.toString();
+        Files.write(ZH_CN_MD_PATH, contentStr.getBytes("UTF-8"));
+        
+        // 验证写入的编码
+        String verifyContent = new String(Files.readAllBytes(ZH_CN_MD_PATH), "UTF-8");
+        if (verifyContent.length() != contentStr.length()) {
+            System.err.println("警告：中文区MD文件编码可能有问题");
+        }
         
         System.out.println("中文区MD文件生成完成: " + chineseImages.size() + " 条数据");
     }
