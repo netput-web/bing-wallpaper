@@ -85,12 +85,7 @@ public class Wallpaper {
             }
         }
         
-        // 7. 生成MD备份文件
-        System.out.println("\n--- 生成MD备份文件 ---");
-        MarkdownBackupGenerator.generateMarkdownBackup();
-        MarkdownBackupGenerator.validateMarkdownFiles();
-        
-        // 8. 最终统计
+        // 7. 最终统计
         System.out.println("\n=== 最终数据统计 ===");
         JsonDataManager.printStatistics();
         
@@ -144,25 +139,21 @@ public class Wallpaper {
         region = region.toLowerCase();
         CURRENT_REGION = region;
         
-        // 主要英文区 - 使用统一的docs/day/路径
+        // 统一配置：所有区域都使用JSON数据存储
         if ("en-us".equalsIgnoreCase(region)) {
             BingFileUtils.README_PATH = Paths.get("README.md");
-            BingFileUtils.BING_PATH = Paths.get("bing-wallpaper.md");
             BingFileUtils.MONTH_PATH = Paths.get("docs/day/");
             HtmlFileUtils.BING_HTML_ROOT = Paths.get("docs/");
         } 
         // 中文区 - 使用区域特定的路径
         else if ("zh-cn".equalsIgnoreCase(region)) {
             BingFileUtils.README_PATH = Paths.get("zh-cn/README.md");
-            BingFileUtils.BING_PATH = Paths.get("zh-cn/bing-wallpaper.md");
             BingFileUtils.MONTH_PATH = Paths.get("zh-cn/picture/");
             HtmlFileUtils.BING_HTML_ROOT = Paths.get("docs/zh-cn/");
         }
-        // 其他区域 - 统一使用JSON存储，不依赖根目录文件
+        // 其他区域 - 统一使用JSON存储
         else {
-            // 这些区域完全依赖JSON数据，不需要根目录文件
             BingFileUtils.README_PATH = Paths.get("README.md"); // 使用主README
-            BingFileUtils.BING_PATH = Paths.get("bing-wallpaper.md"); // 使用主文件
             BingFileUtils.MONTH_PATH = Paths.get("docs/day/"); // 使用统一路径
             HtmlFileUtils.BING_HTML_ROOT = Paths.get("docs/" + region + "/"); // HTML仍生成到对应目录
         }

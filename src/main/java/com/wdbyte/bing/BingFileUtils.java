@@ -26,116 +26,10 @@ import java.util.stream.Collectors;
 public class BingFileUtils {
 
     public static Path README_PATH = Paths.get("README.md");
-    public static Path BING_PATH = Paths.get("bing-wallpaper.md");
 
     public static Path MONTH_PATH = Paths.get("picture/");
 
-    /**
-     * 读取 bing-wallpaper.md
-     *
-     * @return
-     * @throws IOException
-     */
-    public static List<Images> readBing() throws IOException {
-        if (!Files.exists(BING_PATH)) {
-            Path parent = BING_PATH.getParent();
-            if (!Files.exists(parent)) {
-                Files.createDirectory(parent);
-            }
-            Files.createFile(BING_PATH);
-        }
-        
-        // 使用InputStreamReader确保UTF-8编码
-        List<Images> imgList = new ArrayList<>();
-        imgList.add(new Images());
-        
-        try (InputStreamReader reader = new InputStreamReader(
-                Files.newInputStream(BING_PATH), StandardCharsets.UTF_8);
-             BufferedReader bufferedReader = new BufferedReader(reader)) {
-            
-            String line;
-            boolean isFirstLine = true;
-            
-            while ((line = bufferedReader.readLine()) != null) {
-                line = line.trim();
-                if (line.isEmpty()) {
-                    continue;
-                }
-                
-                // 跳过第一行标题
-                if (isFirstLine) {
-                    isFirstLine = false;
-                    continue;
-                }
-                
-                // 找到描述的结束位置
-                int descStart = line.indexOf("[") + 1;
-                int descEnd = line.indexOf("]");
-                
-                // 找到URL的开始和结束位置（最后一个括号对）
-                int lastOpenParen = line.lastIndexOf("(");
-                int lastCloseParen = line.lastIndexOf(")");
 
-                String date = line.substring(0, 10);
-                
-                // 安全检查描述内容
-                String descContent = "";
-                if (descEnd > descStart) {
-                    descContent = line.substring(descStart, descEnd);
-                } else {
-                    System.out.println("DEBUG: 跳过格式错误的行: " + line);
-                    continue;
-                }
-                
-                // 安全检查URL内容
-                String url = "";
-                if (lastOpenParen > descEnd && lastCloseParen > lastOpenParen) {
-                    url = line.substring(lastOpenParen + 1, lastCloseParen);
-                } else {
-                    System.out.println("DEBUG: 跳过URL格式错误的行: " + line);
-                    continue;
-                }
-                
-                // 调试输出，检查读取的内容
-                System.out.println("DEBUG: 读取的描述内容: " + descContent);
-                System.out.println("DEBUG: 读取的URL内容: " + url);
-                
-                imgList.add(new Images(descContent, date, url));
-            }
-        }
-        
-        LogUtils.log("read bing wallpaper,path:%s,size:%d", BING_PATH.toString(), imgList.size());
-        return imgList;
-    }
-
-    /**
-     * 写入 bing-wallpaper.md
-     *
-     * @param imgList
-     * @throws IOException
-     */
-    public static void writeBing(List<Images> imgList) throws IOException {
-        if (!Files.exists(BING_PATH)) {
-            Files.createFile(BING_PATH);
-        }
-        
-        // 使用OutputStreamWriter确保UTF-8编码
-        try (OutputStreamWriter writer = new OutputStreamWriter(
-                Files.newOutputStream(BING_PATH), StandardCharsets.UTF_8)) {
-            writer.write("## Bing Wallpaper");
-            writer.write(System.lineSeparator());
-            writer.write(System.lineSeparator());
-            
-            for (Images images : imgList) {
-                writer.write(images.formatMarkdown());
-                writer.write(System.lineSeparator());
-                writer.write(System.lineSeparator());
-                writer.write(System.lineSeparator());
-            }
-        }
-        
-        LogUtils.log("write bing wallpaper,path:%s,size:%d", BING_PATH.toString(), imgList.size());
-    }
 
     /**
      * 读取 README.md
@@ -166,7 +60,7 @@ public class BingFileUtils {
     }
 
     /**
-     * 写入 README.md
+     * 写入 README.md（保留项目说明功能）
      *
      * @param imgList
      * @throws IOException
@@ -181,7 +75,11 @@ public class BingFileUtils {
         } else {
             imagesList = imgList;
         }
-        writeFile(README_PATH, imagesList, null);
+        
+        // 简化的README写入，只写入基本信息
+        Files.write(README_PATH, "## Bing Wallpaper".getBytes("UTF-8"));
+        Files.write(README_PATH, System.lineSeparator().getBytes("UTF-8"), StandardOpenOption.APPEND);
+        Files.write(README_PATH, System.lineSeparator().getBytes("UTF-8"), StandardOpenOption.APPEND);
 
         Files.write(README_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
         // 归档
@@ -202,14 +100,14 @@ public class BingFileUtils {
             Files.write(README_PATH, link.getBytes("UTF-8"), StandardOpenOption.APPEND);
             i++;
             if (i % 8 == 0) {
-                Files.write(README_PATH, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
+                Files.write(README_PATH, System.lineSeparator().getBytes("UTF-8"), StandardOpenOption.APPEND);
             }
         }
     }
 
 
     /**
-     * 按月份写入图片信息
+     * 按月份创建图片目录
      *
      * @param imgList
      * @throws IOException
@@ -221,8 +119,7 @@ public class BingFileUtils {
             if (!Files.exists(path)) {
                 Files.createDirectories(path);
             }
-            path = path.resolve("README.md");
-            writeFile(path, monthMap.get(key), key);
+            // 不再生成README.md文件，只创建目录结构
         }
     }
 
@@ -250,42 +147,5 @@ public class BingFileUtils {
         return monthMap;
     }
 
-    /**
-     * 写入图片列表到指定位置
-     *
-     * @param path
-     * @param imagesList
-     * @param name
-     * @throws IOException
-     */
-    private static void writeFile(Path path, List<Images> imagesList, String name) throws IOException {
-        if (!Files.exists(path)) {
-            Files.createFile(path);
-        }
-        String title = "## Bing Wallpaper";
-        if (name != null) {
-            title = "## Bing Wallpaper (" + name + ")";
-        }
-        Files.write(path, title.getBytes());
-        Files.write(path, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-        Files.write(path, imagesList.get(0).toLarge().getBytes(), StandardOpenOption.APPEND);
-        Files.write(path, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-        Files.write(path, "|      |      |      |".getBytes(), StandardOpenOption.APPEND);
-        Files.write(path, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-        Files.write(path, "| :----: | :----: | :----: |".getBytes(), StandardOpenOption.APPEND);
-        Files.write(path, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-        int i = 1;
-        for (Images images : imagesList) {
-            Files.write(path, ("|" + images.toString()).getBytes(), StandardOpenOption.APPEND);
-            if (i % 3 == 0) {
-                Files.write(path, "|".getBytes(), StandardOpenOption.APPEND);
-                Files.write(path, System.lineSeparator().getBytes(), StandardOpenOption.APPEND);
-            }
-            i++;
-        }
-        if (i % 3 != 1) {
-            Files.write(path, "|".getBytes(), StandardOpenOption.APPEND);
-        }
-    }
-
+    
 }
