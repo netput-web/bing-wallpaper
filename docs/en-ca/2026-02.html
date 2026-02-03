@@ -2501,6 +2501,55 @@ document.addEventListener('DOMContentLoaded', function() {
     #img_list > div > div[style*="bottom: -16px"] .like-button:hover {
         background: rgba(100, 150, 255, 0.3) !important;
     }
+
+    /* 黑暗模式下的新图片卡片样式 */
+    .img-card {
+        background: rgba(30, 30, 40, 0.95) !important;
+        border: 1px solid rgba(100, 150, 255, 0.2) !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .img-card:hover {
+        background: rgba(40, 40, 55, 0.95) !important;
+        border: 1px solid rgba(100, 150, 255, 0.4) !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    .img-info {
+        background: rgba(30, 30, 40, 0.95) !important;
+    }
+
+    .img-title {
+        color: #e2e8f0 !important;
+    }
+
+    .img-date {
+        color: #9ca3af !important;
+    }
+
+    .download-link {
+        background: rgba(59, 130, 246, 0.2) !important;
+        color: #60a5fa !important;
+        border: 1px solid rgba(59, 130, 246, 0.3) !important;
+    }
+
+    .download-link:hover {
+        background: rgba(59, 130, 246, 0.3) !important;
+        color: #93c5fd !important;
+        border: 1px solid rgba(59, 130, 246, 0.5) !important;
+    }
+
+    .like-button {
+        background: rgba(100, 150, 255, 0.2) !important;
+        color: #e2e8f0 !important;
+        border: 1px solid rgba(100, 150, 255, 0.3) !important;
+    }
+
+    .like-button:hover {
+        background: rgba(100, 150, 255, 0.3) !important;
+        color: #ffffff !important;
+        border: 1px solid rgba(100, 150, 255, 0.5) !important;
+    }
 }
 
 /* 针对darkmode-js库的样式 */
@@ -2533,6 +2582,55 @@ document.addEventListener('DOMContentLoaded', function() {
     background: rgba(100, 150, 255, 0.3) !important;
 }
 
+/* 黑暗模式下的新图片卡片样式 */
+.darkmode .img-card {
+    background: rgba(30, 30, 40, 0.95) !important;
+    border: 1px solid rgba(100, 150, 255, 0.2) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.darkmode .img-card:hover {
+    background: rgba(40, 40, 55, 0.95) !important;
+    border: 1px solid rgba(100, 150, 255, 0.4) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+.darkmode .img-info {
+    background: rgba(30, 30, 40, 0.95) !important;
+}
+
+.darkmode .img-title {
+    color: #e2e8f0 !important;
+}
+
+.darkmode .img-date {
+    color: #9ca3af !important;
+}
+
+.darkmode .download-link {
+    background: rgba(59, 130, 246, 0.2) !important;
+    color: #60a5fa !important;
+    border: 1px solid rgba(59, 130, 246, 0.3) !important;
+}
+
+.darkmode .download-link:hover {
+    background: rgba(59, 130, 246, 0.3) !important;
+    color: #93c5fd !important;
+    border: 1px solid rgba(59, 130, 246, 0.5) !important;
+}
+
+.darkmode .like-button {
+    background: rgba(100, 150, 255, 0.2) !important;
+    color: #e2e8f0 !important;
+    border: 1px solid rgba(100, 150, 255, 0.3) !important;
+}
+
+.darkmode .like-button:hover {
+    background: rgba(100, 150, 255, 0.3) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(100, 150, 255, 0.5) !important;
+}
+
 /* 备用选择器 */
 [data-theme="dark"] #img_list > div > div[style*="bottom: -16px"] {
     background: rgba(20, 20, 30, 0.95) !important;
@@ -2561,6 +2659,55 @@ document.addEventListener('DOMContentLoaded', function() {
 
 [data-theme="dark"] #img_list > div > div[style*="bottom: -16px"] .like-button:hover {
     background: rgba(100, 150, 255, 0.3) !important;
+}
+
+/* 黑暗模式下的新图片卡片样式 - 备用选择器 */
+[data-theme="dark"] .img-card {
+    background: rgba(30, 30, 40, 0.95) !important;
+    border: 1px solid rgba(100, 150, 255, 0.2) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .img-card:hover {
+    background: rgba(40, 40, 55, 0.95) !important;
+    border: 1px solid rgba(100, 150, 255, 0.4) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .img-info {
+    background: rgba(30, 30, 40, 0.95) !important;
+}
+
+[data-theme="dark"] .img-title {
+    color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .img-date {
+    color: #9ca3af !important;
+}
+
+[data-theme="dark"] .download-link {
+    background: rgba(59, 130, 246, 0.2) !important;
+    color: #60a5fa !important;
+    border: 1px solid rgba(59, 130, 246, 0.3) !important;
+}
+
+[data-theme="dark"] .download-link:hover {
+    background: rgba(59, 130, 246, 0.3) !important;
+    color: #93c5fd !important;
+    border: 1px solid rgba(59, 130, 246, 0.5) !important;
+}
+
+[data-theme="dark"] .like-button {
+    background: rgba(100, 150, 255, 0.2) !important;
+    color: #e2e8f0 !important;
+    border: 1px solid rgba(100, 150, 255, 0.3) !important;
+}
+
+[data-theme="dark"] .like-button:hover {
+    background: rgba(100, 150, 255, 0.3) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(100, 150, 255, 0.5) !important;
 }
 </style>
 <script src="https://jsdelivr.wdbyte.com/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
