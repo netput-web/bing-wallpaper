@@ -200,6 +200,145 @@
             background: rgba(255, 255, 255, 0.25) !important;
         }
         
+        /* 新的图片卡片样式 - 增强默认状态效果 */
+        .img-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #f5f5f5;
+        }
+        
+        .img-card:hover {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            transform: translateY(-4px);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .img-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        
+        .img-container .bigImg {
+            transition: transform 0.3s ease;
+        }
+        
+        .img-card:hover .img-container .bigImg {
+            transform: scale(1.05);
+        }
+        
+        .img-card:hover .img-container {
+            border-radius: 8px;
+        }
+        
+        .img-info {
+            padding: 12px 16px;
+        }
+        
+        .img-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 8px;
+            line-height: 1.5;
+            height: 21px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .img-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .img-date {
+            color: #999;
+            font-size: 12px;
+        }
+        
+        .img-actions {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+        
+        .download-link {
+            color: #1976d2;
+            text-decoration: none;
+            padding: 3px 8px;
+            border-radius: 3px;
+            transition: all 0.2s ease;
+            font-size: 11px;
+            border: 1px solid #e0e0e0;
+            background: #fafafa;
+            font-weight: 500;
+        }
+        
+        .download-link:hover {
+            background: #1976d2;
+            color: #fff;
+            border-color: #1976d2;
+        }
+        
+        .like-button {
+            background: #fff;
+            color: #999;
+            border: 1px solid #e0e0e0;
+            border-radius: 3px;
+            padding: 3px 8px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: Arial, sans-serif;
+        }
+        
+        .like-button:hover {
+            background: #f44336;
+            color: #fff;
+            border-color: #f44336;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 1200px) {
+            .img-card {
+                width: 45% !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .img-card {
+                width: 100% !important;
+                margin-bottom: 16px;
+            }
+            
+            .img-title {
+                font-size: 15px;
+                height: 22px;
+            }
+            
+            .img-meta {
+                flex-direction: column;
+                gap: 8px;
+                align-items: flex-start;
+            }
+            
+            .img-actions {
+                align-self: flex-end;
+            }
+        }
+        
         /* Fluent Design 日历样式 - 带预览区域 */
         .calendar-preview-container {
             display: flex;
@@ -1898,99 +2037,533 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- First Photo Grid-->
     <div class="w3-center" id="img_list" style="display: flex; flex-wrap: wrap; justify-content: space-between; padding: 48px 0 0 0;">
-        <div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.SaypeDubai_EN-US5078679271_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/31.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.SaypeDubai_EN-US5078679271_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-31 <a href="day/202507/31.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-31')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.TigerDay_EN-US5038876410_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/30.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.TigerDay_EN-US5038876410_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-30 <a href="day/202507/30.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-30')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.MongoliaYurts_EN-US1803457525_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/29.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.MongoliaYurts_EN-US1803457525_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-29 <a href="day/202507/29.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-29')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.BlackfinBarracuda_EN-US1227116811_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/28.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.BlackfinBarracuda_EN-US1227116811_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-28 <a href="day/202507/28.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-28')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.MangroveTwilight_EN-US0646432423_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/27.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.MangroveTwilight_EN-US0646432423_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-27 <a href="day/202507/27.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-27')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.LasPalmas_EN-US0568727017_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/26.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.LasPalmas_EN-US0568727017_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-26 <a href="day/202507/26.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-26')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.AshyWoodswallow_EN-US7005770998_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/25.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.AshyWoodswallow_EN-US7005770998_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-25 <a href="day/202507/25.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-25')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.VaticanCity_EN-US5915643866_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/24.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.VaticanCity_EN-US5915643866_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-24 <a href="day/202507/24.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-24')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.BadlandsSunset_EN-US5821746223_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/23.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.BadlandsSunset_EN-US5821746223_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-23 <a href="day/202507/23.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-23')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.AcroporaReef_EN-US5567789372_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/22.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.AcroporaReef_EN-US5567789372_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-22 <a href="day/202507/22.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-22')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.BigMoon_EN-US5436003142_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/21.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.BigMoon_EN-US5436003142_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-21 <a href="day/202507/21.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-21')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.MothWeek_EN-US5360572836_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/20.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.MothWeek_EN-US5360572836_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-20 <a href="day/202507/20.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-20')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.FloridaSeashore_EN-US9038929616_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/19.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.FloridaSeashore_EN-US9038929616_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-19 <a href="day/202507/19.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-19')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.FranceLavender_EN-US5224253118_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/18.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.FranceLavender_EN-US5224253118_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-18 <a href="day/202507/18.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-18')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.TemplePhilae_EN-US5062419351_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/17.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.TemplePhilae_EN-US5062419351_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-17 <a href="day/202507/17.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-17')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.PerseidsPine_EN-US4826682211_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/16.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.PerseidsPine_EN-US4826682211_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-16 <a href="day/202507/16.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-16')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.YoungShark_EN-US4689572794_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/15.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.YoungShark_EN-US4689572794_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-15 <a href="day/202507/15.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-15')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.BasaltColumns_EN-US4476950150_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/14.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.BasaltColumns_EN-US4476950150_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-14 <a href="day/202507/14.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-14')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.ThomsonGazelle_EN-US4354285846_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/13.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.ThomsonGazelle_EN-US4354285846_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-13 <a href="day/202507/13.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-13')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.TokyoSunrise_EN-US4269783992_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/12.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.TokyoSunrise_EN-US4269783992_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-12 <a href="day/202507/12.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-12')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.BahamaBlues_EN-US1367794856_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/11.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.BahamaBlues_EN-US1367794856_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-11 <a href="day/202507/11.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-11')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.ConstitucionStation_EN-US1235857389_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/10.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.ConstitucionStation_EN-US1235857389_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-10 <a href="day/202507/10.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-10')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.SecedaPeak_EN-US0983713623_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/09.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.SecedaPeak_EN-US0983713623_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-09 <a href="day/202507/09.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-09')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.ShetlandGannets_EN-US0812287314_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/08.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.ShetlandGannets_EN-US0812287314_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-08 <a href="day/202507/08.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-08')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.MesquiteFlats_EN-US0638943216_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/07.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.MesquiteFlats_EN-US0638943216_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-07 <a href="day/202507/07.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-07')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.TourCyclists_EN-US0589835009_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/06.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.TourCyclists_EN-US0589835009_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-06 <a href="day/202507/06.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-06')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.SeattleFireworks_EN-US0523563675_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/05.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.SeattleFireworks_EN-US0523563675_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-05 <a href="day/202507/05.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-05')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.RainbowRiver_EN-US0442967532_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/04.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.RainbowRiver_EN-US0442967532_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-04 <a href="day/202507/04.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-04')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.MaroonClownfish_EN-US0391262783_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/03.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.MaroonClownfish_EN-US0391262783_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-03 <a href="day/202507/03.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-03')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.CanadaDayFogo_EN-US0231478181_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/02.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.CanadaDayFogo_EN-US0231478181_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-02 <a href="day/202507/02.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-02')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.WolfeCrater_EN-US2390330059_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202507/01.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.WolfeCrater_EN-US2390330059_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2025-07-01 <a href="day/202507/01.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-01')">喜欢</button></div>
+        <div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.SaypeDubai_EN-US5078679271_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/31.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.SaypeDubai_EN-US5078679271_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">'Beyond Walls' land-art installation by Saype at Expo 2020 Dubai, United Arab Emirates</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-31</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/31.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-31')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.TigerDay_EN-US5038876410_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/30.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.TigerDay_EN-US5038876410_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Female Bengal tiger, Kanha National Park, India</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-30</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/30.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-30')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.MongoliaYurts_EN-US1803457525_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/29.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.MongoliaYurts_EN-US1803457525_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Yurts in the grasslands of Mongolia</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-29</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/29.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-29')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.BlackfinBarracuda_EN-US1227116811_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/28.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.BlackfinBarracuda_EN-US1227116811_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">School of blackfin barracuda, Shark Reef, Ras Mohammed National Park, Sinai Peninsula, Egypt</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-28</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/28.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-28')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.MangroveTwilight_EN-US0646432423_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/27.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.MangroveTwilight_EN-US0646432423_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Mangrove trees at twilight, Walakiri Beach, island of Sumba, Indonesia</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-27</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/27.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-27')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.LasPalmas_EN-US0568727017_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/26.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.LasPalmas_EN-US0568727017_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Aerial view of colorful houses, Las Palmas de Gran Canaria, Spain</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-26</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/26.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-26')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.AshyWoodswallow_EN-US7005770998_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/25.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.AshyWoodswallow_EN-US7005770998_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Family of ashy woodswallows perched on a branch in Thailand</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-25</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/25.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-25')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.VaticanCity_EN-US5915643866_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/24.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.VaticanCity_EN-US5915643866_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Vatican City with St. Peter's Basilica</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-24</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/24.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-24')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.BadlandsSunset_EN-US5821746223_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/23.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.BadlandsSunset_EN-US5821746223_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Sunset over Badlands National Park, South Dakota</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-23</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/23.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-23')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.AcroporaReef_EN-US5567789372_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/22.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.AcroporaReef_EN-US5567789372_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Staghorn coral off the island of Bonaire, Caribbean Netherlands</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-22</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/22.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-22')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.BigMoon_EN-US5436003142_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/21.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.BigMoon_EN-US5436003142_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">The moon's surface photographed through a telescope</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-21</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/21.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-21')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.MothWeek_EN-US5360572836_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/20.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.MothWeek_EN-US5360572836_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Luna moth resting on cedar elm, New Braunfels, Texas, USA</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-20</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/20.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-20')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.FloridaSeashore_EN-US9038929616_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/19.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.FloridaSeashore_EN-US9038929616_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Beach at sunrise, Gulf Islands National Seashore, Florida</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-19</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/19.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-19')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.FranceLavender_EN-US5224253118_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/18.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.FranceLavender_EN-US5224253118_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Lavender fields in Plateau de Valensole, France</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-18</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/18.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-18')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.TemplePhilae_EN-US5062419351_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/17.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.TemplePhilae_EN-US5062419351_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Temple of Philae</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-17</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/17.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-17')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.PerseidsPine_EN-US4826682211_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/16.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.PerseidsPine_EN-US4826682211_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Perseid meteor shower and an ancient bristlecone pine, Great Basin National Park, Nevada</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-16</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/16.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-16')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.YoungShark_EN-US4689572794_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/15.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.YoungShark_EN-US4689572794_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Young blue shark swimming off the coast of Galicia, Spain</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-15</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/15.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-15')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.BasaltColumns_EN-US4476950150_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/14.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.BasaltColumns_EN-US4476950150_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Basalt columns at Kálfshamarsvík, Skagi Peninsula, Iceland</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-14</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/14.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-14')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.ThomsonGazelle_EN-US4354285846_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/13.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.ThomsonGazelle_EN-US4354285846_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Thomson's gazelle mother and fawn, Maasai Mara, Kenya</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-13</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/13.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-13')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.TokyoSunrise_EN-US4269783992_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/12.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.TokyoSunrise_EN-US4269783992_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Tokyo at sunrise</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-12</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/12.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-12')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.BahamaBlues_EN-US1367794856_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/11.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.BahamaBlues_EN-US1367794856_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Turquoise waters of the Bahamas</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-11</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/11.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-11')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.ConstitucionStation_EN-US1235857389_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/10.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.ConstitucionStation_EN-US1235857389_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Constitución railway station, Buenos Aires, Argentina</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-10</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/10.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-10')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.SecedaPeak_EN-US0983713623_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/09.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.SecedaPeak_EN-US0983713623_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Seceda, a peak in the Dolomites, South Tyrol, Italy</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-09</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/09.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-09')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.ShetlandGannets_EN-US0812287314_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/08.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.ShetlandGannets_EN-US0812287314_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Northern gannets diving for fish, Shetland Islands, Scotland</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-08</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/08.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-08')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.MesquiteFlats_EN-US0638943216_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/07.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.MesquiteFlats_EN-US0638943216_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Mesquite Flat Sand Dunes in Death Valley National Park, California</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-07</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/07.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-07')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.TourCyclists_EN-US0589835009_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/06.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.TourCyclists_EN-US0589835009_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Descending the Col du Tourmalet in the French Pyrenees during the 2021 Tour de France</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-06</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/06.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-06')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.SeattleFireworks_EN-US0523563675_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/05.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.SeattleFireworks_EN-US0523563675_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Fourth of July fireworks over Lake Union in Seattle</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-05</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/05.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-05')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.RainbowRiver_EN-US0442967532_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/04.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.RainbowRiver_EN-US0442967532_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Rainbow River in Rainbow Springs State Park, Florida</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-04</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/04.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-04')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.MaroonClownfish_EN-US0391262783_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/03.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.MaroonClownfish_EN-US0391262783_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Spine-cheeked anemonefish surrounded by bubble-tip anemone, Milne Bay, Papua New Guinea</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-03</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/03.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-03')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.CanadaDayFogo_EN-US0231478181_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/02.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.CanadaDayFogo_EN-US0231478181_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Fishing village of Tilting, Fogo Island, Newfoundland and Labrador, Canada</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-02</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/02.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-02')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.WolfeCrater_EN-US2390330059_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202507/01.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.WolfeCrater_EN-US2390330059_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Wolfe Creek Crater, Australia</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2025-07-01</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202507/01.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-us','2025-07-01')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
 </div>
     </div>
     

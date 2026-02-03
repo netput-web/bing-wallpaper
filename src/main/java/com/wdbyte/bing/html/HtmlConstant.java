@@ -513,12 +513,25 @@ public class HtmlConstant {
         private static final String VAR_IMG_CARD_DOWNLOAD_URL_PREVIEW = "${img_card_download_url_preview}";
         private static final String VAR_IMG_CARD_DOWNLOAD_URL = "${img_card_download_url}";
         private static final String VAR_IMG_CARD_DATE = "${img_card_date}";
+        private static final String VAR_IMG_CARD_TITLE = "${img_card_title}";
         private static final String IMG_CARD = ""
-            + "<div style=\"width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box\">\n"
-            +"  <img class=\"smallImg\" src=\"${img_card_url}&pid=hp&w=50\"  style=\"width:95%; position: absolute; top: 0; left: 2.5%;\" />"
-            + "<a href=\"${img_detail_url}\"  target=\"_blank\"> <img class=\"bigImg w3-hover-shadow\" src=\"${img_card_download_url_preview}&pid=hp&w=384&h=216&rs=1&c=4\" style=\"width:95%; position: absolute; top: 0; left: 2.5%;\" onload=\"imgloading(this)\"></a>\n"
-            + " <div style=\"position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;\">${img_card_date} <a href=\"${img_detail_url}\" target=\"_blank\">Download 4k</a> "
-            + "<button class=\"like-button img-btn\" onclick=\"updateLove('${img_card_region}','${img_card_date}')\">喜欢</button></div>\n"
+            + "<div class=\"img-card\" style=\"width: 30%; margin-bottom: 20px;\">\n"
+            + "  <div class=\"img-container\" style=\"position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;\">\n"
+            + "    <img class=\"smallImg\" src=\"${img_card_url}&pid=hp&w=50\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;\" />\n"
+            + "    <a href=\"${img_detail_url}\" target=\"_blank\">\n"
+            + "      <img class=\"bigImg\" src=\"${img_card_download_url_preview}&pid=hp&w=384&h=216&rs=1&c=4\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;\" onload=\"imgloading(this)\" />\n"
+            + "    </a>\n"
+            + "  </div>\n"
+            + "  <div class=\"img-info\" style=\"padding: 12px 16px;\">\n"
+            + "    <div class=\"img-title\" style=\"font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;\">${img_card_title}</div>\n"
+            + "    <div class=\"img-meta\" style=\"display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;\">\n"
+            + "      <span class=\"img-date\" style=\"color: #999;\">${img_card_date}</span>\n"
+            + "      <div class=\"img-actions\" style=\"display: flex; gap: 6px; align-items: center;\">\n"
+            + "        <a href=\"${img_detail_url}\" target=\"_blank\" class=\"download-link\" style=\"color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;\">4K</a>\n"
+            + "        <button class=\"like-button img-btn\" onclick=\"updateLove('${img_card_region}','${img_card_date}')\" style=\"background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;\">♥</button>\n"
+            + "      </div>\n"
+            + "    </div>\n"
+            + "  </div>\n"
             + "</div>";
 
         public static String getImgCard(Images bingImage) {
@@ -528,7 +541,8 @@ public class HtmlConstant {
             result = result.replace(VAR_IMG_DETAIL_URL, bingImage.getDetailUrlPath());
             result = result.replace(VAR_IMG_DETAIL_URL, bingImage.getDetailUrlPath());
             result = result.replace(VAR_IMG_CRARD_REGION, Wallpaper.CURRENT_REGION.toLowerCase());
-            return result.replace(VAR_IMG_CARD_DATE, bingImage.getDate());
+            result = result.replace(VAR_IMG_CARD_DATE, bingImage.getDate());
+            return result.replace(VAR_IMG_CARD_TITLE, bingImage.getDesc());
         }
     }
     /**

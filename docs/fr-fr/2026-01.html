@@ -200,6 +200,145 @@
             background: rgba(255, 255, 255, 0.25) !important;
         }
         
+        /* 新的图片卡片样式 - 增强默认状态效果 */
+        .img-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #f5f5f5;
+        }
+        
+        .img-card:hover {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            transform: translateY(-4px);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .img-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        
+        .img-container .bigImg {
+            transition: transform 0.3s ease;
+        }
+        
+        .img-card:hover .img-container .bigImg {
+            transform: scale(1.05);
+        }
+        
+        .img-card:hover .img-container {
+            border-radius: 8px;
+        }
+        
+        .img-info {
+            padding: 12px 16px;
+        }
+        
+        .img-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 8px;
+            line-height: 1.5;
+            height: 21px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .img-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .img-date {
+            color: #999;
+            font-size: 12px;
+        }
+        
+        .img-actions {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+        
+        .download-link {
+            color: #1976d2;
+            text-decoration: none;
+            padding: 3px 8px;
+            border-radius: 3px;
+            transition: all 0.2s ease;
+            font-size: 11px;
+            border: 1px solid #e0e0e0;
+            background: #fafafa;
+            font-weight: 500;
+        }
+        
+        .download-link:hover {
+            background: #1976d2;
+            color: #fff;
+            border-color: #1976d2;
+        }
+        
+        .like-button {
+            background: #fff;
+            color: #999;
+            border: 1px solid #e0e0e0;
+            border-radius: 3px;
+            padding: 3px 8px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: Arial, sans-serif;
+        }
+        
+        .like-button:hover {
+            background: #f44336;
+            color: #fff;
+            border-color: #f44336;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 1200px) {
+            .img-card {
+                width: 45% !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .img-card {
+                width: 100% !important;
+                margin-bottom: 16px;
+            }
+            
+            .img-title {
+                font-size: 15px;
+                height: 22px;
+            }
+            
+            .img-meta {
+                flex-direction: column;
+                gap: 8px;
+                align-items: flex-start;
+            }
+            
+            .img-actions {
+                align-self: flex-end;
+            }
+        }
+        
         /* Fluent Design 日历样式 - 带预览区域 */
         .calendar-preview-container {
             display: flex;
@@ -1870,7 +2009,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge" style="white-space: pre-wrap; word-wrap: break-word; word-break: break-all;">Bing Wallpaper
 (2026-01)</h1>
                 <div class=" w3-padding-large w3-text-light-grey" style="max-width: 800px">
-                    <p>Des z猫bres des plaines, Parc National d鈥橢tosha, Namibie</p>
+                    <p>Des zèbres des plaines, Parc National d’Etosha, Namibie</p>
                 </div>
                 <h5 class="w3-hide-large" style="white-space:nowrap">Bing Wallpaper</h5>
             </div>
@@ -1898,24 +2037,91 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- First Photo Grid-->
     <div class="w3-center" id="img_list" style="display: flex; flex-wrap: wrap; justify-content: space-between; padding: 48px 0 0 0;">
-        <div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.EtoshaZebra_FR-FR8636454138_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202601/31.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.EtoshaZebra_FR-FR8636454138_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2026-01-31 <a href="day/202601/31.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('fr-fr','2026-01-31')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.StMichaelsCornwall_FR-FR8333014700_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202601/30.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.StMichaelsCornwall_FR-FR8333014700_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2026-01-30 <a href="day/202601/30.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('fr-fr','2026-01-30')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.MilwaukeeHall_FR-FR8690417570_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202601/29.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.MilwaukeeHall_FR-FR8690417570_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2026-01-29 <a href="day/202601/29.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('fr-fr','2026-01-29')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.WhanganuiPark_FR-FR8047545940_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202601/28.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.WhanganuiPark_FR-FR8047545940_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2026-01-28 <a href="day/202601/28.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('fr-fr','2026-01-28')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.DalmationPelicans_FR-FR5454969823_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202601/27.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.DalmationPelicans_FR-FR5454969823_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2026-01-27 <a href="day/202601/27.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('fr-fr','2026-01-27')">喜欢</button></div>
-</div><div style="width: 30%; position: relative; height: 0; padding-bottom: 18.75%; margin-bottom: 32px; box-sizing: border-box">
-  <img class="smallImg" src="https://cn.bing.com/th?id=OHR.BluetitWinter_FR-FR1512662576_UHD.jpg&pid=hp&w=50"  style="width:95%; position: absolute; top: 0; left: 2.5%;" /><a href="day/202601/26.html"  target="_blank"> <img class="bigImg w3-hover-shadow" src="https://cn.bing.com/th?id=OHR.BluetitWinter_FR-FR1512662576_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="width:95%; position: absolute; top: 0; left: 2.5%;" onload="imgloading(this)"></a>
- <div style="position: absolute; bottom: -16px; left: 0; right: 0; text-align: center; padding: 8px 0; box-sizing: border-box;">2026-01-26 <a href="day/202601/26.html" target="_blank">Download 4k</a> <button class="like-button img-btn" onclick="updateLove('fr-fr','2026-01-26')">喜欢</button></div>
+        <div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.EtoshaZebra_FR-FR8636454138_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202601/31.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.EtoshaZebra_FR-FR8636454138_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Des zèbres des plaines, Parc National d’Etosha, Namibie</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2026-01-31</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202601/31.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('fr-fr','2026-01-31')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.StMichaelsCornwall_FR-FR8333014700_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202601/30.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.StMichaelsCornwall_FR-FR8333014700_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">St. Michael's Mount à Marazion, Cornouailles, Angleterre, Royaume-Uni</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2026-01-30</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202601/30.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('fr-fr','2026-01-30')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.MilwaukeeHall_FR-FR8690417570_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202601/29.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.MilwaukeeHall_FR-FR8690417570_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">L'atrium ouvert de huit étages du Milwaukee City Hall, Wisconsin, États-Unis</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2026-01-29</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202601/29.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('fr-fr','2026-01-29')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.WhanganuiPark_FR-FR8047545940_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202601/28.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.WhanganuiPark_FR-FR8047545940_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Parc National de Whanganui, Retaruke, Nouvelle-Zélande</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2026-01-28</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202601/28.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('fr-fr','2026-01-28')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.DalmationPelicans_FR-FR5454969823_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202601/27.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.DalmationPelicans_FR-FR5454969823_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Des pélicans frisés sur le Lac Kerkini, Grèce</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2026-01-27</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202601/27.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('fr-fr','2026-01-27')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
 </div>
     </div>
     
@@ -2053,27 +2259,27 @@ document.addEventListener('DOMContentLoaded', function() {
   25
   
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202601/26.html', 'https://cn.bing.com/th?id=OHR.BluetitWinter_FR-FR1512662576_UHD.jpg', 'Une mésange bleue en hiver', 'Une mésange bleue en hiver', 'https://cn.bing.com/th?id=OHR.BluetitWinter_FR-FR1512662576_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   26
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202601/27.html', 'https://cn.bing.com/th?id=OHR.DalmationPelicans_FR-FR5454969823_UHD.jpg', 'Des p茅licans fris茅s sur le Lac Kerkini, Gr猫ce', 'Des p茅licans fris茅s sur le Lac Kerkini, Gr猫ce', 'https://cn.bing.com/th?id=OHR.DalmationPelicans_FR-FR5454969823_UHD.jpg')" data-count="1">
+<div class="calendar-day has-wallpaper" onclick="showPreview('day/202601/27.html', 'https://cn.bing.com/th?id=OHR.DalmationPelicans_FR-FR5454969823_UHD.jpg', 'Des pélicans frisés sur le Lac Kerkini, Grèce', 'Des pélicans frisés sur le Lac Kerkini, Grèce', 'https://cn.bing.com/th?id=OHR.DalmationPelicans_FR-FR5454969823_UHD.jpg')" data-count="1">
   27
   <div class="wallpaper-dot"></div>
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202601/28.html', 'https://cn.bing.com/th?id=OHR.WhanganuiPark_FR-FR8047545940_UHD.jpg', 'Parc National de Whanganui, Retaruke, Nouvelle-Z茅lande', 'Parc National de Whanganui, Retaruke, Nouvelle-Z茅lande', 'https://cn.bing.com/th?id=OHR.WhanganuiPark_FR-FR8047545940_UHD.jpg')" data-count="1">
+<div class="calendar-day has-wallpaper" onclick="showPreview('day/202601/28.html', 'https://cn.bing.com/th?id=OHR.WhanganuiPark_FR-FR8047545940_UHD.jpg', 'Parc National de Whanganui, Retaruke, Nouvelle-Zélande', 'Parc National de Whanganui, Retaruke, Nouvelle-Zélande', 'https://cn.bing.com/th?id=OHR.WhanganuiPark_FR-FR8047545940_UHD.jpg')" data-count="1">
   28
   <div class="wallpaper-dot"></div>
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202601/29.html', 'https://cn.bing.com/th?id=OHR.MilwaukeeHall_FR-FR8690417570_UHD.jpg', 'L\'atrium ouvert de huit 茅tages du Milwaukee City Hall, Wisconsin, 脡tats-Unis', 'L\'atrium ouvert de huit 茅tages du Milwaukee City Hall, Wisconsin, 脡tats-Unis', 'https://cn.bing.com/th?id=OHR.MilwaukeeHall_FR-FR8690417570_UHD.jpg')" data-count="1">
+<div class="calendar-day has-wallpaper" onclick="showPreview('day/202601/29.html', 'https://cn.bing.com/th?id=OHR.MilwaukeeHall_FR-FR8690417570_UHD.jpg', 'L\'atrium ouvert de huit étages du Milwaukee City Hall, Wisconsin, États-Unis', 'L\'atrium ouvert de huit étages du Milwaukee City Hall, Wisconsin, États-Unis', 'https://cn.bing.com/th?id=OHR.MilwaukeeHall_FR-FR8690417570_UHD.jpg')" data-count="1">
   29
   <div class="wallpaper-dot"></div>
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202601/30.html', 'https://cn.bing.com/th?id=OHR.StMichaelsCornwall_FR-FR8333014700_UHD.jpg', 'St. Michael\'s Mount 脿 Marazion, Cornouailles, Angleterre, Royaume-Uni', 'St. Michael\'s Mount 脿 Marazion, Cornouailles, Angleterre, Royaume-Uni', 'https://cn.bing.com/th?id=OHR.StMichaelsCornwall_FR-FR8333014700_UHD.jpg')" data-count="1">
+<div class="calendar-day has-wallpaper" onclick="showPreview('day/202601/30.html', 'https://cn.bing.com/th?id=OHR.StMichaelsCornwall_FR-FR8333014700_UHD.jpg', 'St. Michael\'s Mount à Marazion, Cornouailles, Angleterre, Royaume-Uni', 'St. Michael\'s Mount à Marazion, Cornouailles, Angleterre, Royaume-Uni', 'https://cn.bing.com/th?id=OHR.StMichaelsCornwall_FR-FR8333014700_UHD.jpg')" data-count="1">
   30
   <div class="wallpaper-dot"></div>
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202601/31.html', 'https://cn.bing.com/th?id=OHR.EtoshaZebra_FR-FR8636454138_UHD.jpg', 'Des z猫bres des plaines, Parc National d鈥橢tosha, Namibie', 'Des z猫bres des plaines, Parc National d鈥橢tosha, Namibie', 'https://cn.bing.com/th?id=OHR.EtoshaZebra_FR-FR8636454138_UHD.jpg')" data-count="1">
+<div class="calendar-day has-wallpaper" onclick="showPreview('day/202601/31.html', 'https://cn.bing.com/th?id=OHR.EtoshaZebra_FR-FR8636454138_UHD.jpg', 'Des zèbres des plaines, Parc National d’Etosha, Namibie', 'Des zèbres des plaines, Parc National d’Etosha, Namibie', 'https://cn.bing.com/th?id=OHR.EtoshaZebra_FR-FR8636454138_UHD.jpg')" data-count="1">
   31
   <div class="wallpaper-dot"></div>
 </div>
@@ -2081,7 +2287,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     
     <div class="calendar-stats">
-      📊 <span class="stats-text">2026年共有 9 张壁纸</span>
+      📊 <span class="stats-text">2026年共有 8 张壁纸</span>
     </div>
   </div>
   
@@ -2101,8 +2307,8 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="preview-large-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.EtoshaZebra_FR-FR8636454138_UHD.jpg&pid=hp&w=1200'); background-position: center; background-repeat: no-repeat; background-size: cover; z-index: 2;"></div>
         </div>
         <div class="preview-info">
-          <h4 id="preview-title">Des z猫bres des plaines, Parc National d鈥橢tosha, Namibie</h4>
-          <p id="preview-desc">Des z猫bres des plaines, Parc National d鈥橢tosha, Namibie</p>
+          <h4 id="preview-title">Des zèbres des plaines, Parc National d’Etosha, Namibie</h4>
+          <p id="preview-desc">Des zèbres des plaines, Parc National d’Etosha, Namibie</p>
           <div class="preview-actions">
             <a id="preview-download" href="https://cn.bing.com/th?id=OHR.EtoshaZebra_FR-FR8636454138_UHD.jpg" target="_blank" class="preview-btn">下载4k</a>
             <a id="preview-detail" href="day/202601/31.html" target="_blank" class="preview-btn">查看详情</a>

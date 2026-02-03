@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 /**
  * <p>
@@ -46,7 +47,7 @@ public class HttpUtls {
             int len = -1;
             // 读到文件末尾则返回-1
             while ((len = bis.read(buffer)) != -1) {
-                stringBuilder.append(new String(buffer, 0, len));
+                stringBuilder.append(new String(buffer, 0, len, StandardCharsets.UTF_8));
             }
         } catch (Exception e) {
             e.printStackTrace();
