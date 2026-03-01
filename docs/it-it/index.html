@@ -25,7 +25,7 @@
             border-radius: 8px; /* 添加圆角效果 */
         }
         .bgimg-header {
-            background-image: url("https://cn.bing.com/th?id=OHR.OloupenaFalls_IT-IT4647121958_UHD.jpg&pid=hp&w=2000");
+            background-image: url("https://cn.bing.com/th?id=OHR.BalearesDay_IT-IT5306710674_UHD.jpg&pid=hp&w=2000");
             position: absolute;
             top: 0;
             left: 0;
@@ -37,7 +37,7 @@
             display: none; /* 最初隐藏大图 */
         }
         .smallImg-header {
-            background-image: url("https://cn.bing.com/th?id=OHR.OloupenaFalls_IT-IT4647121958_UHD.jpg&pid=hp&w=480"); /* 使用小图 */
+            background-image: url("https://cn.bing.com/th?id=OHR.BalearesDay_IT-IT5306710674_UHD.jpg&pid=hp&w=480"); /* 使用小图 */
             filter: blur(15px);
             -webkit-filter: blur(15px);
             position: absolute;
@@ -1605,7 +1605,7 @@
         var smallImg = document.querySelector('.smallImg-header');
         // 创建一个新的图片对象以监控加载状态
         var img = new Image();
-        img.src = 'https://cn.bing.com/th?id=OHR.OloupenaFalls_IT-IT4647121958_UHD.jpg&pid=hp&w=2000'; // 从背景图中提取URL
+        img.src = 'https://cn.bing.com/th?id=OHR.BalearesDay_IT-IT5306710674_UHD.jpg&pid=hp&w=2000'; // 从背景图中提取URL
         // 小图逐渐变透明
         smallImg.style.opacity = 0.3;
         img.onload = function() {
@@ -2008,7 +2008,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="w3-display-middle w3-padding-large w3-wide w3-text-light-grey w3-center">
                 <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge" style="white-space: pre-wrap; word-wrap: break-word; word-break: break-all;">Bing Wallpaper</h1>
                 <div class=" w3-padding-large w3-text-light-grey" style="max-width: 800px">
-                    <p>Cascate Olo'upena, isola di Moloka'i, Hawaii, USA</p>
+                    <p>Ibiza, Isole Baleari Spagna</p>
                 </div>
                 <h5 class="w3-hide-large" style="white-space:nowrap">Bing Wallpaper</h5>
             </div>
@@ -2037,6 +2037,23 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- First Photo Grid-->
     <div class="w3-center" id="img_list" style="display: flex; flex-wrap: wrap; justify-content: space-between; padding: 48px 0 0 0;">
         <div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.BalearesDay_IT-IT5306710674_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202603/01.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.BalearesDay_IT-IT5306710674_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Ibiza, Isole Baleari Spagna</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2026-03-01</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202603/01.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('it-it','2026-03-01')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
   <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
     <img class="smallImg" src="https://cn.bing.com/th?id=OHR.OloupenaFalls_IT-IT4647121958_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
     <a href="day/202602/28.html" target="_blank">
@@ -2529,23 +2546,6 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
   </div>
-</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
-  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
-    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.AndermattSwiss_IT-IT7291559000_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
-    <a href="day/202601/30.html" target="_blank">
-      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.AndermattSwiss_IT-IT7291559000_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
-    </a>
-  </div>
-  <div class="img-info" style="padding: 12px 16px;">
-    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Andermatt, Svizzera</div>
-    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
-      <span class="img-date" style="color: #999;">2026-01-30</span>
-      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
-        <a href="day/202601/30.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
-        <button class="like-button img-btn" onclick="updateLove('it-it','2026-01-30')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
-      </div>
-    </div>
-  </div>
 </div>
     </div>
     
@@ -2560,7 +2560,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="nav-info">
             <div class="nav-year-month" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
               <span class="nav-year" onclick="showYearSelector()">2026</span>
-              <span class="nav-month" onclick="showMonthSelector()">2月</span>
+              <span class="nav-month" onclick="showMonthSelector()">3月</span>
             </div>
             <div class="year-selector">
               <!-- 年份列表将在这里动态生成 -->
@@ -2579,130 +2579,142 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="calendar-day-header">四</div>
       <div class="calendar-day-header">五</div>
       <div class="calendar-day-header">六</div>
-      <div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/01.html', 'https://cn.bing.com/th?id=OHR.Olinda_IT-IT4333912850_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Casa colorata, Olinda, Pernambuco, Brasile', 'Casa colorata, Olinda, Pernambuco, Brasile', 'https://cn.bing.com/th?id=OHR.Olinda_IT-IT4333912850_UHD.jpg')" data-count="1">
+      <div class="calendar-day has-wallpaper" onclick="showPreview('day/202603/01.html', 'https://cn.bing.com/th?id=OHR.BalearesDay_IT-IT5306710674_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Ibiza, Isole Baleari Spagna', 'Ibiza, Isole Baleari Spagna', 'https://cn.bing.com/th?id=OHR.BalearesDay_IT-IT5306710674_UHD.jpg')" data-count="1">
   1
   <div class="wallpaper-dot"></div>
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/02.html', 'https://cn.bing.com/th?id=OHR.AlpineMarmots_IT-IT4461801484_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Marmotte alpine, Parco Nazionale degli Alti Tauri, Austria', 'Marmotte alpine, Parco Nazionale degli Alti Tauri, Austria', 'https://cn.bing.com/th?id=OHR.AlpineMarmots_IT-IT4461801484_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   2
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/03.html', 'https://cn.bing.com/th?id=OHR.FanetteIsland_IT-IT4609209454_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Emerald Bay e Fannette Island, Lago Tahoe, California, USA', 'Emerald Bay e Fannette Island, Lago Tahoe, California, USA', 'https://cn.bing.com/th?id=OHR.FanetteIsland_IT-IT4609209454_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   3
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/04.html', 'https://cn.bing.com/th?id=OHR.BigGardenBirdwatch2026_IT-IT4671101896_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Nibbio reale nella neve', 'Nibbio reale nella neve', 'https://cn.bing.com/th?id=OHR.BigGardenBirdwatch2026_IT-IT4671101896_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   4
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/05.html', 'https://cn.bing.com/th?id=OHR.MaltaSalt_IT-IT4724990773_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Bacini di evaporazione del sale sull\'isola di Gozo, Malta', 'Bacini di evaporazione del sale sull\'isola di Gozo, Malta', 'https://cn.bing.com/th?id=OHR.MaltaSalt_IT-IT4724990773_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   5
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/06.html', 'https://cn.bing.com/th?id=OHR.CortinaOlimpiadi_IT-IT1161240762_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Cortina d’Ampezzo, Veneto', 'Cortina d’Ampezzo, Veneto', 'https://cn.bing.com/th?id=OHR.CortinaOlimpiadi_IT-IT1161240762_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   6
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/07.html', 'https://cn.bing.com/th?id=OHR.SalarUyuni_IT-IT0441176057_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Salina del Salar de Uyuni, Bolivia', 'Salina del Salar de Uyuni, Bolivia', 'https://cn.bing.com/th?id=OHR.SalarUyuni_IT-IT0441176057_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   7
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/08.html', 'https://cn.bing.com/th?id=OHR.CorfuGreece_IT-IT2512677240_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Corfù, Grecia', 'Corfù, Grecia', 'https://cn.bing.com/th?id=OHR.CorfuGreece_IT-IT2512677240_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   8
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/09.html', 'https://cn.bing.com/th?id=OHR.LeopardCat_IT-IT7517648612_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Gatto leopardo dell\'Amur, Russia', 'Gatto leopardo dell\'Amur, Russia', 'https://cn.bing.com/th?id=OHR.LeopardCat_IT-IT7517648612_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   9
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/10.html', 'https://cn.bing.com/th?id=OHR.IbizaIslets_IT-IT7799437749_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Isole di Es Vedrà ed Es Vedranell, Ibiza, Spagna', 'Isole di Es Vedrà ed Es Vedranell, Ibiza, Spagna', 'https://cn.bing.com/th?id=OHR.IbizaIslets_IT-IT7799437749_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   10
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/11.html', 'https://cn.bing.com/th?id=OHR.BadwaterFlats_IT-IT4791088413_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Saline nel Badwater Basin, Valle della Morte, California, USA', 'Saline nel Badwater Basin, Valle della Morte, California, USA', 'https://cn.bing.com/th?id=OHR.BadwaterFlats_IT-IT4791088413_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   11
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/12.html', 'https://cn.bing.com/th?id=OHR.DarwinBooby_IT-IT4879885475_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Sula dai piedi azzurri, Isole Galápagos, Ecuador', 'Sula dai piedi azzurri, Isole Galápagos, Ecuador', 'https://cn.bing.com/th?id=OHR.DarwinBooby_IT-IT4879885475_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   12
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/13.html', 'https://cn.bing.com/th?id=OHR.FriendshipBridge_IT-IT0003771526_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Terzo ponte dell\'amicizia tra Thailandia e Laos', 'Terzo ponte dell\'amicizia tra Thailandia e Laos', 'https://cn.bing.com/th?id=OHR.FriendshipBridge_IT-IT0003771526_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   13
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/14.html', 'https://cn.bing.com/th?id=OHR.SanValentino_IT-IT4953032598_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Verona, Veneto', 'Verona, Veneto', 'https://cn.bing.com/th?id=OHR.SanValentino_IT-IT4953032598_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   14
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/15.html', 'https://cn.bing.com/th?id=OHR.MontereyHumpbacks_IT-IT5095312358_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Balene megattere, Baia di Monterey, California, USA', 'Balene megattere, Baia di Monterey, California, USA', 'https://cn.bing.com/th?id=OHR.MontereyHumpbacks_IT-IT5095312358_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   15
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/16.html', 'https://cn.bing.com/th?id=OHR.DragonsEyeRock_IT-IT5246962899_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Formazione rocciosa Dragon\'s Eye, spiaggia di Uttakleiv, Norvegia', 'Formazione rocciosa Dragon\'s Eye, spiaggia di Uttakleiv, Norvegia', 'https://cn.bing.com/th?id=OHR.DragonsEyeRock_IT-IT5246962899_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   16
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/17.html', 'https://cn.bing.com/th?id=OHR.NewYearLantern_IT-IT2070900260_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Lanterne rosse per festeggiare il Capodanno cinese', 'Lanterne rosse per festeggiare il Capodanno cinese', 'https://cn.bing.com/th?id=OHR.NewYearLantern_IT-IT2070900260_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   17
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/18.html', 'https://cn.bing.com/th?id=OHR.PrzewalskisHorse_IT-IT6104947665_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Cavalli di Przewalski', 'Cavalli di Przewalski', 'https://cn.bing.com/th?id=OHR.PrzewalskisHorse_IT-IT6104947665_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   18
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/19.html', 'https://cn.bing.com/th?id=OHR.GiauPass_IT-IT5498738884_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Cima Ra Gusela, Passo Giau, Cortina d\'Ampezzo, Veneto', 'Cima Ra Gusela, Passo Giau, Cortina d\'Ampezzo, Veneto', 'https://cn.bing.com/th?id=OHR.GiauPass_IT-IT5498738884_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   19
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/20.html', 'https://cn.bing.com/th?id=OHR.AdamsFirefall_IT-IT7705285382_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Cascata Horsetail, Parco Nazionale di Yosemite, California, USA', 'Cascata Horsetail, Parco Nazionale di Yosemite, California, USA', 'https://cn.bing.com/th?id=OHR.AdamsFirefall_IT-IT7705285382_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   20
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/21.html', 'https://cn.bing.com/th?id=OHR.TetonFox_IT-IT8444976522_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Volpe rossa, Parco Nazionale del Grand Teton, Wyoming, USA', 'Volpe rossa, Parco Nazionale del Grand Teton, Wyoming, USA', 'https://cn.bing.com/th?id=OHR.TetonFox_IT-IT8444976522_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   21
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/22.html', 'https://cn.bing.com/th?id=OHR.MamTorSunrise_IT-IT4131533173_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Collina di Mam Tor, Derbyshire, Inghilterra', 'Collina di Mam Tor, Derbyshire, Inghilterra', 'https://cn.bing.com/th?id=OHR.MamTorSunrise_IT-IT4131533173_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   22
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/23.html', 'https://cn.bing.com/th?id=OHR.TulumLilies_IT-IT7765619476_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Ninfee, Grand Cenote, Tulum, Messico', 'Ninfee, Grand Cenote, Tulum, Messico', 'https://cn.bing.com/th?id=OHR.TulumLilies_IT-IT7765619476_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   23
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/24.html', 'https://cn.bing.com/th?id=OHR.SanremoLiguria_IT-IT4317774368_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Spiaggia di Sanremo, Liguria', 'Spiaggia di Sanremo, Liguria', 'https://cn.bing.com/th?id=OHR.SanremoLiguria_IT-IT4317774368_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   24
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/25.html', 'https://cn.bing.com/th?id=OHR.MendenhallCave_IT-IT7827640897_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Grotta di ghiaccio, ghiacciaio Mendenhall, Alaska, USA', 'Grotta di ghiaccio, ghiacciaio Mendenhall, Alaska, USA', 'https://cn.bing.com/th?id=OHR.MendenhallCave_IT-IT7827640897_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   25
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/26.html', 'https://cn.bing.com/th?id=OHR.GrandSunset_IT-IT7877559254_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Grand Canyon e fiume Colorado, Arizona, USA', 'Grand Canyon e fiume Colorado, Arizona, USA', 'https://cn.bing.com/th?id=OHR.GrandSunset_IT-IT7877559254_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   26
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/27.html', 'https://cn.bing.com/th?id=OHR.ArcitcCub_IT-IT4577678073_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Cucciolo di orso polare, Arctic National Wildlife Refuge, Alaska, USA', 'Cucciolo di orso polare, Arctic National Wildlife Refuge, Alaska, USA', 'https://cn.bing.com/th?id=OHR.ArcitcCub_IT-IT4577678073_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   27
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202602/28.html', 'https://cn.bing.com/th?id=OHR.OloupenaFalls_IT-IT4647121958_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Cascate Olo\'upena, isola di Moloka\'i, Hawaii, USA', 'Cascate Olo\'upena, isola di Moloka\'i, Hawaii, USA', 'https://cn.bing.com/th?id=OHR.OloupenaFalls_IT-IT4647121958_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   28
-  <div class="wallpaper-dot"></div>
+  
+</div>
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
+  29
+  
+</div>
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
+  30
+  
+</div>
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
+  31
+  
 </div>
 
     </div>
     
     <div class="calendar-stats">
-      📊 <span class="stats-text">2026年共有 33 张壁纸</span>
+      📊 <span class="stats-text">2026年共有 34 张壁纸</span>
     </div>
   </div>
   
   <div class="preview-section">
     <div class="preview-header">
       <h3>壁纸预览</h3>
-      <div class="preview-date" id="preview-date">2026年2月28日</div>
+      <div class="preview-date" id="preview-date">2026年3月1日</div>
     </div>
     <div class="preview-container">
       <div class="preview-placeholder" id="preview-placeholder" style="display: none;">
@@ -2711,15 +2723,15 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <div class="preview-content" id="preview-content" style="display: flex;">
         <div class="preview-image-container">
-          <div class="preview-small-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.OloupenaFalls_IT-IT4647121958_UHD.jpg&pid=hp&w=400'); background-position: center; background-repeat: no-repeat; background-size: cover; filter: blur(2px); -webkit-filter: blur(2px); opacity: 0.8; z-index: 1;"></div>
-          <div class="preview-large-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.OloupenaFalls_IT-IT4647121958_UHD.jpg&pid=hp&w=1200'); background-position: center; background-repeat: no-repeat; background-size: cover; z-index: 2;"></div>
+          <div class="preview-small-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.BalearesDay_IT-IT5306710674_UHD.jpg&pid=hp&w=400'); background-position: center; background-repeat: no-repeat; background-size: cover; filter: blur(2px); -webkit-filter: blur(2px); opacity: 0.8; z-index: 1;"></div>
+          <div class="preview-large-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.BalearesDay_IT-IT5306710674_UHD.jpg&pid=hp&w=1200'); background-position: center; background-repeat: no-repeat; background-size: cover; z-index: 2;"></div>
         </div>
         <div class="preview-info">
-          <h4 id="preview-title">Cascate Olo'upena, isola di Moloka'i, Hawaii, USA</h4>
-          <p id="preview-desc">Cascate Olo'upena, isola di Moloka'i, Hawaii, USA</p>
+          <h4 id="preview-title">Ibiza, Isole Baleari Spagna</h4>
+          <p id="preview-desc">Ibiza, Isole Baleari Spagna</p>
           <div class="preview-actions">
-            <a id="preview-download" href="https://cn.bing.com/th?id=OHR.OloupenaFalls_IT-IT4647121958_UHD.jpg" target="_blank" class="preview-btn">下载4k</a>
-            <a id="preview-detail" href="day/202602/28.html" target="_blank" class="preview-btn">查看详情</a>
+            <a id="preview-download" href="https://cn.bing.com/th?id=OHR.BalearesDay_IT-IT5306710674_UHD.jpg" target="_blank" class="preview-btn">下载4k</a>
+            <a id="preview-detail" href="day/202603/01.html" target="_blank" class="preview-btn">查看详情</a>
           </div>
         </div>
       </div>
