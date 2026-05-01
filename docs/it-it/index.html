@@ -25,7 +25,7 @@
             border-radius: 8px; /* 添加圆角效果 */
         }
         .bgimg-header {
-            background-image: url("https://cn.bing.com/th?id=OHR.DutchTulips_IT-IT3654570550_UHD.jpg&pid=hp&w=2000");
+            background-image: url("https://cn.bing.com/th?id=OHR.TwrMawrLighthouse2026_IT-IT6995398128_UHD.jpg&pid=hp&w=2000");
             position: absolute;
             top: 0;
             left: 0;
@@ -37,7 +37,7 @@
             display: none; /* 最初隐藏大图 */
         }
         .smallImg-header {
-            background-image: url("https://cn.bing.com/th?id=OHR.DutchTulips_IT-IT3654570550_UHD.jpg&pid=hp&w=480"); /* 使用小图 */
+            background-image: url("https://cn.bing.com/th?id=OHR.TwrMawrLighthouse2026_IT-IT6995398128_UHD.jpg&pid=hp&w=480"); /* 使用小图 */
             filter: blur(15px);
             -webkit-filter: blur(15px);
             position: absolute;
@@ -1605,7 +1605,7 @@
         var smallImg = document.querySelector('.smallImg-header');
         // 创建一个新的图片对象以监控加载状态
         var img = new Image();
-        img.src = 'https://cn.bing.com/th?id=OHR.DutchTulips_IT-IT3654570550_UHD.jpg&pid=hp&w=2000'; // 从背景图中提取URL
+        img.src = 'https://cn.bing.com/th?id=OHR.TwrMawrLighthouse2026_IT-IT6995398128_UHD.jpg&pid=hp&w=2000'; // 从背景图中提取URL
         // 小图逐渐变透明
         smallImg.style.opacity = 0.3;
         img.onload = function() {
@@ -2008,7 +2008,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="w3-display-middle w3-padding-large w3-wide w3-text-light-grey w3-center">
                 <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge" style="white-space: pre-wrap; word-wrap: break-word; word-break: break-all;">Bing Wallpaper</h1>
                 <div class=" w3-padding-large w3-text-light-grey" style="max-width: 800px">
-                    <p>Giacinti e tulipani, Giardini di Keukenhof, Lisse, Paesi Bassi</p>
+                    <p>Faro di Tŵr Mawr, isola di Llanddwyn, Anglesey, Galles</p>
                 </div>
                 <h5 class="w3-hide-large" style="white-space:nowrap">Bing Wallpaper</h5>
             </div>
@@ -2037,6 +2037,23 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- First Photo Grid-->
     <div class="w3-center" id="img_list" style="display: flex; flex-wrap: wrap; justify-content: space-between; padding: 48px 0 0 0;">
         <div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.TwrMawrLighthouse2026_IT-IT6995398128_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202605/01.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.TwrMawrLighthouse2026_IT-IT6995398128_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Faro di Tŵr Mawr, isola di Llanddwyn, Anglesey, Galles</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2026-05-01</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202605/01.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('it-it','2026-05-01')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
   <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
     <img class="smallImg" src="https://cn.bing.com/th?id=OHR.DutchTulips_IT-IT3654570550_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
     <a href="day/202604/30.html" target="_blank">
@@ -2529,23 +2546,6 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
   </div>
-</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
-  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
-    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.JapaneseTreeFrog_IT-IT5938893273_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
-    <a href="day/202604/01.html" target="_blank">
-      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.JapaneseTreeFrog_IT-IT5938893273_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
-    </a>
-  </div>
-  <div class="img-info" style="padding: 12px 16px;">
-    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Raganella giapponese, Ipomea rosa</div>
-    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
-      <span class="img-date" style="color: #999;">2026-04-01</span>
-      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
-        <a href="day/202604/01.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
-        <button class="like-button img-btn" onclick="updateLove('it-it','2026-04-01')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
-      </div>
-    </div>
-  </div>
 </div>
     </div>
     
@@ -2560,7 +2560,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="nav-info">
             <div class="nav-year-month" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
               <span class="nav-year" onclick="showYearSelector()">2026</span>
-              <span class="nav-month" onclick="showMonthSelector()">4月</span>
+              <span class="nav-month" onclick="showMonthSelector()">5月</span>
             </div>
             <div class="year-selector">
               <!-- 年份列表将在这里动态生成 -->
@@ -2582,138 +2582,144 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="calendar-day empty"></div>
 <div class="calendar-day empty"></div>
 <div class="calendar-day empty"></div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/01.html', 'https://cn.bing.com/th?id=OHR.JapaneseTreeFrog_IT-IT5938893273_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Raganella giapponese, Ipomea rosa', 'Raganella giapponese, Ipomea rosa', 'https://cn.bing.com/th?id=OHR.JapaneseTreeFrog_IT-IT5938893273_UHD.jpg')" data-count="1">
+<div class="calendar-day empty"></div>
+<div class="calendar-day empty"></div>
+<div class="calendar-day has-wallpaper" onclick="showPreview('day/202605/01.html', 'https://cn.bing.com/th?id=OHR.TwrMawrLighthouse2026_IT-IT6995398128_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Faro di Tŵr Mawr, isola di Llanddwyn, Anglesey, Galles', 'Faro di Tŵr Mawr, isola di Llanddwyn, Anglesey, Galles', 'https://cn.bing.com/th?id=OHR.TwrMawrLighthouse2026_IT-IT6995398128_UHD.jpg')" data-count="1">
   1
   <div class="wallpaper-dot"></div>
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/02.html', 'https://cn.bing.com/th?id=OHR.WildflowerValley_IT-IT6134763724_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Fiori selvatici, Central Valley, California, USA', 'Fiori selvatici, Central Valley, California, USA', 'https://cn.bing.com/th?id=OHR.WildflowerValley_IT-IT6134763724_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   2
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/03.html', 'https://cn.bing.com/th?id=OHR.ArmbrugBridge_IT-IT1501163550_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Ponte Armbrug, Amsterdam, Paesi Bassi', 'Ponte Armbrug, Amsterdam, Paesi Bassi', 'https://cn.bing.com/th?id=OHR.ArmbrugBridge_IT-IT1501163550_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   3
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/04.html', 'https://cn.bing.com/th?id=OHR.CastleBlossoms_IT-IT1656060709_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Castello di Hirosaki con fiori di ciliegio, Hirosaki, Giappone', 'Castello di Hirosaki con fiori di ciliegio, Hirosaki, Giappone', 'https://cn.bing.com/th?id=OHR.CastleBlossoms_IT-IT1656060709_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   4
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/05.html', 'https://cn.bing.com/th?id=OHR.LithuaniaEggs_IT-IT3759718842_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Uova di Pasqua colorate fatte a mano in legno, Vilnius, Lituania', 'Uova di Pasqua colorate fatte a mano in legno, Vilnius, Lituania', 'https://cn.bing.com/th?id=OHR.LithuaniaEggs_IT-IT3759718842_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   5
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/06.html', 'https://cn.bing.com/th?id=OHR.CarbonaraRoma_IT-IT1787234049_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Rione V Ponte, Roma', 'Rione V Ponte, Roma', 'https://cn.bing.com/th?id=OHR.CarbonaraRoma_IT-IT1787234049_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   6
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/07.html', 'https://cn.bing.com/th?id=OHR.BeaverPortrait_IT-IT2053120485_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Castoro, Germania', 'Castoro, Germania', 'https://cn.bing.com/th?id=OHR.BeaverPortrait_IT-IT2053120485_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   7
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/08.html', 'https://cn.bing.com/th?id=OHR.SeattleSunrise_IT-IT2054215926_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Seattle, Washington, USA', 'Seattle, Washington, USA', 'https://cn.bing.com/th?id=OHR.SeattleSunrise_IT-IT2054215926_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   8
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/09.html', 'https://cn.bing.com/th?id=OHR.WalesWaterfall_IT-IT9480992833_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Cascata Sgwd yr Eira, parco nazionale Bannau Brycheiniog, Galles', 'Cascata Sgwd yr Eira, parco nazionale Bannau Brycheiniog, Galles', 'https://cn.bing.com/th?id=OHR.WalesWaterfall_IT-IT9480992833_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   9
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/10.html', 'https://cn.bing.com/th?id=OHR.FoxSiblings_IT-IT2265403232_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Due giovani volpi rosse nel parco nazionale di Karula, Estonia', 'Due giovani volpi rosse nel parco nazionale di Karula, Estonia', 'https://cn.bing.com/th?id=OHR.FoxSiblings_IT-IT2265403232_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   10
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/11.html', 'https://cn.bing.com/th?id=OHR.PlayaPapagayo_IT-IT2334533748_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Spiaggia di Papagayo, Lanzarote, Isole Canarie, Spagna', 'Spiaggia di Papagayo, Lanzarote, Isole Canarie, Spagna', 'https://cn.bing.com/th?id=OHR.PlayaPapagayo_IT-IT2334533748_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   11
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/12.html', 'https://cn.bing.com/th?id=OHR.SpaceTrails_IT-IT2393301171_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Luci della città scorrono sotto, immortalate dalla Stazione Spaziale  Internazionale', 'Luci della città scorrono sotto, immortalate dalla Stazione Spaziale  Internazionale', 'https://cn.bing.com/th?id=OHR.SpaceTrails_IT-IT2393301171_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   12
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/13.html', 'https://cn.bing.com/th?id=OHR.BorregoStars_IT-IT3311374255_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'La Via Lattea sopra l\'Anza-Borrego Desert State Park, California, USA', 'La Via Lattea sopra l\'Anza-Borrego Desert State Park, California, USA', 'https://cn.bing.com/th?id=OHR.BorregoStars_IT-IT3311374255_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   13
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/14.html', 'https://cn.bing.com/th?id=OHR.OcellarisClownfish_IT-IT2484458415_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Pesce pagliaccio comune in un anemone di mare, Isole Raja Ampat, Indonesia', 'Pesce pagliaccio comune in un anemone di mare, Isole Raja Ampat, Indonesia', 'https://cn.bing.com/th?id=OHR.OcellarisClownfish_IT-IT2484458415_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   14
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/15.html', 'https://cn.bing.com/th?id=OHR.VanGoghFields_IT-IT4420676529_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Mostra dedicata a Vincent van Gogh alle Carrières des Lumières, Les Baux-de-Provence, Francia', 'Mostra dedicata a Vincent van Gogh alle Carrières des Lumières, Les Baux-de-Provence, Francia', 'https://cn.bing.com/th?id=OHR.VanGoghFields_IT-IT4420676529_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   15
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/16.html', 'https://cn.bing.com/th?id=OHR.ToscanaSpring_IT-IT2623065946_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Colline ondulate al tramonto, Toscana', 'Colline ondulate al tramonto, Toscana', 'https://cn.bing.com/th?id=OHR.ToscanaSpring_IT-IT2623065946_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   16
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/17.html', 'https://cn.bing.com/th?id=OHR.FlyingFoxMom_IT-IT3683219154_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Pipistrello con il suo cucciolo, Yarra Bend Park, Australia', 'Pipistrello con il suo cucciolo, Yarra Bend Park, Australia', 'https://cn.bing.com/th?id=OHR.FlyingFoxMom_IT-IT3683219154_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   17
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/18.html', 'https://cn.bing.com/th?id=OHR.MaoiStatues_IT-IT3537431977_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Cava delle statue moai, Rano Raraku, Isola di Pasqua, Cile', 'Cava delle statue moai, Rano Raraku, Isola di Pasqua, Cile', 'https://cn.bing.com/th?id=OHR.MaoiStatues_IT-IT3537431977_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   18
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/19.html', 'https://cn.bing.com/th?id=OHR.TranBA_IT-IT3445564294_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Spiaggia di Espelho, Trancoso, Bahia, Brasile', 'Spiaggia di Espelho, Trancoso, Bahia, Brasile', 'https://cn.bing.com/th?id=OHR.TranBA_IT-IT3445564294_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   19
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/20.html', 'https://cn.bing.com/th?id=OHR.SunsetKiva_IT-IT3389674511_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Tramonto nel parco nazionale delle Canyonlands, Moab, Utah, USA', 'Tramonto nel parco nazionale delle Canyonlands, Moab, Utah, USA', 'https://cn.bing.com/th?id=OHR.SunsetKiva_IT-IT3389674511_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   20
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/21.html', 'https://cn.bing.com/th?id=OHR.BirthdayRome_IT-IT3327641807_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Piazza del Campidoglio, Roma, Lazio', 'Piazza del Campidoglio, Roma, Lazio', 'https://cn.bing.com/th?id=OHR.BirthdayRome_IT-IT3327641807_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   21
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/22.html', 'https://cn.bing.com/th?id=OHR.TartuEstonia_IT-IT3277915557_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Riserva naturale di Alam-Pedja, contea di Tartu, Estonia', 'Riserva naturale di Alam-Pedja, contea di Tartu, Estonia', 'https://cn.bing.com/th?id=OHR.TartuEstonia_IT-IT3277915557_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   22
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/23.html', 'https://cn.bing.com/th?id=OHR.HathawayCottage_IT-IT3206612879_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Cottage di Anne Hathaway, Stratford-upon-Avon, Inghilterra', 'Cottage di Anne Hathaway, Stratford-upon-Avon, Inghilterra', 'https://cn.bing.com/th?id=OHR.HathawayCottage_IT-IT3206612879_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   23
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/24.html', 'https://cn.bing.com/th?id=OHR.SlashPine_IT-IT3134964767_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Pini nel parco nazionale delle Everglades, Florida, USA', 'Pini nel parco nazionale delle Everglades, Florida, USA', 'https://cn.bing.com/th?id=OHR.SlashPine_IT-IT3134964767_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   24
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/25.html', 'https://cn.bing.com/th?id=OHR.GalapagosPenguins_IT-IT3075883886_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Pinguini, Isole Galápagos, Ecuador', 'Pinguini, Isole Galápagos, Ecuador', 'https://cn.bing.com/th?id=OHR.GalapagosPenguins_IT-IT3075883886_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   25
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/26.html', 'https://cn.bing.com/th?id=OHR.AppleBlossoms_IT-IT2955443064_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Fiori di melo rosa, Avila Beach, California, USA', 'Fiori di melo rosa, Avila Beach, California, USA', 'https://cn.bing.com/th?id=OHR.AppleBlossoms_IT-IT2955443064_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   26
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/27.html', 'https://cn.bing.com/th?id=OHR.MilanGalleria_IT-IT4692336131_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Cupola di vetro della Galleria Vittorio Emanuele II, Milano', 'Cupola di vetro della Galleria Vittorio Emanuele II, Milano', 'https://cn.bing.com/th?id=OHR.MilanGalleria_IT-IT4692336131_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   27
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/28.html', 'https://cn.bing.com/th?id=OHR.AndeanBear_IT-IT4311061113_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Orso dagli occhiali su un albero, Ecuador', 'Orso dagli occhiali su un albero, Ecuador', 'https://cn.bing.com/th?id=OHR.AndeanBear_IT-IT4311061113_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   28
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/29.html', 'https://cn.bing.com/th?id=OHR.BelemTowerBank_IT-IT4141068514_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Torre di Belém, fiume Tago, Lisbona, Portogallo', 'Torre di Belém, fiume Tago, Lisbona, Portogallo', 'https://cn.bing.com/th?id=OHR.BelemTowerBank_IT-IT4141068514_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   29
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202604/30.html', 'https://cn.bing.com/th?id=OHR.DutchTulips_IT-IT3654570550_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Giacinti e tulipani, Giardini di Keukenhof, Lisse, Paesi Bassi', 'Giacinti e tulipani, Giardini di Keukenhof, Lisse, Paesi Bassi', 'https://cn.bing.com/th?id=OHR.DutchTulips_IT-IT3654570550_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   30
-  <div class="wallpaper-dot"></div>
+  
+</div>
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
+  31
+  
 </div>
 
     </div>
     
     <div class="calendar-stats">
-      📊 <span class="stats-text">2026年共有 94 张壁纸</span>
+      📊 <span class="stats-text">2026年共有 95 张壁纸</span>
     </div>
   </div>
   
   <div class="preview-section">
     <div class="preview-header">
       <h3>壁纸预览</h3>
-      <div class="preview-date" id="preview-date">2026年4月30日</div>
+      <div class="preview-date" id="preview-date">2026年5月1日</div>
     </div>
     <div class="preview-container">
       <div class="preview-placeholder" id="preview-placeholder" style="display: none;">
@@ -2722,15 +2728,15 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <div class="preview-content" id="preview-content" style="display: flex;">
         <div class="preview-image-container">
-          <div class="preview-small-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.DutchTulips_IT-IT3654570550_UHD.jpg&pid=hp&w=400'); background-position: center; background-repeat: no-repeat; background-size: cover; filter: blur(2px); -webkit-filter: blur(2px); opacity: 0.8; z-index: 1;"></div>
-          <div class="preview-large-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.DutchTulips_IT-IT3654570550_UHD.jpg&pid=hp&w=1200'); background-position: center; background-repeat: no-repeat; background-size: cover; z-index: 2;"></div>
+          <div class="preview-small-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.TwrMawrLighthouse2026_IT-IT6995398128_UHD.jpg&pid=hp&w=400'); background-position: center; background-repeat: no-repeat; background-size: cover; filter: blur(2px); -webkit-filter: blur(2px); opacity: 0.8; z-index: 1;"></div>
+          <div class="preview-large-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.TwrMawrLighthouse2026_IT-IT6995398128_UHD.jpg&pid=hp&w=1200'); background-position: center; background-repeat: no-repeat; background-size: cover; z-index: 2;"></div>
         </div>
         <div class="preview-info">
-          <h4 id="preview-title">Giacinti e tulipani, Giardini di Keukenhof, Lisse, Paesi Bassi</h4>
-          <p id="preview-desc">Giacinti e tulipani, Giardini di Keukenhof, Lisse, Paesi Bassi</p>
+          <h4 id="preview-title">Faro di Tŵr Mawr, isola di Llanddwyn, Anglesey, Galles</h4>
+          <p id="preview-desc">Faro di Tŵr Mawr, isola di Llanddwyn, Anglesey, Galles</p>
           <div class="preview-actions">
-            <a id="preview-download" href="https://cn.bing.com/th?id=OHR.DutchTulips_IT-IT3654570550_UHD.jpg" target="_blank" class="preview-btn">下载4k</a>
-            <a id="preview-detail" href="day/202604/30.html" target="_blank" class="preview-btn">查看详情</a>
+            <a id="preview-download" href="https://cn.bing.com/th?id=OHR.TwrMawrLighthouse2026_IT-IT6995398128_UHD.jpg" target="_blank" class="preview-btn">下载4k</a>
+            <a id="preview-detail" href="day/202605/01.html" target="_blank" class="preview-btn">查看详情</a>
           </div>
         </div>
       </div>
