@@ -25,7 +25,7 @@
             border-radius: 8px; /* 添加圆角效果 */
         }
         .bgimg-header {
-            background-image: url("https://cn.bing.com/th?id=OHR.MasaiGiraffe_EN-CA5473733652_UHD.jpg&pid=hp&w=2000");
+            background-image: url("https://cn.bing.com/th?id=OHR.DungeonPark_EN-CA5716185591_UHD.jpg&pid=hp&w=2000");
             position: absolute;
             top: 0;
             left: 0;
@@ -37,7 +37,7 @@
             display: none; /* 最初隐藏大图 */
         }
         .smallImg-header {
-            background-image: url("https://cn.bing.com/th?id=OHR.MasaiGiraffe_EN-CA5473733652_UHD.jpg&pid=hp&w=480"); /* 使用小图 */
+            background-image: url("https://cn.bing.com/th?id=OHR.DungeonPark_EN-CA5716185591_UHD.jpg&pid=hp&w=480"); /* 使用小图 */
             filter: blur(15px);
             -webkit-filter: blur(15px);
             position: absolute;
@@ -1605,7 +1605,7 @@
         var smallImg = document.querySelector('.smallImg-header');
         // 创建一个新的图片对象以监控加载状态
         var img = new Image();
-        img.src = 'https://cn.bing.com/th?id=OHR.MasaiGiraffe_EN-CA5473733652_UHD.jpg&pid=hp&w=2000'; // 从背景图中提取URL
+        img.src = 'https://cn.bing.com/th?id=OHR.DungeonPark_EN-CA5716185591_UHD.jpg&pid=hp&w=2000'; // 从背景图中提取URL
         // 小图逐渐变透明
         smallImg.style.opacity = 0.3;
         img.onload = function() {
@@ -2008,7 +2008,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="w3-display-middle w3-padding-large w3-wide w3-text-light-grey w3-center">
                 <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge" style="white-space: pre-wrap; word-wrap: break-word; word-break: break-all;">Bing Wallpaper</h1>
                 <div class=" w3-padding-large w3-text-light-grey" style="max-width: 800px">
-                    <p>Giraffes at sunset in the Masai Mara National Reserve, Kenya</p>
+                    <p>Dungeon Provincial Park, Newfoundland and Labrador</p>
                 </div>
                 <h5 class="w3-hide-large" style="white-space:nowrap">Bing Wallpaper</h5>
             </div>
@@ -2037,6 +2037,23 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- First Photo Grid-->
     <div class="w3-center" id="img_list" style="display: flex; flex-wrap: wrap; justify-content: space-between; padding: 48px 0 0 0;">
         <div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.DungeonPark_EN-CA5716185591_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202607/02.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.DungeonPark_EN-CA5716185591_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Dungeon Provincial Park, Newfoundland and Labrador</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2026-07-02</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202607/02.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('en-ca','2026-07-02')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
   <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
     <img class="smallImg" src="https://cn.bing.com/th?id=OHR.MasaiGiraffe_EN-CA5473733652_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
     <a href="day/202607/01.html" target="_blank">
@@ -2529,23 +2546,6 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
   </div>
-</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
-  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
-    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.OlivaPalermo_EN-CA6978537696_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
-    <a href="day/202606/02.html" target="_blank">
-      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.OlivaPalermo_EN-CA6978537696_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
-    </a>
-  </div>
-  <div class="img-info" style="padding: 12px 16px;">
-    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Palermo skyline at dusk, Sicily, Italy</div>
-    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
-      <span class="img-date" style="color: #999;">2026-06-02</span>
-      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
-        <a href="day/202606/02.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
-        <button class="like-button img-btn" onclick="updateLove('en-ca','2026-06-02')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
-      </div>
-    </div>
-  </div>
 </div>
     </div>
     
@@ -2560,7 +2560,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="nav-info">
             <div class="nav-year-month" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
               <span class="nav-year" onclick="showYearSelector()">2026</span>
-              <span class="nav-month" onclick="showMonthSelector()">6月</span>
+              <span class="nav-month" onclick="showMonthSelector()">7月</span>
             </div>
             <div class="year-selector">
               <!-- 年份列表将在这里动态生成 -->
@@ -2580,138 +2580,144 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="calendar-day-header">五</div>
       <div class="calendar-day-header">六</div>
       <div class="calendar-day empty"></div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/01.html', 'https://cn.bing.com/th?id=OHR.HumberRiverTrails_EN-CA6657789473_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Humber River winding through Boyd Conservation Area, Woodbridge, Vaughan, Ontario', 'Humber River winding through Boyd Conservation Area, Woodbridge, Vaughan, Ontario', 'https://cn.bing.com/th?id=OHR.HumberRiverTrails_EN-CA6657789473_UHD.jpg')" data-count="1">
+<div class="calendar-day empty"></div>
+<div class="calendar-day empty"></div>
+<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/01.html', 'https://cn.bing.com/th?id=OHR.MasaiGiraffe_EN-CA5473733652_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Giraffes at sunset in the Masai Mara National Reserve, Kenya', 'Giraffes at sunset in the Masai Mara National Reserve, Kenya', 'https://cn.bing.com/th?id=OHR.MasaiGiraffe_EN-CA5473733652_UHD.jpg')" data-count="1">
   1
   <div class="wallpaper-dot"></div>
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/02.html', 'https://cn.bing.com/th?id=OHR.OlivaPalermo_EN-CA6978537696_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Palermo skyline at dusk, Sicily, Italy', 'Palermo skyline at dusk, Sicily, Italy', 'https://cn.bing.com/th?id=OHR.OlivaPalermo_EN-CA6978537696_UHD.jpg')" data-count="1">
+<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/02.html', 'https://cn.bing.com/th?id=OHR.DungeonPark_EN-CA5716185591_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Dungeon Provincial Park, Newfoundland and Labrador', 'Dungeon Provincial Park, Newfoundland and Labrador', 'https://cn.bing.com/th?id=OHR.DungeonPark_EN-CA5716185591_UHD.jpg')" data-count="1">
   2
   <div class="wallpaper-dot"></div>
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/03.html', 'https://cn.bing.com/th?id=OHR.Qinghai_EN-CA7131694039_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Highway through Xitai Jinaier Lake, Qinghai Province, China', 'Highway through Xitai Jinaier Lake, Qinghai Province, China', 'https://cn.bing.com/th?id=OHR.Qinghai_EN-CA7131694039_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   3
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/04.html', 'https://cn.bing.com/th?id=OHR.BardenasReales_EN-CA9380471029_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Cyclist in Bardenas Reales Natural Park and Biosphere Reserve, Navarra, Spain', 'Cyclist in Bardenas Reales Natural Park and Biosphere Reserve, Navarra, Spain', 'https://cn.bing.com/th?id=OHR.BardenasReales_EN-CA9380471029_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   4
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/05.html', 'https://cn.bing.com/th?id=OHR.PreeningEgret_EN-CA4690989796_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Snowy egret preening, central Florida, United States', 'Snowy egret preening, central Florida, United States', 'https://cn.bing.com/th?id=OHR.PreeningEgret_EN-CA4690989796_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   5
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/06.html', 'https://cn.bing.com/th?id=OHR.WedLapland_EN-CA4849438466_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'View from Skierffe Mountain over the Rapadalen river delta, Sarek National Park, Laponia, Lapland, Sweden', 'View from Skierffe Mountain over the Rapadalen river delta, Sarek National Park, Laponia, Lapland, Sweden', 'https://cn.bing.com/th?id=OHR.WedLapland_EN-CA4849438466_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   6
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/07.html', 'https://cn.bing.com/th?id=OHR.HikingNatchez_EN-CA4973547873_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Natchez Trace Parkway, Tupelo, Mississippi, United States', 'Natchez Trace Parkway, Tupelo, Mississippi, United States', 'https://cn.bing.com/th?id=OHR.HikingNatchez_EN-CA4973547873_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   7
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/08.html', 'https://cn.bing.com/th?id=OHR.DunseverickCastle2026_EN-CA2353386537_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Ruins of Dunseverick Castle, County Antrim, Northern Ireland', 'Ruins of Dunseverick Castle, County Antrim, Northern Ireland', 'https://cn.bing.com/th?id=OHR.DunseverickCastle2026_EN-CA2353386537_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   8
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/09.html', 'https://cn.bing.com/th?id=OHR.Cyanea_EN-CA5037200918_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Lion\'s mane jellyfish swimming in the ocean', 'Lion\'s mane jellyfish swimming in the ocean', 'https://cn.bing.com/th?id=OHR.Cyanea_EN-CA5037200918_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   9
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/10.html', 'https://cn.bing.com/th?id=OHR.CTNPVernazza_EN-CA5243327024_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Vernazza, Cinque Terre, Liguria, Italy', 'Vernazza, Cinque Terre, Liguria, Italy', 'https://cn.bing.com/th?id=OHR.CTNPVernazza_EN-CA5243327024_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   10
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/11.html', 'https://cn.bing.com/th?id=OHR.Hnausapollur_EN-CA5291123440_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Hnausapollur volcanic crater lake, Fjallabak Nature Reserve, Landmannalaugar, Iceland', 'Hnausapollur volcanic crater lake, Fjallabak Nature Reserve, Landmannalaugar, Iceland', 'https://cn.bing.com/th?id=OHR.Hnausapollur_EN-CA5291123440_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   11
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/12.html', 'https://cn.bing.com/th?id=OHR.Limpets_EN-CA5417186464_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Limpets exposed at low tide on the coast of Praia da Ursa, Portugal', 'Limpets exposed at low tide on the coast of Praia da Ursa, Portugal', 'https://cn.bing.com/th?id=OHR.Limpets_EN-CA5417186464_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   12
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/13.html', 'https://cn.bing.com/th?id=OHR.SpainBeeEater_EN-CA4532177883_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'European bee-eater in Sierra de Grazalema Natural Park, Cádiz, Spain', 'European bee-eater in Sierra de Grazalema Natural Park, Cádiz, Spain', 'https://cn.bing.com/th?id=OHR.SpainBeeEater_EN-CA4532177883_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   13
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/14.html', 'https://cn.bing.com/th?id=OHR.BadSunset_EN-CA4785183991_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Sunset in Badlands National Park, South Dakota, United States', 'Sunset in Badlands National Park, South Dakota, United States', 'https://cn.bing.com/th?id=OHR.BadSunset_EN-CA4785183991_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   14
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/15.html', 'https://cn.bing.com/th?id=OHR.DuckPond_EN-CA5165691235_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Mallard duck', 'Mallard duck', 'https://cn.bing.com/th?id=OHR.DuckPond_EN-CA5165691235_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   15
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/16.html', 'https://cn.bing.com/th?id=OHR.ParkEstd_EN-CA5456833657_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Great Smoky Mountains National Park, Tennessee, United States', 'Great Smoky Mountains National Park, Tennessee, United States', 'https://cn.bing.com/th?id=OHR.ParkEstd_EN-CA5456833657_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   16
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/17.html', 'https://cn.bing.com/th?id=OHR.SevenMileTurtle_EN-CA5750272834_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Hawksbill sea turtle pair near Seven Mile Beach, Grand Cayman, Cayman Islands', 'Hawksbill sea turtle pair near Seven Mile Beach, Grand Cayman, Cayman Islands', 'https://cn.bing.com/th?id=OHR.SevenMileTurtle_EN-CA5750272834_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   17
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/18.html', 'https://cn.bing.com/th?id=OHR.TremolaRoad_EN-CA6025249827_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Tremola Road on the Saint Gotthard Pass in Airolo, Switzerland', 'Tremola Road on the Saint Gotthard Pass in Airolo, Switzerland', 'https://cn.bing.com/th?id=OHR.TremolaRoad_EN-CA6025249827_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   18
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/19.html', 'https://cn.bing.com/th?id=OHR.Saqsaywaman_EN-CA6349309682_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Aerial view of the ruins of Sacsayhuamán, Cusco, Peru', 'Aerial view of the ruins of Sacsayhuamán, Cusco, Peru', 'https://cn.bing.com/th?id=OHR.Saqsaywaman_EN-CA6349309682_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   19
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/20.html', 'https://cn.bing.com/th?id=OHR.IsolaElba_EN-CA8613795085_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'La Rocchetta Lighthouse, Piombino, Italy', 'La Rocchetta Lighthouse, Piombino, Italy', 'https://cn.bing.com/th?id=OHR.IsolaElba_EN-CA8613795085_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   20
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/21.html', 'https://cn.bing.com/th?id=OHR.ArchedIceberg_EN-CA7836830010_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Arched iceberg floating off the western Antarctic Peninsula, Southern Ocean', 'Arched iceberg floating off the western Antarctic Peninsula, Southern Ocean', 'https://cn.bing.com/th?id=OHR.ArchedIceberg_EN-CA7836830010_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   21
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/22.html', 'https://cn.bing.com/th?id=OHR.IndigenousMaple_EN-CA8176109531_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Red maple leaf, symbol of Canada', 'Red maple leaf, symbol of Canada', 'https://cn.bing.com/th?id=OHR.IndigenousMaple_EN-CA8176109531_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   22
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/23.html', 'https://cn.bing.com/th?id=OHR.QuinaultFerns_EN-CA8536233053_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Quinault rainforest, Olympic National Park, Washington state, United States', 'Quinault rainforest, Olympic National Park, Washington state, United States', 'https://cn.bing.com/th?id=OHR.QuinaultFerns_EN-CA8536233053_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   23
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/24.html', 'https://cn.bing.com/th?id=OHR.Fujisan_EN-CA8841580600_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Mount Fuji on Honshu Island, Japan', 'Mount Fuji on Honshu Island, Japan', 'https://cn.bing.com/th?id=OHR.Fujisan_EN-CA8841580600_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   24
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/25.html', 'https://cn.bing.com/th?id=OHR.BFPollin_EN-CA9136085313_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Butterfly pollinating on yellow flower', 'Butterfly pollinating on yellow flower', 'https://cn.bing.com/th?id=OHR.BFPollin_EN-CA9136085313_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   25
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/26.html', 'https://cn.bing.com/th?id=OHR.GrandPlace_EN-CA9367099821_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Buildings on Grand-Place Square in Brussels, Belgium', 'Buildings on Grand-Place Square in Brussels, Belgium', 'https://cn.bing.com/th?id=OHR.GrandPlace_EN-CA9367099821_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   26
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/27.html', 'https://cn.bing.com/th?id=OHR.ThamesSummer_EN-CA4092680642_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'The River Thames, London, England', 'The River Thames, London, England', 'https://cn.bing.com/th?id=OHR.ThamesSummer_EN-CA4092680642_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   27
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/28.html', 'https://cn.bing.com/th?id=OHR.MulticulturalismDY_EN-CA9116110353_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Dramatic sky over Montreal, Quebec', 'Dramatic sky over Montreal, Quebec', 'https://cn.bing.com/th?id=OHR.MulticulturalismDY_EN-CA9116110353_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   28
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/29.html', 'https://cn.bing.com/th?id=OHR.SaguaroSun_EN-CA5131430817_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Saguaro cacti near Windgate Pass, McDowell Range, Arizona, United States', 'Saguaro cacti near Windgate Pass, McDowell Range, Arizona, United States', 'https://cn.bing.com/th?id=OHR.SaguaroSun_EN-CA5131430817_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   29
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202606/30.html', 'https://cn.bing.com/th?id=OHR.BoraBoraLagoon_EN-CA7294184526_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Bora Bora and its lagoon, South Pacific, French Polynesia', 'Bora Bora and its lagoon, South Pacific, French Polynesia', 'https://cn.bing.com/th?id=OHR.BoraBoraLagoon_EN-CA7294184526_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   30
-  <div class="wallpaper-dot"></div>
+  
+</div>
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
+  31
+  
 </div>
 
     </div>
     
     <div class="calendar-stats">
-      📊 <span class="stats-text">2026年共有 157 张壁纸</span>
+      📊 <span class="stats-text">2026年共有 158 张壁纸</span>
     </div>
   </div>
   
   <div class="preview-section">
     <div class="preview-header">
       <h3>壁纸预览</h3>
-      <div class="preview-date" id="preview-date">2026年7月1日</div>
+      <div class="preview-date" id="preview-date">2026年7月2日</div>
     </div>
     <div class="preview-container">
       <div class="preview-placeholder" id="preview-placeholder" style="display: none;">
@@ -2720,15 +2726,15 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <div class="preview-content" id="preview-content" style="display: flex;">
         <div class="preview-image-container">
-          <div class="preview-small-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.MasaiGiraffe_EN-CA5473733652_UHD.jpg&pid=hp&w=400'); background-position: center; background-repeat: no-repeat; background-size: cover; filter: blur(2px); -webkit-filter: blur(2px); opacity: 0.8; z-index: 1;"></div>
-          <div class="preview-large-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.MasaiGiraffe_EN-CA5473733652_UHD.jpg&pid=hp&w=1200'); background-position: center; background-repeat: no-repeat; background-size: cover; z-index: 2;"></div>
+          <div class="preview-small-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.DungeonPark_EN-CA5716185591_UHD.jpg&pid=hp&w=400'); background-position: center; background-repeat: no-repeat; background-size: cover; filter: blur(2px); -webkit-filter: blur(2px); opacity: 0.8; z-index: 1;"></div>
+          <div class="preview-large-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.DungeonPark_EN-CA5716185591_UHD.jpg&pid=hp&w=1200'); background-position: center; background-repeat: no-repeat; background-size: cover; z-index: 2;"></div>
         </div>
         <div class="preview-info">
-          <h4 id="preview-title">Giraffes at sunset in the Masai Mara National Reserve, Kenya</h4>
-          <p id="preview-desc">Giraffes at sunset in the Masai Mara National Reserve, Kenya</p>
+          <h4 id="preview-title">Dungeon Provincial Park, Newfoundland and Labrador</h4>
+          <p id="preview-desc">Dungeon Provincial Park, Newfoundland and Labrador</p>
           <div class="preview-actions">
-            <a id="preview-download" href="https://cn.bing.com/th?id=OHR.MasaiGiraffe_EN-CA5473733652_UHD.jpg" target="_blank" class="preview-btn">下载4k</a>
-            <a id="preview-detail" href="day/202607/01.html" target="_blank" class="preview-btn">查看详情</a>
+            <a id="preview-download" href="https://cn.bing.com/th?id=OHR.DungeonPark_EN-CA5716185591_UHD.jpg" target="_blank" class="preview-btn">下载4k</a>
+            <a id="preview-detail" href="day/202607/02.html" target="_blank" class="preview-btn">查看详情</a>
           </div>
         </div>
       </div>
