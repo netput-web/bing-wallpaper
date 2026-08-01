@@ -25,7 +25,7 @@
             border-radius: 8px; /* 添加圆角效果 */
         }
         .bgimg-header {
-            background-image: url("https://cn.bing.com/th?id=OHR.VirginiaTrail_FR-FR7594645617_UHD.jpg&pid=hp&w=2000");
+            background-image: url("https://cn.bing.com/th?id=OHR.SeaStacks_FR-FR4057620009_UHD.jpg&pid=hp&w=2000");
             position: absolute;
             top: 0;
             left: 0;
@@ -37,7 +37,7 @@
             display: none; /* 最初隐藏大图 */
         }
         .smallImg-header {
-            background-image: url("https://cn.bing.com/th?id=OHR.VirginiaTrail_FR-FR7594645617_UHD.jpg&pid=hp&w=480"); /* 使用小图 */
+            background-image: url("https://cn.bing.com/th?id=OHR.SeaStacks_FR-FR4057620009_UHD.jpg&pid=hp&w=480"); /* 使用小图 */
             filter: blur(15px);
             -webkit-filter: blur(15px);
             position: absolute;
@@ -1605,7 +1605,7 @@
         var smallImg = document.querySelector('.smallImg-header');
         // 创建一个新的图片对象以监控加载状态
         var img = new Image();
-        img.src = 'https://cn.bing.com/th?id=OHR.VirginiaTrail_FR-FR7594645617_UHD.jpg&pid=hp&w=2000'; // 从背景图中提取URL
+        img.src = 'https://cn.bing.com/th?id=OHR.SeaStacks_FR-FR4057620009_UHD.jpg&pid=hp&w=2000'; // 从背景图中提取URL
         // 小图逐渐变透明
         smallImg.style.opacity = 0.3;
         img.onload = function() {
@@ -2008,7 +2008,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="w3-display-middle w3-padding-large w3-wide w3-text-light-grey w3-center">
                 <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge" style="white-space: pre-wrap; word-wrap: break-word; word-break: break-all;">Bing Wallpaper</h1>
                 <div class=" w3-padding-large w3-text-light-grey" style="max-width: 800px">
-                    <p>Vue aérienne du sentier Virginia Creeper Trail, Damascus, Virginie, États-Unis</p>
+                    <p>Stacks près de Wilson Creek Beach, False Klamath Cove, Parc national et parcs d’État de Redwood, Californie, États-Unis</p>
                 </div>
                 <h5 class="w3-hide-large" style="white-space:nowrap">Bing Wallpaper</h5>
             </div>
@@ -2037,6 +2037,23 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- First Photo Grid-->
     <div class="w3-center" id="img_list" style="display: flex; flex-wrap: wrap; justify-content: space-between; padding: 48px 0 0 0;">
         <div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.SeaStacks_FR-FR4057620009_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202608/01.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.SeaStacks_FR-FR4057620009_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Stacks près de Wilson Creek Beach, False Klamath Cove, Parc national et parcs d’État de Redwood, Californie, États-Unis</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2026-08-01</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202608/01.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('fr-fr','2026-08-01')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
   <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
     <img class="smallImg" src="https://cn.bing.com/th?id=OHR.VirginiaTrail_FR-FR7594645617_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
     <a href="day/202607/31.html" target="_blank">
@@ -2529,23 +2546,6 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
   </div>
-</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
-  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
-    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.TempleEsna_FR-FR7122811032_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
-    <a href="day/202607/02.html" target="_blank">
-      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.TempleEsna_FR-FR7122811032_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
-    </a>
-  </div>
-  <div class="img-info" style="padding: 12px 16px;">
-    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Plafond du temple d'Esna, Égypte</div>
-    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
-      <span class="img-date" style="color: #999;">2026-07-02</span>
-      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
-        <a href="day/202607/02.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
-        <button class="like-button img-btn" onclick="updateLove('fr-fr','2026-07-02')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
-      </div>
-    </div>
-  </div>
 </div>
     </div>
     
@@ -2560,7 +2560,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="nav-info">
             <div class="nav-year-month" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
               <span class="nav-year" onclick="showYearSelector()">2026</span>
-              <span class="nav-month" onclick="showMonthSelector()">7月</span>
+              <span class="nav-month" onclick="showMonthSelector()">8月</span>
             </div>
             <div class="year-selector">
               <!-- 年份列表将在这里动态生成 -->
@@ -2582,142 +2582,145 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="calendar-day empty"></div>
 <div class="calendar-day empty"></div>
 <div class="calendar-day empty"></div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/01.html', 'https://cn.bing.com/th?id=OHR.DungeonPark_FR-FR7667168923_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Parc provincial de Dungeon, Terre-Neuve-et-Labrador, Canada', 'Parc provincial de Dungeon, Terre-Neuve-et-Labrador, Canada', 'https://cn.bing.com/th?id=OHR.DungeonPark_FR-FR7667168923_UHD.jpg')" data-count="1">
+<div class="calendar-day empty"></div>
+<div class="calendar-day empty"></div>
+<div class="calendar-day empty"></div>
+<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/01.html', 'https://cn.bing.com/th?id=OHR.SeaStacks_FR-FR4057620009_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Stacks près de Wilson Creek Beach, False Klamath Cove, Parc national et parcs d’État de Redwood, Californie, États-Unis', 'Stacks près de Wilson Creek Beach, False Klamath Cove, Parc national et parcs d’État de Redwood, Californie, États-Unis', 'https://cn.bing.com/th?id=OHR.SeaStacks_FR-FR4057620009_UHD.jpg')" data-count="1">
   1
   <div class="wallpaper-dot"></div>
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/02.html', 'https://cn.bing.com/th?id=OHR.TempleEsna_FR-FR7122811032_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Plafond du temple d\'Esna, Égypte', 'Plafond du temple d\'Esna, Égypte', 'https://cn.bing.com/th?id=OHR.TempleEsna_FR-FR7122811032_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   2
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/03.html', 'https://cn.bing.com/th?id=OHR.FirefliesJapan_FR-FR8593158782_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Lucioles scintillant au-dessus d\'un ruisseau, Okayama, Japon', 'Lucioles scintillant au-dessus d\'un ruisseau, Okayama, Japon', 'https://cn.bing.com/th?id=OHR.FirefliesJapan_FR-FR8593158782_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   3
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/04.html', 'https://cn.bing.com/th?id=OHR.KaysersbergVillage_FR-FR8479653154_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Kaysersberg, Alsace', 'Kaysersberg, Alsace', 'https://cn.bing.com/th?id=OHR.KaysersbergVillage_FR-FR8479653154_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   4
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/05.html', 'https://cn.bing.com/th?id=OHR.LavenderRows_FR-FR9535531184_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Champs de lavande, Plateau de Valensole, Provence', 'Champs de lavande, Plateau de Valensole, Provence', 'https://cn.bing.com/th?id=OHR.LavenderRows_FR-FR9535531184_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   5
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/06.html', 'https://cn.bing.com/th?id=OHR.SyracuseItaly_FR-FR9604430573_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Syracuse au coucher du soleil, Sicile, Italie', 'Syracuse au coucher du soleil, Sicile, Italie', 'https://cn.bing.com/th?id=OHR.SyracuseItaly_FR-FR9604430573_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   6
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/07.html', 'https://cn.bing.com/th?id=OHR.MountainToucanOrchids_FR-FR9785340325_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Toucan montagnard à bec plat avec des orchidées, Équateur', 'Toucan montagnard à bec plat avec des orchidées, Équateur', 'https://cn.bing.com/th?id=OHR.MountainToucanOrchids_FR-FR9785340325_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   7
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/08.html', 'https://cn.bing.com/th?id=OHR.LakeAtitlan_FR-FR9789294273_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Lever du soleil sur le lac Atitlán, Guatemala', 'Lever du soleil sur le lac Atitlán, Guatemala', 'https://cn.bing.com/th?id=OHR.LakeAtitlan_FR-FR9789294273_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   8
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/09.html', 'https://cn.bing.com/th?id=OHR.SapaVietnam_FR-FR9797558235_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Champs de riz à Sapa, Lào Cai, Vietnam', 'Champs de riz à Sapa, Lào Cai, Vietnam', 'https://cn.bing.com/th?id=OHR.SapaVietnam_FR-FR9797558235_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   9
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/10.html', 'https://cn.bing.com/th?id=OHR.VictoriaBeach_FR-FR3702097800_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Vue aérienne des terres et de l\'océan, Victoria, Australie', 'Vue aérienne des terres et de l\'océan, Victoria, Australie', 'https://cn.bing.com/th?id=OHR.VictoriaBeach_FR-FR3702097800_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   10
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/11.html', 'https://cn.bing.com/th?id=OHR.AurayBrittany_FR-FR2151221761_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Port de Saint-Goustan, Auray, Bretagne', 'Port de Saint-Goustan, Auray, Bretagne', 'https://cn.bing.com/th?id=OHR.AurayBrittany_FR-FR2151221761_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   11
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/12.html', 'https://cn.bing.com/th?id=OHR.KatahdinWWNM_FR-FR2337328139_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Monument national des bois et des eaux de Katahdin, Maine, États-Unis', 'Monument national des bois et des eaux de Katahdin, Maine, États-Unis', 'https://cn.bing.com/th?id=OHR.KatahdinWWNM_FR-FR2337328139_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   12
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/13.html', 'https://cn.bing.com/th?id=OHR.NavajoSandstone_FR-FR2547131354_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Antelope Canyon, territoire Navajo, Arizona, États-Unis', 'Antelope Canyon, territoire Navajo, Arizona, États-Unis', 'https://cn.bing.com/th?id=OHR.NavajoSandstone_FR-FR2547131354_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   13
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/14.html', 'https://cn.bing.com/th?id=OHR.BastilleSacreCoeur_FR-FR3878699722_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Feux d’artifice face à la basilique du Sacré-Cœur, Montmartre, Paris', 'Feux d’artifice face à la basilique du Sacré-Cœur, Montmartre, Paris', 'https://cn.bing.com/th?id=OHR.BastilleSacreCoeur_FR-FR3878699722_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   14
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/15.html', 'https://cn.bing.com/th?id=OHR.LemonShark_FR-FR4291742004_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Jeune requin-citron dans la mangrove, Eleuthera, Bahamas', 'Jeune requin-citron dans la mangrove, Eleuthera, Bahamas', 'https://cn.bing.com/th?id=OHR.LemonShark_FR-FR4291742004_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   15
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/16.html', 'https://cn.bing.com/th?id=OHR.DeerGrass_FR-FR3634474861_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Cerf sika dans l’herbe, parc de Merlet, Haute-Savoie', 'Cerf sika dans l’herbe, parc de Merlet, Haute-Savoie', 'https://cn.bing.com/th?id=OHR.DeerGrass_FR-FR3634474861_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   16
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/17.html', 'https://cn.bing.com/th?id=OHR.VaiUmbrellas_FR-FR3414218342_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Chaises longues sur la plage de Vaï, Crète, Grèce', 'Chaises longues sur la plage de Vaï, Crète, Grèce', 'https://cn.bing.com/th?id=OHR.VaiUmbrellas_FR-FR3414218342_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   17
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/18.html', 'https://cn.bing.com/th?id=OHR.DevilsBridge_FR-FR5259113427_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Pont du Diable dans le parc aux rhododendrons de Kromlau, en Saxe, Allemagne', 'Pont du Diable dans le parc aux rhododendrons de Kromlau, en Saxe, Allemagne', 'https://cn.bing.com/th?id=OHR.DevilsBridge_FR-FR5259113427_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   18
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/19.html', 'https://cn.bing.com/th?id=OHR.HirundoRustica_FR-FR5403619513_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Hirondelles rustiques de différentes sous-espèces se reposant ensemble', 'Hirondelles rustiques de différentes sous-espèces se reposant ensemble', 'https://cn.bing.com/th?id=OHR.HirundoRustica_FR-FR5403619513_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   19
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/20.html', 'https://cn.bing.com/th?id=OHR.Artemis_FR-FR5561744161_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'La Lune et la Terre capturées par l\'équipage d\'Artemis II', 'La Lune et la Terre capturées par l\'équipage d\'Artemis II', 'https://cn.bing.com/th?id=OHR.Artemis_FR-FR5561744161_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   20
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/21.html', 'https://cn.bing.com/th?id=OHR.SantaCatalina_FR-FR5835984495_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Arche de Santa Catalina, Antigua, Guatemala', 'Arche de Santa Catalina, Antigua, Guatemala', 'https://cn.bing.com/th?id=OHR.SantaCatalina_FR-FR5835984495_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   21
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/22.html', 'https://cn.bing.com/th?id=OHR.CoralAwareness_FR-FR4288203085_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Récif corallien et plage de Raja Ampat, Indonésie', 'Récif corallien et plage de Raja Ampat, Indonésie', 'https://cn.bing.com/th?id=OHR.CoralAwareness_FR-FR4288203085_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   22
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/23.html', 'https://cn.bing.com/th?id=OHR.PinkDahlia_FR-FR6134462708_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Dahlia rose', 'Dahlia rose', 'https://cn.bing.com/th?id=OHR.PinkDahlia_FR-FR6134462708_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   23
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/24.html', 'https://cn.bing.com/th?id=OHR.GalapagosFlamingos_FR-FR0682662624_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Flamboyance de flamants des Caraïbes, île Isabela, îles Galápagos, Équateur', 'Flamboyance de flamants des Caraïbes, île Isabela, îles Galápagos, Équateur', 'https://cn.bing.com/th?id=OHR.GalapagosFlamingos_FR-FR0682662624_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   24
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/25.html', 'https://cn.bing.com/th?id=OHR.GaliciaBeach_FR-FR6503602591_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Plage des Cathédrales, Galice, Espagne', 'Plage des Cathédrales, Galice, Espagne', 'https://cn.bing.com/th?id=OHR.GaliciaBeach_FR-FR6503602591_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   25
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/26.html', 'https://cn.bing.com/th?id=OHR.RedMangroveSunrise_FR-FR6736116710_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Lever de soleil sur un palétuvier rouge, Cayos Cochinos, Honduras', 'Lever de soleil sur un palétuvier rouge, Cayos Cochinos, Honduras', 'https://cn.bing.com/th?id=OHR.RedMangroveSunrise_FR-FR6736116710_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   26
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/27.html', 'https://cn.bing.com/th?id=OHR.VerdonKayaks_FR-FR6935931270_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Canoë-kayaks au cœur des gorges du Verdon, Provence-Alpes-Côte d\'Azur', 'Canoë-kayaks au cœur des gorges du Verdon, Provence-Alpes-Côte d\'Azur', 'https://cn.bing.com/th?id=OHR.VerdonKayaks_FR-FR6935931270_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   27
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/28.html', 'https://cn.bing.com/th?id=OHR.ChannelKelp_FR-FR7114923921_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Une forêt de varech au large d\'Anacapa Island, Parc national des Channel Islands, Californie, États-Unis', 'Une forêt de varech au large d\'Anacapa Island, Parc national des Channel Islands, Californie, États-Unis', 'https://cn.bing.com/th?id=OHR.ChannelKelp_FR-FR7114923921_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   28
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/29.html', 'https://cn.bing.com/th?id=OHR.TigerFamily_FR-FR7284476347_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Une famille de tigres du Bengale au parc national de Ranthambore, Rajasthan, Inde', 'Une famille de tigres du Bengale au parc national de Ranthambore, Rajasthan, Inde', 'https://cn.bing.com/th?id=OHR.TigerFamily_FR-FR7284476347_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   29
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/30.html', 'https://cn.bing.com/th?id=OHR.WildJackalFriends_FR-FR7398331328_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Jeunes chacals sauvages dans le Bushveld, Afrique du Sud', 'Jeunes chacals sauvages dans le Bushveld, Afrique du Sud', 'https://cn.bing.com/th?id=OHR.WildJackalFriends_FR-FR7398331328_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   30
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/31.html', 'https://cn.bing.com/th?id=OHR.VirginiaTrail_FR-FR7594645617_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Vue aérienne du sentier Virginia Creeper Trail, Damascus, Virginie, États-Unis', 'Vue aérienne du sentier Virginia Creeper Trail, Damascus, Virginie, États-Unis', 'https://cn.bing.com/th?id=OHR.VirginiaTrail_FR-FR7594645617_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   31
-  <div class="wallpaper-dot"></div>
+  
 </div>
 
     </div>
     
     <div class="calendar-stats">
-      📊 <span class="stats-text">2026年共有 188 张壁纸</span>
+      📊 <span class="stats-text">2026年共有 189 张壁纸</span>
     </div>
   </div>
   
   <div class="preview-section">
     <div class="preview-header">
       <h3>壁纸预览</h3>
-      <div class="preview-date" id="preview-date">2026年7月31日</div>
+      <div class="preview-date" id="preview-date">2026年8月1日</div>
     </div>
     <div class="preview-container">
       <div class="preview-placeholder" id="preview-placeholder" style="display: none;">
@@ -2726,15 +2729,15 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <div class="preview-content" id="preview-content" style="display: flex;">
         <div class="preview-image-container">
-          <div class="preview-small-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.VirginiaTrail_FR-FR7594645617_UHD.jpg&pid=hp&w=400'); background-position: center; background-repeat: no-repeat; background-size: cover; filter: blur(2px); -webkit-filter: blur(2px); opacity: 0.8; z-index: 1;"></div>
-          <div class="preview-large-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.VirginiaTrail_FR-FR7594645617_UHD.jpg&pid=hp&w=1200'); background-position: center; background-repeat: no-repeat; background-size: cover; z-index: 2;"></div>
+          <div class="preview-small-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.SeaStacks_FR-FR4057620009_UHD.jpg&pid=hp&w=400'); background-position: center; background-repeat: no-repeat; background-size: cover; filter: blur(2px); -webkit-filter: blur(2px); opacity: 0.8; z-index: 1;"></div>
+          <div class="preview-large-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.SeaStacks_FR-FR4057620009_UHD.jpg&pid=hp&w=1200'); background-position: center; background-repeat: no-repeat; background-size: cover; z-index: 2;"></div>
         </div>
         <div class="preview-info">
-          <h4 id="preview-title">Vue aérienne du sentier Virginia Creeper Trail, Damascus, Virginie, États-Unis</h4>
-          <p id="preview-desc">Vue aérienne du sentier Virginia Creeper Trail, Damascus, Virginie, États-Unis</p>
+          <h4 id="preview-title">Stacks près de Wilson Creek Beach, False Klamath Cove, Parc national et parcs d’État de Redwood, Californie, États-Unis</h4>
+          <p id="preview-desc">Stacks près de Wilson Creek Beach, False Klamath Cove, Parc national et parcs d’État de Redwood, Californie, États-Unis</p>
           <div class="preview-actions">
-            <a id="preview-download" href="https://cn.bing.com/th?id=OHR.VirginiaTrail_FR-FR7594645617_UHD.jpg" target="_blank" class="preview-btn">下载4k</a>
-            <a id="preview-detail" href="day/202607/31.html" target="_blank" class="preview-btn">查看详情</a>
+            <a id="preview-download" href="https://cn.bing.com/th?id=OHR.SeaStacks_FR-FR4057620009_UHD.jpg" target="_blank" class="preview-btn">下载4k</a>
+            <a id="preview-detail" href="day/202608/01.html" target="_blank" class="preview-btn">查看详情</a>
           </div>
         </div>
       </div>

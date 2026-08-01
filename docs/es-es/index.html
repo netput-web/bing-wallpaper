@@ -25,7 +25,7 @@
             border-radius: 8px; /* 添加圆角效果 */
         }
         .bgimg-header {
-            background-image: url("https://cn.bing.com/th?id=OHR.DeltaEbro_ES-ES3023885514_UHD.jpg&pid=hp&w=2000");
+            background-image: url("https://cn.bing.com/th?id=OHR.SantaCatalina_ES-ES2186596110_UHD.jpg&pid=hp&w=2000");
             position: absolute;
             top: 0;
             left: 0;
@@ -37,7 +37,7 @@
             display: none; /* 最初隐藏大图 */
         }
         .smallImg-header {
-            background-image: url("https://cn.bing.com/th?id=OHR.DeltaEbro_ES-ES3023885514_UHD.jpg&pid=hp&w=480"); /* 使用小图 */
+            background-image: url("https://cn.bing.com/th?id=OHR.SantaCatalina_ES-ES2186596110_UHD.jpg&pid=hp&w=480"); /* 使用小图 */
             filter: blur(15px);
             -webkit-filter: blur(15px);
             position: absolute;
@@ -1605,7 +1605,7 @@
         var smallImg = document.querySelector('.smallImg-header');
         // 创建一个新的图片对象以监控加载状态
         var img = new Image();
-        img.src = 'https://cn.bing.com/th?id=OHR.DeltaEbro_ES-ES3023885514_UHD.jpg&pid=hp&w=2000'; // 从背景图中提取URL
+        img.src = 'https://cn.bing.com/th?id=OHR.SantaCatalina_ES-ES2186596110_UHD.jpg&pid=hp&w=2000'; // 从背景图中提取URL
         // 小图逐渐变透明
         smallImg.style.opacity = 0.3;
         img.onload = function() {
@@ -2008,7 +2008,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="w3-display-middle w3-padding-large w3-wide w3-text-light-grey w3-center">
                 <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge" style="white-space: pre-wrap; word-wrap: break-word; word-break: break-all;">Bing Wallpaper</h1>
                 <div class=" w3-padding-large w3-text-light-grey" style="max-width: 800px">
-                    <p>Flamencos en el Delta del Ebro, Tarragona, España</p>
+                    <p>Arco de Santa Catalina, Antigua Guatemala, Guatemala</p>
                 </div>
                 <h5 class="w3-hide-large" style="white-space:nowrap">Bing Wallpaper</h5>
             </div>
@@ -2037,6 +2037,23 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- First Photo Grid-->
     <div class="w3-center" id="img_list" style="display: flex; flex-wrap: wrap; justify-content: space-between; padding: 48px 0 0 0;">
         <div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.SantaCatalina_ES-ES2186596110_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202608/01.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.SantaCatalina_ES-ES2186596110_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Arco de Santa Catalina, Antigua Guatemala, Guatemala</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2026-08-01</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202608/01.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('es-es','2026-08-01')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
   <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
     <img class="smallImg" src="https://cn.bing.com/th?id=OHR.DeltaEbro_ES-ES3023885514_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
     <a href="day/202607/31.html" target="_blank">
@@ -2529,23 +2546,6 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
   </div>
-</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
-  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
-    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.TempleEsna_ES-ES5295149663_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
-    <a href="day/202607/02.html" target="_blank">
-      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.TempleEsna_ES-ES5295149663_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
-    </a>
-  </div>
-  <div class="img-info" style="padding: 12px 16px;">
-    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Techo del Templo de Jnum en Esna, Egipto</div>
-    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
-      <span class="img-date" style="color: #999;">2026-07-02</span>
-      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
-        <a href="day/202607/02.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
-        <button class="like-button img-btn" onclick="updateLove('es-es','2026-07-02')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
-      </div>
-    </div>
-  </div>
 </div>
     </div>
     
@@ -2560,7 +2560,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="nav-info">
             <div class="nav-year-month" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
               <span class="nav-year" onclick="showYearSelector()">2026</span>
-              <span class="nav-month" onclick="showMonthSelector()">7月</span>
+              <span class="nav-month" onclick="showMonthSelector()">8月</span>
             </div>
             <div class="year-selector">
               <!-- 年份列表将在这里动态生成 -->
@@ -2582,142 +2582,145 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="calendar-day empty"></div>
 <div class="calendar-day empty"></div>
 <div class="calendar-day empty"></div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/01.html', 'https://cn.bing.com/th?id=OHR.DungeonPark_ES-ES4904785525_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Dungeon Provincial Park, Terranova y Labrador, Canadá', 'Dungeon Provincial Park, Terranova y Labrador, Canadá', 'https://cn.bing.com/th?id=OHR.DungeonPark_ES-ES4904785525_UHD.jpg')" data-count="1">
+<div class="calendar-day empty"></div>
+<div class="calendar-day empty"></div>
+<div class="calendar-day empty"></div>
+<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/01.html', 'https://cn.bing.com/th?id=OHR.SantaCatalina_ES-ES2186596110_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Arco de Santa Catalina, Antigua Guatemala, Guatemala', 'Arco de Santa Catalina, Antigua Guatemala, Guatemala', 'https://cn.bing.com/th?id=OHR.SantaCatalina_ES-ES2186596110_UHD.jpg')" data-count="1">
   1
   <div class="wallpaper-dot"></div>
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/02.html', 'https://cn.bing.com/th?id=OHR.TempleEsna_ES-ES5295149663_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Techo del Templo de Jnum en Esna, Egipto', 'Techo del Templo de Jnum en Esna, Egipto', 'https://cn.bing.com/th?id=OHR.TempleEsna_ES-ES5295149663_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   2
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/03.html', 'https://cn.bing.com/th?id=OHR.FirefliesJapan_ES-ES5556389569_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Luciérnagas brillando sobre un arroyo, prefectura de Okayama, Japón', 'Luciérnagas brillando sobre un arroyo, prefectura de Okayama, Japón', 'https://cn.bing.com/th?id=OHR.FirefliesJapan_ES-ES5556389569_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   3
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/04.html', 'https://cn.bing.com/th?id=OHR.KaysersbergVillage_ES-ES2312486084_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Kaysersberg, Alsacia, Francia', 'Kaysersberg, Alsacia, Francia', 'https://cn.bing.com/th?id=OHR.KaysersbergVillage_ES-ES2312486084_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   4
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/05.html', 'https://cn.bing.com/th?id=OHR.LavenderRows_ES-ES6518419327_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Plantaciones de lavanda, Plateau de Valensole, Provenza, Francia', 'Plantaciones de lavanda, Plateau de Valensole, Provenza, Francia', 'https://cn.bing.com/th?id=OHR.LavenderRows_ES-ES6518419327_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   5
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/06.html', 'https://cn.bing.com/th?id=OHR.SyracuseItaly_ES-ES6910557655_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Siracusa al atardecer, Sicilia, Italia', 'Siracusa al atardecer, Sicilia, Italia', 'https://cn.bing.com/th?id=OHR.SyracuseItaly_ES-ES6910557655_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   6
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/07.html', 'https://cn.bing.com/th?id=OHR.GranCanaria_ES-ES7578658409_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Vista aérea del paisaje urbano y las dunas de arena en Maspalomas, Gran Canaria, España', 'Vista aérea del paisaje urbano y las dunas de arena en Maspalomas, Gran Canaria, España', 'https://cn.bing.com/th?id=OHR.GranCanaria_ES-ES7578658409_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   7
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/08.html', 'https://cn.bing.com/th?id=OHR.LakeAtitlan_ES-ES9285347150_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Amanecer en el Lago de Atitlán, Guatemala', 'Amanecer en el Lago de Atitlán, Guatemala', 'https://cn.bing.com/th?id=OHR.LakeAtitlan_ES-ES9285347150_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   8
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/09.html', 'https://cn.bing.com/th?id=OHR.SapaVietnam_ES-ES9535992527_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Arrozales en Sapa, Lào Cai, Vietnam', 'Arrozales en Sapa, Lào Cai, Vietnam', 'https://cn.bing.com/th?id=OHR.SapaVietnam_ES-ES9535992527_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   9
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/10.html', 'https://cn.bing.com/th?id=OHR.VictoriaBeach_ES-ES0275659103_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Vista aérea de tierra y océano, Victoria, Australia', 'Vista aérea de tierra y océano, Victoria, Australia', 'https://cn.bing.com/th?id=OHR.VictoriaBeach_ES-ES0275659103_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   10
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/11.html', 'https://cn.bing.com/th?id=OHR.AurayBrittany_ES-ES0686964132_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Puerto de Saint-Goustan, Auray, Bretaña, Francia', 'Puerto de Saint-Goustan, Auray, Bretaña, Francia', 'https://cn.bing.com/th?id=OHR.AurayBrittany_ES-ES0686964132_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   11
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/12.html', 'https://cn.bing.com/th?id=OHR.KatahdinWWNM_ES-ES0827560100_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Monumento Nacional Katahdin Woods and Waters, Maine, EE. UU.', 'Monumento Nacional Katahdin Woods and Waters, Maine, EE. UU.', 'https://cn.bing.com/th?id=OHR.KatahdinWWNM_ES-ES0827560100_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   12
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/13.html', 'https://cn.bing.com/th?id=OHR.NavajoSandstone_ES-ES1041732911_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Antelope Canyon en la Nación Navajo, al este de Page, Arizona, EE. UU.', 'Antelope Canyon en la Nación Navajo, al este de Page, Arizona, EE. UU.', 'https://cn.bing.com/th?id=OHR.NavajoSandstone_ES-ES1041732911_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   13
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/14.html', 'https://cn.bing.com/th?id=OHR.LemonShark_ES-ES9243591847_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Tiburón limón en bosque de manglares, Eleuthera, Bahamas', 'Tiburón limón en bosque de manglares, Eleuthera, Bahamas', 'https://cn.bing.com/th?id=OHR.LemonShark_ES-ES9243591847_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   14
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/15.html', 'https://cn.bing.com/th?id=OHR.MarieLake_ES-ES0302365880_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Marie Lake, Área silvestre John Muir cerca de Bishop, California, EE. UU.', 'Marie Lake, Área silvestre John Muir cerca de Bishop, California, EE. UU.', 'https://cn.bing.com/th?id=OHR.MarieLake_ES-ES0302365880_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   15
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/16.html', 'https://cn.bing.com/th?id=OHR.NavyPier_ES-ES1489693745_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Muelle de la Armada, Chicago, Illinois, EE. UU.', 'Muelle de la Armada, Chicago, Illinois, EE. UU.', 'https://cn.bing.com/th?id=OHR.NavyPier_ES-ES1489693745_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   16
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/17.html', 'https://cn.bing.com/th?id=OHR.PerseidasTenerife_ES-ES7757979261_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Vía Láctea y meteoros de las Perseidas sobre el Teide, Observatorio Astronómico de Izaña, Tenerife, Islas Canarias', 'Vía Láctea y meteoros de las Perseidas sobre el Teide, Observatorio Astronómico de Izaña, Tenerife, Islas Canarias', 'https://cn.bing.com/th?id=OHR.PerseidasTenerife_ES-ES7757979261_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   17
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/18.html', 'https://cn.bing.com/th?id=OHR.DevilsBridge_ES-ES8242183956_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Puente Rakotzbrücke en Rhododendronpark Kromlau, Sajonia, Alemania', 'Puente Rakotzbrücke en Rhododendronpark Kromlau, Sajonia, Alemania', 'https://cn.bing.com/th?id=OHR.DevilsBridge_ES-ES8242183956_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   18
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/19.html', 'https://cn.bing.com/th?id=OHR.HirundoRustica_ES-ES1865458756_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Golondrinas descansando juntas', 'Golondrinas descansando juntas', 'https://cn.bing.com/th?id=OHR.HirundoRustica_ES-ES1865458756_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   19
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/20.html', 'https://cn.bing.com/th?id=OHR.Artemis_ES-ES9353344735_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Luna y Tierra capturadas por la tripulación Artemis II', 'Luna y Tierra capturadas por la tripulación Artemis II', 'https://cn.bing.com/th?id=OHR.Artemis_ES-ES9353344735_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   20
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/21.html', 'https://cn.bing.com/th?id=OHR.IslaCristina_ES-ES8480409312_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Vista aérea de Isla Cristina en Huelva, Andalucía, España', 'Vista aérea de Isla Cristina en Huelva, Andalucía, España', 'https://cn.bing.com/th?id=OHR.IslaCristina_ES-ES8480409312_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   21
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/22.html', 'https://cn.bing.com/th?id=OHR.CoralAwareness_ES-ES8867891901_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Arrecife de coral y playa en Raja Ampat, Indonesia', 'Arrecife de coral y playa en Raja Ampat, Indonesia', 'https://cn.bing.com/th?id=OHR.CoralAwareness_ES-ES8867891901_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   22
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/23.html', 'https://cn.bing.com/th?id=OHR.PinkDahlia_ES-ES2391047367_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Flor de dalia rosa', 'Flor de dalia rosa', 'https://cn.bing.com/th?id=OHR.PinkDahlia_ES-ES2391047367_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   23
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/24.html', 'https://cn.bing.com/th?id=OHR.ChicagoTiffany_ES-ES2128020420_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Tiffany Dome, Chicago Cultural Center, Illinois, EE. UU.', 'Tiffany Dome, Chicago Cultural Center, Illinois, EE. UU.', 'https://cn.bing.com/th?id=OHR.ChicagoTiffany_ES-ES2128020420_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   24
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/25.html', 'https://cn.bing.com/th?id=OHR.GaliciaBeach_ES-ES2298992138_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Playa de las Catedrales, Galicia, España', 'Playa de las Catedrales, Galicia, España', 'https://cn.bing.com/th?id=OHR.GaliciaBeach_ES-ES2298992138_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   25
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/26.html', 'https://cn.bing.com/th?id=OHR.RedMangroveSunrise_ES-ES2463781861_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Amanecer en un mangle rojo en los Pig Keys, Honduras', 'Amanecer en un mangle rojo en los Pig Keys, Honduras', 'https://cn.bing.com/th?id=OHR.RedMangroveSunrise_ES-ES2463781861_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   26
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/27.html', 'https://cn.bing.com/th?id=OHR.GaliciaSpain_ES-ES2553115650_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Veleros cerca de las Islas Cíes en Galicia, España', 'Veleros cerca de las Islas Cíes en Galicia, España', 'https://cn.bing.com/th?id=OHR.GaliciaSpain_ES-ES2553115650_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   27
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/28.html', 'https://cn.bing.com/th?id=OHR.ChannelKelp_ES-ES2666922160_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Un bosque de algas cerca de la isla Anacapa, Parque Nacional de las Islas del Canal, California, EE. UU.', 'Un bosque de algas cerca de la isla Anacapa, Parque Nacional de las Islas del Canal, California, EE. UU.', 'https://cn.bing.com/th?id=OHR.ChannelKelp_ES-ES2666922160_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   28
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/29.html', 'https://cn.bing.com/th?id=OHR.TigerFamily_ES-ES8935295288_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Una familia de tigres de Bengala en el Parque Nacional de Ranthambore, Rajasthan, India', 'Una familia de tigres de Bengala en el Parque Nacional de Ranthambore, Rajasthan, India', 'https://cn.bing.com/th?id=OHR.TigerFamily_ES-ES8935295288_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   29
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/30.html', 'https://cn.bing.com/th?id=OHR.NavajoNation_ES-ES2923536313_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'El Valle de los Monumentos, Nación Navajo, Arizona, EE. UU.', 'El Valle de los Monumentos, Nación Navajo, Arizona, EE. UU.', 'https://cn.bing.com/th?id=OHR.NavajoNation_ES-ES2923536313_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   30
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202607/31.html', 'https://cn.bing.com/th?id=OHR.DeltaEbro_ES-ES3023885514_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Flamencos en el Delta del Ebro, Tarragona, España', 'Flamencos en el Delta del Ebro, Tarragona, España', 'https://cn.bing.com/th?id=OHR.DeltaEbro_ES-ES3023885514_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   31
-  <div class="wallpaper-dot"></div>
+  
 </div>
 
     </div>
     
     <div class="calendar-stats">
-      📊 <span class="stats-text">2026年共有 186 张壁纸</span>
+      📊 <span class="stats-text">2026年共有 187 张壁纸</span>
     </div>
   </div>
   
   <div class="preview-section">
     <div class="preview-header">
       <h3>壁纸预览</h3>
-      <div class="preview-date" id="preview-date">2026年7月31日</div>
+      <div class="preview-date" id="preview-date">2026年8月1日</div>
     </div>
     <div class="preview-container">
       <div class="preview-placeholder" id="preview-placeholder" style="display: none;">
@@ -2726,15 +2729,15 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <div class="preview-content" id="preview-content" style="display: flex;">
         <div class="preview-image-container">
-          <div class="preview-small-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.DeltaEbro_ES-ES3023885514_UHD.jpg&pid=hp&w=400'); background-position: center; background-repeat: no-repeat; background-size: cover; filter: blur(2px); -webkit-filter: blur(2px); opacity: 0.8; z-index: 1;"></div>
-          <div class="preview-large-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.DeltaEbro_ES-ES3023885514_UHD.jpg&pid=hp&w=1200'); background-position: center; background-repeat: no-repeat; background-size: cover; z-index: 2;"></div>
+          <div class="preview-small-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.SantaCatalina_ES-ES2186596110_UHD.jpg&pid=hp&w=400'); background-position: center; background-repeat: no-repeat; background-size: cover; filter: blur(2px); -webkit-filter: blur(2px); opacity: 0.8; z-index: 1;"></div>
+          <div class="preview-large-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.SantaCatalina_ES-ES2186596110_UHD.jpg&pid=hp&w=1200'); background-position: center; background-repeat: no-repeat; background-size: cover; z-index: 2;"></div>
         </div>
         <div class="preview-info">
-          <h4 id="preview-title">Flamencos en el Delta del Ebro, Tarragona, España</h4>
-          <p id="preview-desc">Flamencos en el Delta del Ebro, Tarragona, España</p>
+          <h4 id="preview-title">Arco de Santa Catalina, Antigua Guatemala, Guatemala</h4>
+          <p id="preview-desc">Arco de Santa Catalina, Antigua Guatemala, Guatemala</p>
           <div class="preview-actions">
-            <a id="preview-download" href="https://cn.bing.com/th?id=OHR.DeltaEbro_ES-ES3023885514_UHD.jpg" target="_blank" class="preview-btn">下载4k</a>
-            <a id="preview-detail" href="day/202607/31.html" target="_blank" class="preview-btn">查看详情</a>
+            <a id="preview-download" href="https://cn.bing.com/th?id=OHR.SantaCatalina_ES-ES2186596110_UHD.jpg" target="_blank" class="preview-btn">下载4k</a>
+            <a id="preview-detail" href="day/202608/01.html" target="_blank" class="preview-btn">查看详情</a>
           </div>
         </div>
       </div>
