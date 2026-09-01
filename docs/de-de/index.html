@@ -25,7 +25,7 @@
             border-radius: 8px; /* 添加圆角效果 */
         }
         .bgimg-header {
-            background-image: url("https://cn.bing.com/th?id=OHR.SamarkandCeiling_DE-DE7789243927_UHD.jpg&pid=hp&w=2000");
+            background-image: url("https://cn.bing.com/th?id=OHR.HorseHairShroom_DE-DE7910104416_UHD.jpg&pid=hp&w=2000");
             position: absolute;
             top: 0;
             left: 0;
@@ -37,7 +37,7 @@
             display: none; /* 最初隐藏大图 */
         }
         .smallImg-header {
-            background-image: url("https://cn.bing.com/th?id=OHR.SamarkandCeiling_DE-DE7789243927_UHD.jpg&pid=hp&w=480"); /* 使用小图 */
+            background-image: url("https://cn.bing.com/th?id=OHR.HorseHairShroom_DE-DE7910104416_UHD.jpg&pid=hp&w=480"); /* 使用小图 */
             filter: blur(15px);
             -webkit-filter: blur(15px);
             position: absolute;
@@ -1605,7 +1605,7 @@
         var smallImg = document.querySelector('.smallImg-header');
         // 创建一个新的图片对象以监控加载状态
         var img = new Image();
-        img.src = 'https://cn.bing.com/th?id=OHR.SamarkandCeiling_DE-DE7789243927_UHD.jpg&pid=hp&w=2000'; // 从背景图中提取URL
+        img.src = 'https://cn.bing.com/th?id=OHR.HorseHairShroom_DE-DE7910104416_UHD.jpg&pid=hp&w=2000'; // 从背景图中提取URL
         // 小图逐渐变透明
         smallImg.style.opacity = 0.3;
         img.onload = function() {
@@ -2008,7 +2008,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="w3-display-middle w3-padding-large w3-wide w3-text-light-grey w3-center">
                 <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge" style="white-space: pre-wrap; word-wrap: break-word; word-break: break-all;">Bing Wallpaper</h1>
                 <div class=" w3-padding-large w3-text-light-grey" style="max-width: 800px">
-                    <p>Architektonisches Detail des Registan-Platzes, Samarkand, Usbekistan</p>
+                    <p>Rosshaar-Schwindling, Belarus</p>
                 </div>
                 <h5 class="w3-hide-large" style="white-space:nowrap">Bing Wallpaper</h5>
             </div>
@@ -2037,6 +2037,23 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- First Photo Grid-->
     <div class="w3-center" id="img_list" style="display: flex; flex-wrap: wrap; justify-content: space-between; padding: 48px 0 0 0;">
         <div class="img-card" style="width: 30%; margin-bottom: 20px;">
+  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
+    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.HorseHairShroom_DE-DE7910104416_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
+    <a href="day/202609/01.html" target="_blank">
+      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.HorseHairShroom_DE-DE7910104416_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
+    </a>
+  </div>
+  <div class="img-info" style="padding: 12px 16px;">
+    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Rosshaar-Schwindling, Belarus</div>
+    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
+      <span class="img-date" style="color: #999;">2026-09-01</span>
+      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
+        <a href="day/202609/01.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
+        <button class="like-button img-btn" onclick="updateLove('de-de','2026-09-01')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
+      </div>
+    </div>
+  </div>
+</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
   <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
     <img class="smallImg" src="https://cn.bing.com/th?id=OHR.SamarkandCeiling_DE-DE7789243927_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
     <a href="day/202608/31.html" target="_blank">
@@ -2529,23 +2546,6 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
   </div>
-</div><div class="img-card" style="width: 30%; margin-bottom: 20px;">
-  <div class="img-container" style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 8px;">
-    <img class="smallImg" src="https://cn.bing.com/th?id=OHR.HelsinkiBlue_DE-DE4461850043_UHD.jpg&pid=hp&w=50" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px); opacity: 0;" />
-    <a href="day/202608/02.html" target="_blank">
-      <img class="bigImg" src="https://cn.bing.com/th?id=OHR.HelsinkiBlue_DE-DE4461850043_UHD.jpg&pid=hp&w=384&h=216&rs=1&c=4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;" onload="imgloading(this)" />
-    </a>
-  </div>
-  <div class="img-info" style="padding: 12px 16px;">
-    <div class="img-title" style="font-size: 14px; font-weight: 500; color: #333; margin-bottom: 8px; line-height: 1.5; height: 21px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Helsinkis Küste zur blauen Stunde, Uusimaa, Finnland</div>
-    <div class="img-meta" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #666;">
-      <span class="img-date" style="color: #999;">2026-08-02</span>
-      <div class="img-actions" style="display: flex; gap: 6px; align-items: center;">
-        <a href="day/202608/02.html" target="_blank" class="download-link" style="color: #1976d2; text-decoration: none; padding: 3px 8px; border-radius: 3px; transition: all 0.2s ease; font-size: 11px; border: 1px solid #e0e0e0; background: #fafafa;">4K</a>
-        <button class="like-button img-btn" onclick="updateLove('de-de','2026-08-02')" style="background: #fff; color: #999; border: 1px solid #e0e0e0; border-radius: 3px; padding: 3px 8px; font-size: 11px; cursor: pointer; transition: all 0.2s ease;">♥</button>
-      </div>
-    </div>
-  </div>
 </div>
     </div>
     
@@ -2560,7 +2560,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="nav-info">
             <div class="nav-year-month" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
               <span class="nav-year" onclick="showYearSelector()">2026</span>
-              <span class="nav-month" onclick="showMonthSelector()">8月</span>
+              <span class="nav-month" onclick="showMonthSelector()">9月</span>
             </div>
             <div class="year-selector">
               <!-- 年份列表将在这里动态生成 -->
@@ -2581,146 +2581,138 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="calendar-day-header">六</div>
       <div class="calendar-day empty"></div>
 <div class="calendar-day empty"></div>
-<div class="calendar-day empty"></div>
-<div class="calendar-day empty"></div>
-<div class="calendar-day empty"></div>
-<div class="calendar-day empty"></div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/01.html', 'https://cn.bing.com/th?id=OHR.HawaiiLava_DE-DE4111997666_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Eine Reihe von Lavaströmen mündet ins Meer, Big Island, Hawaii, USA', 'Eine Reihe von Lavaströmen mündet ins Meer, Big Island, Hawaii, USA', 'https://cn.bing.com/th?id=OHR.HawaiiLava_DE-DE4111997666_UHD.jpg')" data-count="1">
+<div class="calendar-day has-wallpaper" onclick="showPreview('day/202609/01.html', 'https://cn.bing.com/th?id=OHR.HorseHairShroom_DE-DE7910104416_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Rosshaar-Schwindling, Belarus', 'Rosshaar-Schwindling, Belarus', 'https://cn.bing.com/th?id=OHR.HorseHairShroom_DE-DE7910104416_UHD.jpg')" data-count="1">
   1
   <div class="wallpaper-dot"></div>
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/02.html', 'https://cn.bing.com/th?id=OHR.HelsinkiBlue_DE-DE4461850043_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Helsinkis Küste zur blauen Stunde, Uusimaa, Finnland', 'Helsinkis Küste zur blauen Stunde, Uusimaa, Finnland', 'https://cn.bing.com/th?id=OHR.HelsinkiBlue_DE-DE4461850043_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   2
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/03.html', 'https://cn.bing.com/th?id=OHR.BoatsMalta_DE-DE5376700732_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Bunte Boote im Hafen von Marsaxlokk, Malta', 'Bunte Boote im Hafen von Marsaxlokk, Malta', 'https://cn.bing.com/th?id=OHR.BoatsMalta_DE-DE5376700732_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   3
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/04.html', 'https://cn.bing.com/th?id=OHR.AdorableOwlet_DE-DE5484057022_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Florida-Kanincheneule, Cape Coral, Florida, USA', 'Florida-Kanincheneule, Cape Coral, Florida, USA', 'https://cn.bing.com/th?id=OHR.AdorableOwlet_DE-DE5484057022_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   4
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/05.html', 'https://cn.bing.com/th?id=OHR.FezMorocco_DE-DE5645521719_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Verziertes Tor des Königspalasts von Fès, Marokko', 'Verziertes Tor des Königspalasts von Fès, Marokko', 'https://cn.bing.com/th?id=OHR.FezMorocco_DE-DE5645521719_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   5
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/06.html', 'https://cn.bing.com/th?id=OHR.MaraCrossing_DE-DE5747320047_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Gnuherden überqueren den Mara-Fluss in der Masai Mara, Kenia', 'Gnuherden überqueren den Mara-Fluss in der Masai Mara, Kenia', 'https://cn.bing.com/th?id=OHR.MaraCrossing_DE-DE5747320047_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   6
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/07.html', 'https://cn.bing.com/th?id=OHR.LimeKiln_DE-DE5407156308_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Leuchtturm Lime Kiln auf San Juan Island, Washington, USA', 'Leuchtturm Lime Kiln auf San Juan Island, Washington, USA', 'https://cn.bing.com/th?id=OHR.LimeKiln_DE-DE5407156308_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   7
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/08.html', 'https://cn.bing.com/th?id=OHR.RhineFlames_DE-DE7527393403_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Rhein in Flammen vor Schloss Stolzenfels bei Koblenz, Rheinland-Pfalz', 'Rhein in Flammen vor Schloss Stolzenfels bei Koblenz, Rheinland-Pfalz', 'https://cn.bing.com/th?id=OHR.RhineFlames_DE-DE7527393403_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   8
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/09.html', 'https://cn.bing.com/th?id=OHR.JMTjibaou_DE-DE7677372250_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Tjibaou-Kulturzentrum, Neukaledonien', 'Tjibaou-Kulturzentrum, Neukaledonien', 'https://cn.bing.com/th?id=OHR.JMTjibaou_DE-DE7677372250_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   9
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/10.html', 'https://cn.bing.com/th?id=OHR.SandPath_DE-DE5965414761_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Joshua-Tree-Nationalpark, Kalifornien, USA', 'Joshua-Tree-Nationalpark, Kalifornien, USA', 'https://cn.bing.com/th?id=OHR.SandPath_DE-DE5965414761_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   10
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/11.html', 'https://cn.bing.com/th?id=OHR.ColorfulCop_DE-DE9077062253_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Bunte Häuser säumen den Nyhavn-Kanal in Kopenhagen, Dänemark', 'Bunte Häuser säumen den Nyhavn-Kanal in Kopenhagen, Dänemark', 'https://cn.bing.com/th?id=OHR.ColorfulCop_DE-DE9077062253_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   11
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/12.html', 'https://cn.bing.com/th?id=OHR.ElephantDay_DE-DE9475374565_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Eine Elefantengruppe im Amboseli-Nationalpark, Kenia', 'Eine Elefantengruppe im Amboseli-Nationalpark, Kenia', 'https://cn.bing.com/th?id=OHR.ElephantDay_DE-DE9475374565_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   12
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/13.html', 'https://cn.bing.com/th?id=OHR.PerseidasTenerife_DE-DE8459328996_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Perseiden-Meteore über dem Teide-Observatorium auf Teneriffa, Spanien', 'Perseiden-Meteore über dem Teide-Observatorium auf Teneriffa, Spanien', 'https://cn.bing.com/th?id=OHR.PerseidasTenerife_DE-DE8459328996_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   13
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/14.html', 'https://cn.bing.com/th?id=OHR.WildlifeCrossingPoland_DE-DE6173480409_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Luftaufnahme einer Grünbrücke bei Zakrzów, Polen', 'Luftaufnahme einer Grünbrücke bei Zakrzów, Polen', 'https://cn.bing.com/th?id=OHR.WildlifeCrossingPoland_DE-DE6173480409_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   14
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/15.html', 'https://cn.bing.com/th?id=OHR.SellinSunrise_DE-DE6501539287_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Sonnenaufgang an der Seebrücke Sellin, Rügen, Mecklenburg-Vorpommern', 'Sonnenaufgang an der Seebrücke Sellin, Rügen, Mecklenburg-Vorpommern', 'https://cn.bing.com/th?id=OHR.SellinSunrise_DE-DE6501539287_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   15
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/16.html', 'https://cn.bing.com/th?id=OHR.RossErrillyRuins_DE-DE7983217751_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Ruinen des Klosters Ross Errilly, Grafschaft Galway, Irland', 'Ruinen des Klosters Ross Errilly, Grafschaft Galway, Irland', 'https://cn.bing.com/th?id=OHR.RossErrillyRuins_DE-DE7983217751_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   16
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/17.html', 'https://cn.bing.com/th?id=OHR.CabilaoClowns_DE-DE7285791368_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Drei Falsche Clownfische in einer Seeanemone, Insel Cabilao, Bohol, Philippinen', 'Drei Falsche Clownfische in einer Seeanemone, Insel Cabilao, Bohol, Philippinen', 'https://cn.bing.com/th?id=OHR.CabilaoClowns_DE-DE7285791368_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   17
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/18.html', 'https://cn.bing.com/th?id=OHR.Palmanova_DE-DE7108374282_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Luftaufnahme von Palmanova, einer Festungsstadt in Friaul, Italien', 'Luftaufnahme von Palmanova, einer Festungsstadt in Friaul, Italien', 'https://cn.bing.com/th?id=OHR.Palmanova_DE-DE7108374282_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   18
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/19.html', 'https://cn.bing.com/th?id=OHR.WhyteCliffP_DE-DE7763456664_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Whytecliff Park in West Vancouver, British Columbia, Kanada', 'Whytecliff Park in West Vancouver, British Columbia, Kanada', 'https://cn.bing.com/th?id=OHR.WhyteCliffP_DE-DE7763456664_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   19
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/20.html', 'https://cn.bing.com/th?id=OHR.LynnCanalOrca_DE-DE7566722719_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Ein Schwertwal im Lynn Canal nahe den Chilkat Mountains in Alaska, USA', 'Ein Schwertwal im Lynn Canal nahe den Chilkat Mountains in Alaska, USA', 'https://cn.bing.com/th?id=OHR.LynnCanalOrca_DE-DE7566722719_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   20
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/21.html', 'https://cn.bing.com/th?id=OHR.JulierPass_DE-DE4547078745_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Serpentinenstraße am Julierpass, Schweiz', 'Serpentinenstraße am Julierpass, Schweiz', 'https://cn.bing.com/th?id=OHR.JulierPass_DE-DE4547078745_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   21
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/22.html', 'https://cn.bing.com/th?id=OHR.CommonBlue_DE-DE9673283581_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Hauhechel-Bläuling, Devon, England', 'Hauhechel-Bläuling, Devon, England', 'https://cn.bing.com/th?id=OHR.CommonBlue_DE-DE9673283581_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   22
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/23.html', 'https://cn.bing.com/th?id=OHR.KatmaiBear_DE-DE4863569312_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Braunbär beim Fischen im Fluss, Katmai-Nationalpark, Alaska, USA', 'Braunbär beim Fischen im Fluss, Katmai-Nationalpark, Alaska, USA', 'https://cn.bing.com/th?id=OHR.KatmaiBear_DE-DE4863569312_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   23
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/24.html', 'https://cn.bing.com/th?id=OHR.BKBridge_DE-DE5037319514_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Brooklyn Bridge, New York, USA', 'Brooklyn Bridge, New York, USA', 'https://cn.bing.com/th?id=OHR.BKBridge_DE-DE5037319514_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   24
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/25.html', 'https://cn.bing.com/th?id=OHR.KitesurfersSunset_DE-DE3980635203_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Kitesurfer bei Sonnenuntergang in Deutschland', 'Kitesurfer bei Sonnenuntergang in Deutschland', 'https://cn.bing.com/th?id=OHR.KitesurfersSunset_DE-DE3980635203_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   25
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/26.html', 'https://cn.bing.com/th?id=OHR.AurorasIceland_DE-DE5182720309_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Polarlichter über dem Kirkjufell, Island', 'Polarlichter über dem Kirkjufell, Island', 'https://cn.bing.com/th?id=OHR.AurorasIceland_DE-DE5182720309_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   26
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/27.html', 'https://cn.bing.com/th?id=OHR.LakeMagadi_DE-DE5321228958_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Zwergflamingos bei Sonnenaufgang am Magadi-See, Kenia', 'Zwergflamingos bei Sonnenaufgang am Magadi-See, Kenia', 'https://cn.bing.com/th?id=OHR.LakeMagadi_DE-DE5321228958_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   27
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/28.html', 'https://cn.bing.com/th?id=OHR.MichelSunset_DE-DE7463636835_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Mont-Saint-Michel bei Flut, Manche, Normandie, Frankreich', 'Mont-Saint-Michel bei Flut, Manche, Normandie, Frankreich', 'https://cn.bing.com/th?id=OHR.MichelSunset_DE-DE7463636835_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   28
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/29.html', 'https://cn.bing.com/th?id=OHR.SantaCatarina_DE-DE7458345257_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Luftaufnahme von Surfern, Santa Catarina, Brasilien', 'Luftaufnahme von Surfern, Santa Catarina, Brasilien', 'https://cn.bing.com/th?id=OHR.SantaCatarina_DE-DE7458345257_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   29
-  <div class="wallpaper-dot"></div>
+  
 </div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/30.html', 'https://cn.bing.com/th?id=OHR.YellowShark_DE-DE7632036192_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Walhai und Goldmakrelen, Cenderawasih-Bucht, West-Papua, Indonesien', 'Walhai und Goldmakrelen, Cenderawasih-Bucht, West-Papua, Indonesien', 'https://cn.bing.com/th?id=OHR.YellowShark_DE-DE7632036192_UHD.jpg')" data-count="1">
+<div class="calendar-day " onclick="showPreview('', '', '', '', '')" data-count="0">
   30
-  <div class="wallpaper-dot"></div>
-</div>
-<div class="calendar-day has-wallpaper" onclick="showPreview('day/202608/31.html', 'https://cn.bing.com/th?id=OHR.SamarkandCeiling_DE-DE7789243927_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4', 'Architektonisches Detail des Registan-Platzes, Samarkand, Usbekistan', 'Architektonisches Detail des Registan-Platzes, Samarkand, Usbekistan', 'https://cn.bing.com/th?id=OHR.SamarkandCeiling_DE-DE7789243927_UHD.jpg')" data-count="1">
-  31
-  <div class="wallpaper-dot"></div>
+  
 </div>
 
     </div>
     
     <div class="calendar-stats">
-      📊 <span class="stats-text">2026年共有 217 张壁纸</span>
+      📊 <span class="stats-text">2026年共有 218 张壁纸</span>
     </div>
   </div>
   
   <div class="preview-section">
     <div class="preview-header">
       <h3>壁纸预览</h3>
-      <div class="preview-date" id="preview-date">2026年8月31日</div>
+      <div class="preview-date" id="preview-date">2026年9月1日</div>
     </div>
     <div class="preview-container">
       <div class="preview-placeholder" id="preview-placeholder" style="display: none;">
@@ -2729,15 +2721,15 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <div class="preview-content" id="preview-content" style="display: flex;">
         <div class="preview-image-container">
-          <div class="preview-small-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.SamarkandCeiling_DE-DE7789243927_UHD.jpg&pid=hp&w=400'); background-position: center; background-repeat: no-repeat; background-size: cover; filter: blur(2px); -webkit-filter: blur(2px); opacity: 0.8; z-index: 1;"></div>
-          <div class="preview-large-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.SamarkandCeiling_DE-DE7789243927_UHD.jpg&pid=hp&w=1200'); background-position: center; background-repeat: no-repeat; background-size: cover; z-index: 2;"></div>
+          <div class="preview-small-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.HorseHairShroom_DE-DE7910104416_UHD.jpg&pid=hp&w=400'); background-position: center; background-repeat: no-repeat; background-size: cover; filter: blur(2px); -webkit-filter: blur(2px); opacity: 0.8; z-index: 1;"></div>
+          <div class="preview-large-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background-image: url('https://cn.bing.com/th?id=OHR.HorseHairShroom_DE-DE7910104416_UHD.jpg&pid=hp&w=1200'); background-position: center; background-repeat: no-repeat; background-size: cover; z-index: 2;"></div>
         </div>
         <div class="preview-info">
-          <h4 id="preview-title">Architektonisches Detail des Registan-Platzes, Samarkand, Usbekistan</h4>
-          <p id="preview-desc">Architektonisches Detail des Registan-Platzes, Samarkand, Usbekistan</p>
+          <h4 id="preview-title">Rosshaar-Schwindling, Belarus</h4>
+          <p id="preview-desc">Rosshaar-Schwindling, Belarus</p>
           <div class="preview-actions">
-            <a id="preview-download" href="https://cn.bing.com/th?id=OHR.SamarkandCeiling_DE-DE7789243927_UHD.jpg" target="_blank" class="preview-btn">下载4k</a>
-            <a id="preview-detail" href="day/202608/31.html" target="_blank" class="preview-btn">查看详情</a>
+            <a id="preview-download" href="https://cn.bing.com/th?id=OHR.HorseHairShroom_DE-DE7910104416_UHD.jpg" target="_blank" class="preview-btn">下载4k</a>
+            <a id="preview-detail" href="day/202609/01.html" target="_blank" class="preview-btn">查看详情</a>
           </div>
         </div>
       </div>
